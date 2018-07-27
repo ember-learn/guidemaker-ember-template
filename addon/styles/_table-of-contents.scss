@@ -83,8 +83,11 @@ label[for="toc-toggle"]:after {
   }
 }
 
-.toc-container {
+.toc-container.versions {
   border-top: 1px solid #F8E7CF;
+}
+
+.toc-container {
   overflow: hidden;
   display: none;
 }

@@ -16,6 +16,10 @@ module.exports = {
   },
   rules: {
   },
+  globals: {
+    Prism: true,
+    compareVersions: true
+  },
   overrides: [
     // node files
     {

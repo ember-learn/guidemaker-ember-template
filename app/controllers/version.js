@@ -14,6 +14,10 @@ export default Controller.extend({
   versions: computed('application.model.allVersions.[]', function () {
     let allVersions = get(this, 'application.model.allVersions');
 
+    if(!allVersions) {
+      return;
+    }
+
     return allVersions.sort(compareVersions).reverse();
   }),
 

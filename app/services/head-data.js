@@ -33,7 +33,7 @@ export default HeadData.extend({
   }),
 
   canonical: computed('routeName', function() {
-    if (!isEmpty(this.currentRouteModel.canonical)) {
+    if (!isEmpty(this.get('currentRouteModel.canonical'))) {
       return this.currentRouteModel.canonical;
     }
 

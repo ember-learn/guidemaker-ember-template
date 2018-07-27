@@ -1,0 +1,18 @@
+{{#unless (eq version currentVersion)}}
+ <div class="old-version-warning">
+   <i class="icon-attention-circled"></i><strong>Old Guides - </strong>You are viewing the guides for Ember {{version}}.
+
+   {{#link-to 'version.show' 'release' path class="btn"}} VIEW {{currentVersion}} {{/link-to}}
+ </div>
+{{/unless}}
+
+<h1>
+  {{page.currentPage.title}}
+  <a href="https://github.com/ember-learn/guides-source/edit/master/guides/{{page.currentVersion}}/{{model.id}}.md"
+     target="_blank" class="edit-page icon-pencil">Edit Page</a>
+</h1>
+<hr>
+
+{{markdown-to-html model.content}}
+
+{{chapter-links pages=pages}}

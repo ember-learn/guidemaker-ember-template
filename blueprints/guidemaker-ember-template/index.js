@@ -74,5 +74,7 @@ module.exports = {
     });
 
     writeFileSync('./ember-cli-build.js', recast.print(ast, { tabWidth: 2, quote: 'single' }).code);
-  }
+  },
+
+  filesToRemove: ['app/styles/app.css'],
 };

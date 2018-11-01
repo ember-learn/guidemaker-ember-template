@@ -14,9 +14,7 @@ module.exports = {
 
   afterInstall() {
     return this.addAddonsToProject({
-      packages: [
-        'ember-bootstrap'
-      ]
+      packages: []
     }).then(() => {
       const code = readFileSync('./ember-cli-build.js');
       const ast = recast.parse(code);

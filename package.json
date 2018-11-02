@@ -36,7 +36,8 @@
     "ember-styleguide": "^2.3.3",
     "ember-tether": "^1.0.0",
     "recast": "^0.15.3",
-    "sass": "^1.14.3"
+    "sass": "^1.14.3",
+    "showdown-section-groups": "^0.3.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",

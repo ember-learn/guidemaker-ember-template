@@ -1,6 +1,6 @@
 {
   "name": "guidemaker-ember-template",
-  "version": "0.1.0-7",
+  "version": "0.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"

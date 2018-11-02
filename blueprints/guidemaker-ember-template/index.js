@@ -15,8 +15,7 @@ module.exports = {
   afterInstall() {
     return this.addAddonsToProject({
       packages: [
-        'ember-auto-import',
-        'algoliasearch'
+        'ember-auto-import'
       ]
     }).then(() => {
       const code = readFileSync('./ember-cli-build.js');

@@ -1,4 +1,9 @@
 
+0.4.0 / 2018-11-08
+==================
+
+  * moving controllers, helpers, initializers, models, and routes to core from @mansona
+
 0.3.0 / 2018-11-07
 ==================
 

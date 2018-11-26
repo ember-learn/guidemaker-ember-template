@@ -1,4 +1,9 @@
 
+0.5.0 / 2018-11-26
+==================
+
+  * Making edit button link configurable #3 from @mansona
+
 0.4.0 / 2018-11-08
 ==================
 

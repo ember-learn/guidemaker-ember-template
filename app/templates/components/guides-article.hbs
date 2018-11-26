@@ -6,8 +6,10 @@
  </div>
 {{/unless}}
 
-<a href="https://github.com/ember-learn/guides-source/edit/master/guides/{{page.currentVersion}}/{{model.id}}.md"
+{{#if guidemaker.sourceRepo}}
+  <a href="{{guidemaker.sourceRepo}}/edit/master/guides/{{unless (eq page.currentVersion 'release') (concat page.currentVersion '/')}}{{model.id}}.md"
   target="_blank" class="edit-page icon-pencil">Edit Page</a>
+{{/if}}
 
 <h1>
   {{page.currentPage.title}}

@@ -5,8 +5,9 @@ export default Component.extend({
   tagName: 'article',
   classNames: 'chapter',
   page: service(),
-  didRender() {
+  guidemaker: service(),
 
+  didRender() {
     let nodeList = this.$('pre:not(.no-line-numbers) > code');
 
     if (nodeList) {

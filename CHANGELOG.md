@@ -1,4 +1,10 @@
 
+0.5.1 / 2019-01-21
+==================
+
+  * updating ember-concurrency
+  * fixing power-select version dropdown
+
 0.5.0 / 2018-11-26
 ==================
 

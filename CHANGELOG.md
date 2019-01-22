@@ -1,4 +1,9 @@
 
+0.6.0 / 2019-01-22
+==================
+
+  * implementing "no search results" feature https://github.com/ember-learn/guides-app/pull/342 from @cah-danmonroe
+
 0.5.1 / 2019-01-21
 ==================
 

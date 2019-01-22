@@ -1239,6 +1239,10 @@ body {
   }
 }
 
+.sidebar nav.toc-container {
+  margin-top: 1em;
+}
+
 article {
   padding: 3em 0;
   @media screen and (min-width: 53.75em) {

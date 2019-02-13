@@ -1,11 +1,23 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   tagName: 'article',
   classNames: 'chapter',
   page: service(),
   guidemaker: service(),
+  editVersion: computed('version', 'currentVersion', function() {
+    if(this.page.currentVersion === 'release') {
+      return '';
+    }
+
+    if(this.version === this.currentVersion) {
+      return 'release/'
+    }
+
+    return `${this.page.currentVersion}/`;
+  }),
 
   didRender() {
     let nodeList = this.$('pre:not(.no-line-numbers) > code');

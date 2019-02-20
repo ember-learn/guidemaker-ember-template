@@ -26,8 +26,8 @@ $white: #fdfdfd;
   margin: auto;
 }
 
-@media screen and (max-width: 53.75rem) {
-  .responsive .survey-reminder-container {
+@media (max-width: 53.75rem) {
+  .survey-reminder-container {
     width: inherit;
     line-height: 1.5;
     padding: 0.8rem 1rem;

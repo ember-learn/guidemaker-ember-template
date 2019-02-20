@@ -1,4 +1,9 @@
 
+0.7.0 / 2019-02-20
+==================
+
+  * adding link for the community survey #6 from @mansona
+
 0.6.0 / 2019-01-22
 ==================
 

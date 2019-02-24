@@ -27,7 +27,9 @@ module.exports = function(environment) {
 
     guidemaker: {
       title: 'Ember Guidemaker Template'
-    }
+    },
+
+    runPercyTest: process.env.RUN_PERCY_TESTS,
   };
 
   if (environment === 'development') {

@@ -12,3 +12,5 @@
       url: "index"
     - title: "Code Syntax Highlighting"
       url: "syntax-highlighting"
+    - title: "Callouts"
+      url: 'callouts'

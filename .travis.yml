@@ -25,6 +25,7 @@ env:
   global:
     # See https://git.io/vdao3 for details.
     - JOBS=1
+    - PERCY_ENABLE=0 # disable percy by default
 
 jobs:
   fail_fast: true
@@ -38,6 +39,7 @@ jobs:
       name: "Tests"
       env:
         - RUN_PERCY_TESTS=true
+        - PERCY_ENABLE=1
       script:
         - npm run lint:js
         - npm test

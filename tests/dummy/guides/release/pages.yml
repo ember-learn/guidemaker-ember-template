@@ -1,0 +1,16 @@
+- title: "Introduction"
+  url: 'index'
+  skip_toc: true
+  pages:
+    - title: "Ember Guides Template"
+      url: ""
+
+- title: "Examples"
+  url: 'examples'
+  pages:
+    - title: "Basic Markdown"
+      url: "index"
+    - title: "Code Syntax Highlighting"
+      url: "syntax-highlighting"
+    - title: "Callouts"
+      url: 'callouts'

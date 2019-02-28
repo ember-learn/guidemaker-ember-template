@@ -7,25 +7,6 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: false
     },
-    // TODO: remove once https://github.com/ember-cli/ember-cli/issues/8448 is fixed
-    'ember-prism': {
-      theme: 'okaidia',
-
-      components: [
-        'apacheconf',
-        'bash',
-        'css',
-        'handlebars',
-        'http',
-        'javascript',
-        'json',
-        'markup-templating',
-        'ruby',
-        'scss'
-      ],
-
-      plugins: ['line-numbers', 'normalize-whitespace']
-    }
   });
 
   /*

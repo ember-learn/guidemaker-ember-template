@@ -20,6 +20,10 @@ $white: #fdfdfd;
   &.hidden {
     display: none;
   }
+
+  &.survey {
+    background-color: #1e719b;
+  }
 }
 .info-banner-container {
   width: 960px;

@@ -1,8 +1,8 @@
-$blue: #1e719b;
+$dark-gray: #4d4d4d;
 $white: #fdfdfd;
 
-.survey-reminder-wrapper {
-  background-color: $blue;
+.info-banner-wrapper {
+  background-color: $dark-gray;
   color: $white;
   text-align: center;
   line-height: 2.2;
@@ -21,13 +21,13 @@ $white: #fdfdfd;
     display: none;
   }
 }
-.survey-reminder-container {
+.info-banner-container {
   width: 960px;
   margin: auto;
 }
 
 @media (max-width: 53.75rem) {
-  .survey-reminder-container {
+  .info-banner-container {
     width: inherit;
     line-height: 1.5;
     padding: 0.8rem 1rem;

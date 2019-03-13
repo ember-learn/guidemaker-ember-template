@@ -8,7 +8,17 @@
   {{/es-navbar}}
 {{/es-header}}
 
-{{info-banner}}
+{{#info-banner type="survey" configName="survey" as |ui|}}
+  {{#ui.container}}
+    Take the <a href={{ui.config.link}} target="_blank" rel="noopener">{{ui.config.title}}</a>
+  {{/ui.container}}
+{{/info-banner}}
+
+{{#info-banner configName="infoBanner" as |ui|}}
+  {{#ui.container}}
+    This is a preview of Octane, an upcoming edition of Ember.js! Go <a href={{ui.config.link}} target="_blank" rel="noopener">{{ui.config.title}}</a> to help out and learn more.
+  {{/ui.container}}
+{{/info-banner}}
 
 <main class="container">
   {{outlet}}

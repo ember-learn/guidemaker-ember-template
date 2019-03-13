@@ -1,7 +1,5 @@
 {{#if config.link}}
-  <div class="info-banner-wrapper">
-    <div class="info-banner-container">
-      This is a preview of Octane, an upcoming edition of Ember.js! Go <a href={{config.link}} target="_blank" rel="noopener">{{config.title}}</a> to help out and learn more.
-    </div>
+  <div class="info-banner-wrapper {{type}}">
+    {{yield (hash container=(component 'info-banner-container') config=config)}}
   </div>
 {{/if}}

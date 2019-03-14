@@ -1,5 +1,7 @@
-{{#if config.link}}
+{{#if config}}
   <div class="info-banner-wrapper {{type}}">
-    {{yield (hash container=(component 'info-banner-container') config=config)}}
+    <div class="info-banner-container">
+      {{markdown-to-html config.content}}
+    </div>
   </div>
 {{/if}}

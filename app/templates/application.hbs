@@ -8,22 +8,8 @@
   {{/es-navbar}}
 {{/es-header}}
 
-{{#info-banner type="survey" configName="survey" as |ui|}}
-  {{#ui.container}}
-    Take the <a href={{ui.config.link}} target="_blank" rel="noopener">{{ui.config.title}}</a>
-  {{/ui.container}}
-{{/info-banner}}
-
-{{#info-banner configName="infoBanner" as |ui|}}
-  {{#ui.container}}
-    Thanks for taking the Octane preview for a test drive! Visit
-    <a href={{ui.config.link}} target="_blank" rel="noopener">{{ui.config.title}}</a>
-    for more info and ways you can help out.
-    These preview guides URLs are subject to change, so point your bookmarks at that landing page.
-    If you are looking for the latest stable release of Ember, please instead visit
-    <a href="https://guides.emberjs.com" target="_blank" rel="noopener">guides.emberjs.com</a>.
-  {{/ui.container}}
-{{/info-banner}}
+{{info-banner type="survey" configName="survey"}}
+{{info-banner configName="infoBanner"}}
 
 <main class="container">
   {{outlet}}

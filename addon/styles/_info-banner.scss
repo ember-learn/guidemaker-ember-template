@@ -25,6 +25,10 @@ $white: #fdfdfd;
   &.survey {
     background-color: $dusty-blue;
   }
+
+  p {
+    margin: 0;
+  }
 }
 .info-banner-container {
   width: 960px;

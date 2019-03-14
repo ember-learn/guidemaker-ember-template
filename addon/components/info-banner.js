@@ -9,6 +9,6 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     const config = getOwner(this).resolveRegistration('config:environment');
-    this.config = config['infoBanner'];
+    this.config = config[this.configName];
   },
 });

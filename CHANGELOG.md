@@ -1,9 +1,3 @@
-0.8.0-alpha / 2019-03-14
-========================
-
- * abstract the survey component to be `info-banner` instead, taking a config object named `infoBanner`
- * add temporary text to make it be Octane preview-ready. Remove this for the real 8.0 release in `info-banner.hbs`
-
 
 0.7.1 / 2019-02-20
 ==================

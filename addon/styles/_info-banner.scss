@@ -1,12 +1,13 @@
-$dark-gray: #4d4d4d;
+$dusty-blue: #1e719b;
 $white: #fdfdfd;
 
 .info-banner-wrapper {
-  background-color: $dark-gray;
+  background-color: $dusty-blue;
   color: $white;
   text-align: center;
-  line-height: 2.2;
-  padding-top: 1px;
+  line-height: 1.5;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 100%;
   border-bottom: 1px solid #e5dbd6;
   strong {
@@ -22,7 +23,7 @@ $white: #fdfdfd;
   }
 
   &.survey {
-    background-color: #1e719b;
+    background-color: $dusty-blue;
   }
 }
 .info-banner-container {

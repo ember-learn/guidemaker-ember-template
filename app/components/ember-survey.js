@@ -1,1 +1,0 @@
-export { default } from 'guidemaker-ember-template/components/ember-survey';

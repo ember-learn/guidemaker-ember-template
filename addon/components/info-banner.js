@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/ember-survey';
+import layout from '../templates/components/info-banner';
 
 import { getOwner } from '@ember/application';
 
@@ -9,6 +9,6 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     const config = getOwner(this).resolveRegistration('config:environment');
-    this.config = config['survey'];
+    this.config = config[this.configName];
   },
 });

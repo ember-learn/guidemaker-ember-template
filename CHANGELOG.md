@@ -1,4 +1,11 @@
 
+1.0.0 / 2019-03-14
+==================
+
+  * working local development #8 from @mansona
+  * abstract the survey component to be `info-banner` instead, taking a config object named `infoBanner` #12 from @jenweber
+  * make the infoBanner use markdown for the text and links #12 from @mansona
+
 0.7.1 / 2019-02-20
 ==================
 

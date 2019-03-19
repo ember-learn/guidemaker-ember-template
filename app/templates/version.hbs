@@ -7,14 +7,16 @@
       ariaLabel=model.version
       selected=model.version
       options=versions
-      onchange=(action 'selectVersion')
+      onchange=(action "selectVersion")
       renderInPlace=true
-      as |version|}}
-      {{shorten-version version}}
+    as |version|
+    }}
+      {{shorten-version version}} {{#if (includes this.application.model.ltsVersions version)}}(LTS){{/if}}
     {{/power-select}}
   {{/if}}
 
-  <input id="toc-toggle" class="toc-toggle visually-hidden" type="checkbox" />
+
+  <input id="toc-toggle" class="toc-toggle visually-hidden" type="checkbox">
   <label for="toc-toggle">Table of Contents <span class="visually-hidden">toggle</span></label>
 
   <nav class='toc-container {{if versions 'versions'}}' aria-label='table of contents'>

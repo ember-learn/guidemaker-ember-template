@@ -1,4 +1,9 @@
 
+1.1.0 / 2019-03-27
+==================
+
+  * add LTS signifier to version dropdown #11 from @locks
+
 1.0.0 / 2019-03-14
 ==================
 

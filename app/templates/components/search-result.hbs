@@ -6,13 +6,13 @@ algolia-docsearch-suggestion__secondary">
     </div>
     <div class="algolia-docsearch-suggestion--content">
 
-      <a href="{{href-to 'version.show' result.path}}#{{result.anchor}}" data-href-to-ignore>
+      <a href="{{href-to "version.show" result.path}}#{{result.anchor}}" data-href-to-ignore>
         <div class="algolia-docsearch-suggestion--title">
           {{#each remainingHeadings as |heading index|}}
             {{#if index}}
               >
             {{/if}}
-            {{{heading.value}}}
+            {{html-safe heading.value}}
           {{/each}}
         </div>
       </a>

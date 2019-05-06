@@ -19,7 +19,7 @@
   <input id="toc-toggle" class="toc-toggle visually-hidden" type="checkbox">
   <label for="toc-toggle">Table of Contents <span class="visually-hidden">toggle</span></label>
 
-  <nav class='toc-container {{if versions 'versions'}}' aria-label='table of contents'>
+  <nav class="toc-container {{if versions "versions"}}" aria-label="table of contents">
     {{table-of-contents data=model.pages version=model.version currentPage=page.currentPage currentSection=page.currentSection}}
   </nav>
 

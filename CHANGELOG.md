@@ -1,4 +1,10 @@
 
+1.2.0 / 2019-05-06
+==================
+
+  * Update dependencies and fix template lint #19 from @mansona
+  * Removing the need for jQuery #19 from @mansona
+
 1.1.0 / 2019-03-27
 ==================
 

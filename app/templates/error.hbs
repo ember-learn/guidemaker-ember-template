@@ -1,6 +1,6 @@
 <article class="x404" data-test-error-page>
   {{#if (contains model.errors.0.status (array "404" "403"))}}
-    <img src="/images/fishy.png" title="ACK! 404 FRIEND, YOU'RE IN THE WRONG PLACE">
+    <img src="/images/fishy.png" title="ACK! 404 FRIEND, YOU'RE IN THE WRONG PLACE" alt="A Tomster mascot holding a fish that has been outside in the sun too long!">
     <h1 class="whoops" data-test-error-message>Ack! 404 friend, you're in the wrong place</h1>
 
     <p>
@@ -9,7 +9,7 @@
       something else to be here, please <a href="https://github.com/ember-learn/guides-app/issues">file a ticket</a>.
     </p>
   {{else}}
-    <img src="/images/fishy.png" title="ACK! An unknown error has occured!">
+    <img src="/images/fishy.png" title="ACK! An unknown error has occured!" alt="A Tomster mascot holding a fish that has been outside in the sun too long!">
     <h1 class="whoops">Ack! An unknown error has occured!</h1>
 
     <p>

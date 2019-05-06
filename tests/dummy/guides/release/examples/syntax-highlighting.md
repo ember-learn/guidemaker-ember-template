@@ -55,3 +55,5 @@ export default Router;
 {{outlet}}
 
 ```
+
+Just a little tip: you need to make sure that the code samples aren't the first or last things on the page

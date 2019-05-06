@@ -1,49 +1,49 @@
 {{#if searchService.searchFunction}}
-<input
-  id='search-input'
-  type='search'
-  value={{value}}
-  oninput={{perform search value='target.value'}}
-  placeholder="Search the guides"
-  autocomplete="off"
-  onfocus={{action 'onfocus'}}
-  onblur={{action 'onblur'}}
->
+  <input
+    id="search-input"
+    type="search"
+    value={{value}}
+    oninput={{perform search value="target.value"}}
+    placeholder="Search the guides"
+    autocomplete="off"
+    onfocus={{action "onfocus"}}
+    onblur={{action "onblur"}}
+  >
 
-{{!-- Search results dropdown --}}
-{{#ember-tether
-  target='#search-input'
-  targetAttachment='bottom left'
-  attachment='top left'
-  constraints=_resultTetherConstraints
-  class='ds-dropdown-results'
-}}
-  {{#if showDropdown}}
-    <span class="ds-suggestions ds-dropdown-menu">
-      {{#dropdown-header}}
+  {{!-- Search results dropdown --}}
+  {{#ember-tether
+    target="#search-input"
+    targetAttachment="bottom left"
+    attachment="top left"
+    constraints=_resultTetherConstraints
+    class="ds-dropdown-results"
+  }}
+    {{#if showDropdown}}
+      <span class="ds-suggestions ds-dropdown-menu">
+        {{#dropdown-header}}
           Search Results
-      {{/dropdown-header}}
+        {{/dropdown-header}}
 
-      {{#each searchService.results as |result|}}
-        {{search-result result=result}}
-      {{else}}
-        <div class="algolia-docsearch-suggestion">
-          <div class="algolia-docsearch-suggestion--noresults">
-            <p>
-              No results found.
-              {{#if deprecationsGuideURL}}
-                Try searching the <a href="{{deprecationsGuideURL}}" target="_deprecations">deprecations guide</a>.
-              {{/if}}
-            </p>
+        {{#each searchService.results as |result|}}
+          {{search-result result=result}}
+        {{else}}
+          <div class="algolia-docsearch-suggestion">
+            <div class="algolia-docsearch-suggestion--noresults">
+              <p>
+                No results found.
+                {{#if deprecationsGuideURL}}
+                  Try searching the <a href={{deprecationsGuideURL}} target="_deprecations">deprecations guide</a>.
+                {{/if}}
+              </p>
+            </div>
           </div>
+        {{/each}}
+        <div class="powered-by-algolia">
+          <a href="https://www.algolia.com/" target="_blank" rel="noopener">
+            <img src="/images/logos/search-by-algolia.svg" alt="Search Powered by Algolia">
+          </a>
         </div>
-      {{/each}}
-      <div class="powered-by-algolia">
-        <a href="https://www.algolia.com/" target="_blank">
-          <img src="/images/logos/search-by-algolia.svg" alt="Search Powered by Algolia">
-        </a>
-      </div>
-    </span>
-  {{/if}}
-{{/ember-tether}}
+      </span>
+    {{/if}}
+  {{/ember-tether}}
 {{/if}}

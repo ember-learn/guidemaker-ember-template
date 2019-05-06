@@ -3,6 +3,14 @@ guidemaker-ember-template
 
 [Short description of the addon.]
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 

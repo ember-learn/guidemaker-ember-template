@@ -1,0 +1,7 @@
+/         /release/     301
+
+# make sure missing json still gets a 404
+/*.json   /:splat.json  404
+
+# single page app
+/*        /index.html   200

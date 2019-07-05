@@ -7,6 +7,13 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: false
     },
+    autoImport: {
+      webpack: {
+        node: {
+          global: true
+        }
+      }
+    },
     // TODO: remove once https://github.com/ember-cli/ember-cli/issues/8448 is fixed
     'ember-prism': {
       theme: 'okaidia',

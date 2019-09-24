@@ -12,3 +12,16 @@
       url: "index"
     - title: "Editing"
       url: "editing"
+
+- title: "Another Section"
+  url: 'another-section'
+  pages:
+    - title: "Page 1"
+      url: "page-1"
+    - title: "Subsection"
+      url: "subsection"
+      pages:
+        - title: "Page 2"
+          url: "page-2"
+    - title: "Page 3"
+      url: "page-3"

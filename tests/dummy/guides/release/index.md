@@ -4,4 +4,4 @@ So if this isn't the **real** Ember Guides then what is it? This is the [Guidema
 
 ## So what is this site for?
 
-This site is used to develop the template that is used for the Ember Guides, the next few pages will be a set of examples that show off the capabilities of this template such as code samples and "callouts". To get started let's see what basic markdown looks like in the [Basic Markdown](./examples/index/) Guide.
+This site is used to develop the template that is used for the Ember Guides, the next few pages will be a set of examples that show off the capabilities of this template such as code samples and "callouts". To get started let's see what basic markdown looks like in the [Basic Markdown](./release/examples/) Guide.

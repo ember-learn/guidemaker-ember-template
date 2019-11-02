@@ -1,5 +1,5 @@
 {{#if page.previousPage}}
-  {{#link-to "version.show" page.previousPage.url class="previous-guide"}}{{page.previousPage.title}}{{/link-to}}
+  {{#link-to "version.show" page.previousPage.url class="previous-guide"}}Previous: {{page.previousPage.title}}{{/link-to}}
 {{/if}}
 
 {{#if page.nextPage}}
@@ -7,9 +7,9 @@
     {{#if page.isLastPage}}
       We've finished covering {{page.currentSection.title}}. Next up: {{page.nextSection.title}} - {{page.nextPage.title}}
     {{else if page.nextIsFirstPage}}
-      {{page.nextSection.title}} - {{page.nextPage.title}}
+      Next: {{page.nextSection.title}} - {{page.nextPage.title}}
     {{else}}
-      {{page.nextPage.title}}
+      Next: {{page.nextPage.title}}
     {{/if}}
   {{/link-to}}
 {{/if}}

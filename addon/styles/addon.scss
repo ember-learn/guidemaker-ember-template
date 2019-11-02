@@ -999,7 +999,11 @@ picture {
   padding: 0 0 5em 0;
 }
 
-// add border to footer to differentiate from prev elements
+// override styleguide h4
+
+h4 {
+  font-weight: bold;
+}
 
 .sidebar {
   padding-top: 0.75em;

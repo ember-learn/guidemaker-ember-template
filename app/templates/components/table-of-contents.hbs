@@ -2,7 +2,7 @@
   {{! template-lint-disable simple-unless }}
   {{#unless (or page.skipToc (get page "skip-toc"))}}
     {{#if page.pages}}
-      <li class="toc-group list-unstyled {{tocLevel}} {{levelTextSize}}">
+      <li class="toc-group list-unstyled regular {{tocLevel}} {{levelTextSize}}">
         {{#cp-panel open=(eq currentSection.id page.id) as |p|}}
           {{#if fastboot.isFastBoot}}
             {{#link-to "version.show" page.id activeClass="selected" class="cp-Panel-toggle medium" data-test-toc-link=page.title}}
@@ -20,7 +20,7 @@
         {{/cp-panel}}
       </li>
     {{else}}
-      <li class="toc-link list-unstyled {{tocLevel}} {{levelTextSize}} {{if (eq currentPage.url page.url) "selected"}}">
+      <li class="toc-link list-unstyled regular {{tocLevel}} {{levelTextSize}} {{if (eq currentPage.url page.url) "selected"}}">
         {{#link-to "version.show" page.url activeClass="selected" data-test-toc-link=page.title}}
           {{page.title}}
         {{/link-to}}

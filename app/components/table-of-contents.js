@@ -12,6 +12,6 @@ export default Component.extend({
   }),
   classNameBindings: ['tocLevel'],
   levelTextSize: computed('level', function() {
-    return Number(this.level) === 0 ? 'large' : 'medium regular';
+    return Number(this.level) === 0 ? 'large' : 'medium';
   })
 });

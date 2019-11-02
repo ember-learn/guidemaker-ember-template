@@ -1303,54 +1303,6 @@ article .video iframe {
   height: 100%;
 }
 
-article footer {
-  border-top: 1px solid #F8E7CF;
-  margin-top: 5em;
-  padding: 1.5em 0;
-}
-
-article footer::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-article footer a {
-  text-decoration: underline;
-}
-
-article footer a::after,
-article footer a::before {
-  display: inline-block;
-  font-weight: 700;
-  margin: 0 0.5em;
-  transition: transform 200ms;
-}
-
-article footer .previous-guide {
-  float: left;
-}
-
-article footer .previous-guide::before {
-  content: "\2039";
-}
-
-article footer .previous-guide:hover::before {
-  transform: translateX(-0.5em);
-}
-
-article footer .next-guide {
-  float: right;
-}
-
-article footer .next-guide::after {
-  content: "\203A";
-}
-
-article footer .next-guide:hover::after {
-  transform: translateX(0.5em);
-}
-
 article.x404 {
   width: 80%;
   margin: 0 auto;
@@ -1485,22 +1437,12 @@ article.x404 img {
   content: '\f08e';
 }
 
-.note {
-  background: rgba(0,0,0,0.2);
-}
-
-.note::before {
-  content: "Note";
-}
-
 .previous-guide {
   float: left;
-  border-bottom: 1px solid transparent;
 }
 
 .next-guide {
   float: right;
-  border-bottom: 1px solid transparent;
 }
 
 .visually-hidden {
@@ -1512,10 +1454,6 @@ article.x404 img {
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-}
-
-.footer a {
-  text-decoration: none;
 }
 
 // @import "ember-power-select";

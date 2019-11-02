@@ -994,17 +994,10 @@ picture {
   }
 }
 
-.container {
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1em;
-}
-
-.container::after {
-  clear: both;
-  content: "";
-  display: table;
+// override 
+.container.container-guides {
+  max-width: 90%;
+  padding-top: 0;
 }
 
 .sidebar {

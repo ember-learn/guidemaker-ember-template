@@ -691,7 +691,7 @@ button {
 
 fieldset {
   background-color: #fefdfc;
-  border: 1px solid #F8E7CF;
+  border: 1px solid #BEC4CC;
   margin: 0 0 0.75em;
   padding: 1.5em;
 }
@@ -734,7 +734,7 @@ select[multiple=multiple],
 textarea,
 textarea {
   background-color: #FDFDFD;
-  border: 1px solid #F8E7CF;
+  border: 1px solid #BEC4CC;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
   box-sizing: border-box;
@@ -785,7 +785,7 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #F8E7CF;
+  border-bottom: 1px solid #BEC4CC;
 }
 
 td,
@@ -899,7 +899,7 @@ picture {
 }
 
 .algolia-docsearch-footer {
-  border-top: 1px solid #F8E7CF;
+  border-top: 1px solid #BEC4CC;
   text-align: right;
   font-size: 12px;
   padding: 4px 2px 0 0;
@@ -937,11 +937,11 @@ picture {
   .algolia-docsearch-suggestion {
     display: table;
     width: 100%;
-    border-bottom: 1px solid #F8E7CF;
+    border-bottom: 1px solid #BEC4CC;
   }
 
   .algolia-docsearch-suggestion--subcategory-column {
-    border-right: 1px solid #F8E7CF;
+    border-right: 1px solid #BEC4CC;
     background: #FFFDF9;
     color: #444;
     display: table-cell;
@@ -994,7 +994,7 @@ picture {
   }
 }
 
-// override 
+// override styleguide container that has huge gutters
 .container.container-guides {
   max-width: 90%;
   padding-top: 0;

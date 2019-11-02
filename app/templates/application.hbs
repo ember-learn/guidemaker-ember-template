@@ -1,11 +1,9 @@
 {{head-layout}}
 
-{{#es-header}}
-  {{#es-navbar links=links}}
-    <form>
-      {{search-input projectVersion=page.currentVersion}}
-    </form>
-  {{/es-navbar}}
+{{#es-header links=links}}
+  <form>
+    {{search-input projectVersion=page.currentVersion}}
+  </form>
 {{/es-header}}
 
 {{info-banner configName="survey"}}

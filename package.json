@@ -33,7 +33,7 @@
     "ember-href-to": "^3.1.0",
     "ember-power-select": "^2.0.9",
     "ember-prism": "^0.4.0",
-    "ember-styleguide": "^2.5.0",
+    "ember-styleguide": "ember-learn/ember-styleguide#66bd44f03a3dd629d926e4c0b99f9372c0851802",
     "ember-tether": "^1.0.0",
     "ember-truth-helpers": "^2.1.0",
     "sass": "^1.14.3"

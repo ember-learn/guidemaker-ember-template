@@ -999,6 +999,13 @@ picture {
   padding: 0 0 5em 0;
 }
 
+@media (max-width: 80em) {
+  .container.container-guides {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
 // override styleguide h4
 
 h4 {

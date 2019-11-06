@@ -32,6 +32,11 @@ code .diff-operator {
   user-select: none;
 }
 
+code .diff-deletion {
+  // don't include removed code in copy-paste
+  user-select: none;
+}
+
 code .token.comment {
   color: #E6E6E6;
 }

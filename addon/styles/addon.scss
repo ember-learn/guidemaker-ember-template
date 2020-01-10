@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(244, 246, 248);
+}
+
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-style: normal;
@@ -995,16 +999,16 @@ picture {
 }
 
 // override styleguide container
-.container.container-guides {
-  padding: 0 0 5em 0;
-}
+// .container.container-guides {
+//   padding: 0 0 5em 0;
+// }
 
-@media (max-width: 80em) {
-  .container.container-guides {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
+// @media (max-width: 80em) {
+//   .container.container-guides {
+//     padding-left: 5%;
+//     padding-right: 5%;
+//   }
+// }
 
 // override styleguide h4
 
@@ -1013,7 +1017,6 @@ h4 {
 }
 
 .sidebar {
-  padding-top: 0.75em;
   position: relative;
   z-index: 1;
 }
@@ -1024,7 +1027,7 @@ h4 {
     margin-right: 2.35765%;
     width: 27.49666%;
     border-bottom: 0;
-    padding: 3em 1.618em 3em 0;
+    padding: 0 1.618em 3em 0;
   }
 
   .sidebar:last-child {
@@ -1048,7 +1051,6 @@ h4 {
 }
 
 article {
-  padding: 3em 0;
   @media screen and (min-width: 53.75em) {
     float: left;
     display: block;

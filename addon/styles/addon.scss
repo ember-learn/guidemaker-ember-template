@@ -695,7 +695,7 @@ button {
 
 fieldset {
   background-color: #fefdfc;
-  border: 1px solid #F8E7CF;
+  border: 1px solid #999;
   margin: 0 0 0.75em;
   padding: 1.5em;
 }
@@ -738,7 +738,7 @@ select[multiple=multiple],
 textarea,
 textarea {
   background-color: #FDFDFD;
-  border: 1px solid #F8E7CF;
+  border: 1px solid #999;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
   box-sizing: border-box;
@@ -789,7 +789,7 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #F8E7CF;
+  border-bottom: 1px solid #999;
 }
 
 td,
@@ -842,7 +842,7 @@ picture {
 .algolia-docsearch-suggestion--category-header {
   display: none;
   border: 2px solid white;
-  background: #dd6a58;
+  background: #000;
   color: white;
   font-weight: 600;
   padding: 5px 10px;
@@ -903,7 +903,7 @@ picture {
 }
 
 .algolia-docsearch-footer {
-  border-top: 1px solid #F8E7CF;
+  border-top: 1px solid #999;
   text-align: right;
   font-size: 12px;
   padding: 4px 2px 0 0;
@@ -941,12 +941,12 @@ picture {
   .algolia-docsearch-suggestion {
     display: table;
     width: 100%;
-    border-bottom: 1px solid #F8E7CF;
+    border-bottom: 1px solid #999;
   }
 
   .algolia-docsearch-suggestion--subcategory-column {
-    border-right: 1px solid #F8E7CF;
-    background: #FFFDF9;
+    border-right: 1px solid #999;
+    background: #FFF;
     color: #444;
     display: table-cell;
     overflow: hidden;

@@ -12,6 +12,8 @@
   position: relative;
   margin-left: -22px;
   padding-left: 22px;
+  margin-top: 4em;
+  margin-bottom: 0;
 }
 
 .anchorable-toc:hover a.toc-anchor {
@@ -37,6 +39,7 @@ label[for="toc-toggle"] {
   cursor: pointer;
   font-size: 1.25em;
   position: relative;
+  margin-top: 20px;
 }
 
 label[for="toc-toggle"]:hover {

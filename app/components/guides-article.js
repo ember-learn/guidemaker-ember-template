@@ -76,6 +76,14 @@ export default Component.extend({
         link.href = `#${element.id}`;
         element.insertBefore(link, element.firstElementChild);
       }
+
+      // If a heading precedes a section, move it inside that section
+      // This is important for accessibility.
+      let sibling = element.nextElementSibling
+      if (sibling && sibling.nodeName === "SECTION") {
+        let header = element.parentElement.removeChild(element);
+        sibling.prepend(header);
+      }
     }
 
     Prism.highlightAll();

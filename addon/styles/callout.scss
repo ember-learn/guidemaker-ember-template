@@ -1,0 +1,25 @@
+.cta-note {
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cta-note img {
+  order: 1;
+  flex: 0 0 auto;
+  margin: var(--spacing-3) 0 var(--spacing-3) var(--spacing-3);
+}
+
+.cta-note .cta-note-body {
+  flex: 1 1 100%;
+  order: 2;
+  padding: var(--spacing-3);
+}
+
+.cta-note-heading {
+  font-weight: bold;
+}

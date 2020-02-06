@@ -1016,6 +1016,13 @@ h4 {
   font-weight: bold;
 }
 
+// override styleguide for table of contents
+
+.toc-container .toc-link a,
+.toc-container .toc-group a {
+  background: none;
+}
+
 .sidebar {
   position: relative;
   z-index: 1;

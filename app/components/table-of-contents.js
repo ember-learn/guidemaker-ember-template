@@ -10,7 +10,8 @@ export default Component.extend({
   tocLevel: computed('level', function() {
     return `toc-level-${this.level}`;
   }),
-  classNameBindings: ['tocLevel', 'list-unstyled'],
+  listUnstyled: 'list-unstyled',
+  classNameBindings: ['tocLevel', 'listUnstyled'],
   levelTextSize: computed('level', function() {
     return Number(this.level) === 0 ? 'large' : 'medium';
   })

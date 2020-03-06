@@ -18,6 +18,7 @@ cache:
 branches:
   only:
     - master
+    - website-redesign-rfc
     # npm version tags
     - /^v\d+\.\d+\.\d+/
 

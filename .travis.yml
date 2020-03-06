@@ -28,12 +28,6 @@ env:
     - JOBS=1
     - PERCY_ENABLE=0 # disable percy by default
 
-branches:
-  only:
-    - master
-    # npm version tags
-    - /^v\d+\.\d+\.\d+/
-
 jobs:
   fail_fast: true
   allow_failures:

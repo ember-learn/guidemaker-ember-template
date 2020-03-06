@@ -7,6 +7,9 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: false
     },
+    fingerprint: {
+      extensions: ['js', 'css', 'map'],
+    },
     // TODO: remove once https://github.com/ember-cli/ember-cli/issues/8448 is fixed
     'ember-prism': {
       theme: 'okaidia',

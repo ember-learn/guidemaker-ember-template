@@ -28,12 +28,12 @@ code > .diff-deletion {
   }
 }
 
-code .diff-operator {
-  user-select: none;
-}
-
+// don't include "removed" code when copy-pasting diffs
+code .diff-operator,
 code .diff-deletion {
-  // don't include removed code in copy-paste
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 

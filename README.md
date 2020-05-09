@@ -18,7 +18,7 @@ not this repository.
 [guidemaker](https://github.com/empress/guidemaker) is what
 assembles guides content into queryable records.
 
-[guides-source])(https://github.com/ember-learn/guides-source)
+[guides-source](https://github.com/ember-learn/guides-source)
 has the learning content itself.
 
 Compatibility
@@ -39,7 +39,7 @@ ember install guidemaker-ember-template
 Usage
 ------------------------------------------------------------------------------
 
-See [guides-source])(https://github.com/ember-learn/guides-source)
+See [guides-source](https://github.com/ember-learn/guides-source)
 for an example of how to use this addon.
 
 

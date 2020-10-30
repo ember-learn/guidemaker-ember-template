@@ -47,7 +47,8 @@ export default Router;
 </div>
 ```
 
-```handlebars {data-filename="app/templates/application.hbs" data-diff="-1,-2,-3"}
+## Code Diff
+```handlebars { data-filename="app/templates/application.hbs" data-diff="+1,-3" }
 {{!-- The following component displays Ember's default welcome message. --}}
 <WelcomePage />
 {{!-- Feel free to remove this! --}}

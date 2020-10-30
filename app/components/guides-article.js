@@ -107,9 +107,9 @@ export default Component.extend({
         let lineNo = +(pD.replace(operator, ''));
         let text = lines[lineNo - 1];
         if (operator === '+') {
-          lines[lineNo - 1] = `<span class="diff-insertion"><span class="diff-operator">+</span>${text}</span>`;
+          lines[lineNo - 1] = `<span class="diff-insertion">${text}</span>`;
         } else {
-          lines[lineNo - 1] = `<span class="diff-deletion"><span class="diff-operator">-</span>${text}</span>`;
+          lines[lineNo - 1] = `<span class="diff-deletion">${text}</span>`;
         }
       });
       codeBlock.innerHTML = lines.join('\n');

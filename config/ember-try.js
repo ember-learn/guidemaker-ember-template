@@ -51,6 +51,7 @@ module.exports = function() {
           },
         },
         {
+          allowedToFail: true,
           name: 'ember-canary',
           npm: {
             devDependencies: {

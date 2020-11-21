@@ -101,3 +101,45 @@ jobs:
           PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
           PERCY_TOKEN: e01f89bea06d5ccd1207a5cd2799645e4942ecd0d8da739502a206d0fc7392fc
           RUN_PERCY_TESTS: true
+
+
+  test-compatibility:
+    name: Test compatibility
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        scenario:
+          - 'ember-lts-3.4'
+          - 'ember-lts-3.8'
+          - 'ember-lts-3.12'
+          - 'ember-release'
+          - 'ember-beta'
+          - 'ember-canary'
+          - 'ember-default-with-jquery'
+    timeout-minutes: 7
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache npm cache and node_modules
+        id: cache-dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-
+
+      - name: Install dependencies
+        run: npm install
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+
+      - name: Test
+        run: npm run test:ember-compatibility ${{ matrix.scenario }}

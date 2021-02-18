@@ -1,18 +1,15 @@
-{{head-layout}}
+<HeadLayout />
 
-{{#es-header}}
-  {{#es-navbar links=links}}
-    <form>
-      {{search-input projectVersion=page.currentVersion}}
-    </form>
-  {{/es-navbar}}
-{{/es-header}}
+<EsHeader />
 
-{{info-banner configName="survey"}}
-{{info-banner configName="infoBanner"}}
+<InfoBanner @configName="survey" />
+<InfoBanner @configName="infoBanner" />
 
-<main class="container">
-  {{outlet}}
+
+<main>
+  <div class="container">
+    {{outlet}}
+  </div>
 </main>
 
-{{es-footer}}
+<EsFooter />

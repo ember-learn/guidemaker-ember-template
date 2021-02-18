@@ -36,7 +36,7 @@
     "ember-composable-helpers": "^3.1.0",
     "ember-href-to": "^3.1.0",
     "ember-power-select": "^2.0.9",
-    "ember-styleguide": "^2.5.0",
+    "ember-styleguide": "^5.1.0",
     "ember-tether": "^1.0.0",
     "ember-truth-helpers": "^2.1.0"
   },

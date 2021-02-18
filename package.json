@@ -31,17 +31,14 @@
     "ember-auto-import": "^1.5.2",
     "ember-cli-babel": "^7.23.1",
     "ember-cli-htmlbars": "^5.3.2",
-    "ember-cli-sass": "^10.0.0",
     "ember-cli-showdown": "^4.4.4",
     "ember-collapsible-panel": "^3.1.1",
     "ember-composable-helpers": "^3.1.0",
     "ember-href-to": "^3.1.0",
     "ember-power-select": "^2.0.9",
-    "ember-prism": "^0.4.0",
     "ember-styleguide": "^2.5.0",
     "ember-tether": "^1.0.0",
-    "ember-truth-helpers": "^2.1.0",
-    "sass": "^1.14.3"
+    "ember-truth-helpers": "^2.1.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

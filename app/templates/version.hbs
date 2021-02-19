@@ -1,18 +1,13 @@
 <aside class="sidebar">
   <label for="version-select" class="visually-hidden">Guides version</label>
-
   {{#if versions}}
-    {{#power-select
-      class="version-select"
-      ariaLabel=model.version
-      selected=model.version
-      options=versions
-      onchange=(action "selectVersion")
-      renderInPlace=true
-    as |version|
-    }}
+    <PowerSelect
+      @options={{this.versions}}
+      @onChange={{action "selectVersion"}}
+      @selected={{model.version}}
+      as |version|>
       {{shorten-version version}} {{#if (includes this.application.model.ltsVersions version)}}(LTS){{/if}}
-    {{/power-select}}
+    </PowerSelect>
   {{/if}}
 
 

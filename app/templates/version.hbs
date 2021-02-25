@@ -7,7 +7,7 @@
       @onChange={{action "selectVersion"}}
       @selected={{model.version}}
       as |version|>
-      {{shorten-version version}} {{#if (includes this.application.model.ltsVersions version)}}(LTS){{/if}}
+      {{shorten-version version}} {{#if (includes version this.application.model.ltsVersions)}}(LTS){{/if}}
     </PowerSelect>
   {{/if}}
 

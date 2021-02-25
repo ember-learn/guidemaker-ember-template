@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-classes, prettier/prettier, ember/no-get */
 import Service from '@ember/service';
 import { task } from 'ember-concurrency';
 import { get, set } from '@ember/object';

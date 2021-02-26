@@ -1,3 +1,4 @@
+{{!-- template-lint-disable no-action no-curly-component-invocation no-implicit-this --}}
 <aside class="sidebar">
   <label for="version-select" class="visually-hidden">Guides version</label>
   {{#if versions}}
@@ -6,7 +7,7 @@
       @onChange={{action "selectVersion"}}
       @selected={{model.version}}
       as |version|>
-      {{shorten-version version}} {{#if (includes this.application.model.ltsVersions version)}}(LTS){{/if}}
+      {{shorten-version version}} {{#if (includes version this.application.model.ltsVersions)}}(LTS){{/if}}
     </PowerSelect>
   {{/if}}
 

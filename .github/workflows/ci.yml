@@ -142,4 +142,4 @@ jobs:
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
 
       - name: Test
-        run: npm run test:ember-compatibility ${{ matrix.scenario }}
+        run: npx ember try:one ${{ matrix.scenario }}

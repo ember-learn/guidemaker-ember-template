@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-components, no-unused-vars, prettier/prettier, ember/no-classic-classes, ember/require-tagless-components, ember/require-computed-property-dependencies */
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';

@@ -6,9 +6,5 @@ export default LinkComponent.extend({
     if(window.scrollTo) {
       window.scrollTo(0,0);
     }
-
-    if(document) {
-      document.getElementById('toc-toggle').checked = false;
-    }
   }
 });

@@ -1,4 +1,5 @@
-This will just be a bunch of examples showing the different styles that are available
+This will just be a bunch of examples showing the different styles that are available.
+You can do code blocks or `inline code in backticks`.
 
 ```bash
 mkdir super-rentals

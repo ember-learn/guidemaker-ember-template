@@ -37,7 +37,7 @@
     "ember-concurrency": "^2.0.1",
     "ember-href-to": "^4.1.0",
     "ember-power-select": "^4.1.2",
-    "ember-styleguide": "^5.1.0",
+    "ember-styleguide": "^6.0.0",
     "ember-tether": "^2.0.0",
     "ember-truth-helpers": "^3.0.0"
   },
@@ -65,7 +65,7 @@
     "ember-qunit": "^5.1.2",
     "ember-resolver": "^8.0.2",
     "ember-showdown-prism": "^2.2.0",
-    "ember-source": "~3.25.1",
+    "ember-source": "~3.25.4",
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^2.18.1",
     "ember-try": "^1.4.0",

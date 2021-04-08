@@ -1,25 +1,26 @@
-{{!-- template-lint-disable no-action no-curly-component-invocation no-implicit-this --}}
-<aside class="sidebar">
-  <label for="version-select" class="visually-hidden">Guides version</label>
-  {{#if versions}}
-    <PowerSelect
-      @options={{this.versions}}
-      @onChange={{action "selectVersion"}}
-      @selected={{model.version}}
-      as |version|>
-      {{shorten-version version}} {{#if (includes version this.application.model.ltsVersions)}}(LTS){{/if}}
-    </PowerSelect>
-  {{/if}}
+{{!-- template-lint-disable no-action --}}
+<div class="sidebar-container">
+  <EsSidebar>
+    <label for="version-select" class="visually-hidden">Guides version</label>
+    {{#if this.versions}}
+      <PowerSelect
+        @options={{this.versions}}
+        @onChange={{action "selectVersion"}}
+        @selected={{@model.version}}
+        as |version|>
+        {{shorten-version version}} {{#if (includes version this.application.model.ltsVersions)}}(LTS){{/if}}
+      </PowerSelect>
+    {{/if}}
 
-
-  <input id="toc-toggle" class="toc-toggle visually-hidden" type="checkbox">
-  <label for="toc-toggle">Table of Contents <span class="visually-hidden">toggle</span></label>
-
-  <nav class="toc-container {{if versions "versions"}}" aria-label="table of contents">
-    {{table-of-contents data=model.pages version=model.version currentPage=page.currentPage currentSection=page.currentSection}}
-  </nav>
-
-  {{!-- <%= link_to "&#11014; Back to Top".html_safe, "#", class: "back-to-top" %> --}}
-</aside>
-
-{{outlet}}
+    <nav class="toc-container {{if this.versions "versions"}}" aria-label="table of contents">
+      <TableOfContents
+        @data={{@model.pages}}
+        @currentSection={{this.page.currentSection}}
+        @currentPage={{this.page.currentPage}}
+      />
+    </nav>
+  </EsSidebar>
+  <div class="example-content">
+    {{outlet}}
+  </div>
+</div>

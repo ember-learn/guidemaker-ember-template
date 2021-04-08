@@ -29,7 +29,7 @@ module('Acceptance | chapter-links', function(hooks) {
 
     assert.deepEqual(
       prevLinkTexts,
-      [null, 'Guides', 'Introduction', 'Editing', 'Page 1', 'Page 2'],
+      [null, 'Guides', 'Introduction', 'Editing', 'Introduction', 'Page 1', 'Introduction', 'Page 2'],
       'previous link texts were correct'
     );
     assert.deepEqual(
@@ -37,8 +37,10 @@ module('Acceptance | chapter-links', function(hooks) {
       [
         "We've finished covering Guides and Tutorials. Next up: Getting Started - Introduction",
         'Editing',
-        "We've finished covering Getting Started. Next up: Another Section - Page 1",
-        'Subsection - Page 2',
+        "We've finished covering Getting Started. Next up: Another Section - Introduction",
+        'Page 1',
+        'Subsection - Introduction',
+        'Page 2',
         "We've finished covering Subsection. Next up: Another Section - Page 3",
         null,
       ],

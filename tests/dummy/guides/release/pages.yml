@@ -1,9 +1,34 @@
-- title: "Introduction"
+- title: "Guides and Tutorials"
   url: 'index'
   skip_toc: true
   pages:
-    - title: "Ember Guides Template"
+    - title: "Guides"
       url: ""
+
+- title: "Getting Started"
+  url: 'getting-started'
+  pages:
+    - title: "Introduction"
+      url: "index"
+    - title: "Editing"
+      url: "editing"
+
+- title: "Another Section"
+  url: 'another-section'
+  pages:
+    - title: "Introduction"
+      url: "index"
+    - title: "Page 1"
+      url: "page-1"
+    - title: "Subsection"
+      url: "subsection"
+      pages:
+        - title: "Introduction"
+          url: "index"
+        - title: "Page 2"
+          url: "page-2"
+    - title: "Page 3"
+      url: "page-3"
 
 - title: "Examples"
   url: 'examples'

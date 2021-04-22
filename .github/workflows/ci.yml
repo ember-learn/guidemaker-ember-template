@@ -4,112 +4,74 @@ on:
   push:
     branches:
       - master
-    tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+      - main
+      - "v*"
   pull_request:
 
 env:
   NODE_VERSION: 10
-  PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
-  PERCY_PARALLEL_TOTAL: 1
+  FORCE_COLOR: 1
 
 jobs:
   lint:
-    name: Lint files
+    name: Linting
     runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - name: Check out a copy of the repo
-        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Cache npm cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
+      - run: npm i -g npm@7
+      - run: npm ci
+      - run: npm run lint
 
-      - name: Install dependencies
-        run: npm install
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-
-      - name: Lint
-        run: npm run lint
-
-
-  test-addon-floating:
-    name: Test addon (floating dependencies)
+  floating-dependencies:
+    name: Floating Dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Check out a copy of the repo
-        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install dependencies
-        run: npm install --no-package-lock
+      - run: npm i -g npm@7
+      - run: npm install --no-package-lock
+      - run: npm test
 
-      - name: Test
-        run: npm run test:ember
-
-
-  test-addon-locked:
-    name: Test addon (locked dependencies)
+  test:
+    name: Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Check out a copy of the repo
-        uses: actions/checkout@v2
+    env:
+      PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
+      PERCY_PARALLEL_TOTAL: 1
+      PERCY_TOKEN: e01f89bea06d5ccd1207a5cd2799645e4942ecd0d8da739502a206d0fc7392fc
+      RUN_PERCY_TESTS: true
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mansona/npm-lockfile-version@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Cache npm cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
+      - run: npm i -g npm@7
+      - run: npm ci
+      - uses: percy/exec-action@v0.3.1
         with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-
+          custom-command: npm run test
 
-      - name: Install dependencies
-        run: npm install
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-
-      - name: Test
-        uses: percy/exec-action@v0.3.1
-        with:
-          custom-command: npm run test:ember
-        env:
-          PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
-          PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
-          PERCY_TOKEN: e01f89bea06d5ccd1207a5cd2799645e4942ecd0d8da739502a206d0fc7392fc
-          RUN_PERCY_TESTS: true
-
-
-  test-compatibility:
-    name: Test compatibility
+  try-scenarios:
+    name: "ember-try: ${{ matrix.ember-try-scenario }}"
     runs-on: ubuntu-latest
+    needs: test
+
     strategy:
-      fail-fast: true
       matrix:
-        scenario:
+        ember-try-scenario:
           - 'ember-lts-3.16'
           - 'ember-lts-3.20'
           - 'ember-release'
@@ -117,29 +79,14 @@ jobs:
           - 'ember-canary'
           - 'ember-default-with-jquery'
           - 'ember-classic'
-    timeout-minutes: 7
-    steps:
-      - name: Check out a copy of the repo
-        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Cache npm cache and node_modules
-        id: cache-dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ matrix.scenario }}-
-
-      - name: Install dependencies
-        run: npm install
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-
-      - name: Test
-        run: npx ember try:one ${{ matrix.scenario }}
+      - run: npm i -g npm@7
+      - run: npm ci
+      - name: test
+        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup

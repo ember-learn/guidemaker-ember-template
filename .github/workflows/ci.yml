@@ -72,8 +72,6 @@ jobs:
     strategy:
       matrix:
         ember-try-scenario:
-          - 'ember-lts-3.4'
-          - 'ember-lts-3.8'
           - 'ember-release'
           - 'ember-beta'
           - 'ember-canary'

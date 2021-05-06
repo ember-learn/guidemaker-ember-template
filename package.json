@@ -5,7 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/ember-learn/guidemaker-ember-template",
   "license": "MIT",
   "author": "",
   "directories": {

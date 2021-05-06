@@ -1,3 +1,16 @@
+2.0.0 / 2021-05-06
+==================
+
+  * Add support for "main" branches in edit URLs #77 from @jenweber
+  * BREAKING: Fix CI for ember-release and update minimum Ember version #78 from @mansona
+  * Migrated from Travis to GitHub Actions #57 from @ijlee2
+  * Updated links to the Ember Guides for filing an issue #49 from @ijlee2
+  * Fix typo in README #44 from @amyrlam
+  * don't include removal diff in copy-paste code, fix tests #32 from @jenweber
+  * Fill in README #34 from @jenweber
+  * [Fix] Basic Markdown path link #28 from @safirelauene
+
+This Template now requires Ember 3.13 as a minimum version in the host app.
 
 1.2.0 / 2019-05-06
 ==================

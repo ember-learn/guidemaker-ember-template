@@ -60,9 +60,7 @@ jobs:
 
       - run: npm i -g npm@7
       - run: npm ci
-      - uses: percy/exec-action@v0.3.1
-        with:
-          custom-command: npm run test
+      - run: npx percy exec -- npm run test
 
   try-scenarios:
     name: "ember-try: ${{ matrix.ember-try-scenario }}"

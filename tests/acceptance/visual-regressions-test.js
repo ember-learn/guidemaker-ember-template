@@ -20,7 +20,7 @@ module('Acceptance | visual regressions', function(hooks) {
       await pages.reduce(async (prev, section) => {
         await prev;
 
-        return section.get('pages').reduce(async (prev, page) => {
+        return section.get('pages')?.reduce(async (prev, page) => {
           await prev;
 
           await visit(`/release/${page.url}`);

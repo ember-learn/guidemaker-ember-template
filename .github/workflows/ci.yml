@@ -68,6 +68,7 @@ jobs:
     needs: test
 
     strategy:
+      fail-fast: false
       matrix:
         ember-try-scenario:
           - 'ember-lts-3.16'
@@ -77,6 +78,8 @@ jobs:
           - 'ember-canary'
           - 'ember-default-with-jquery'
           - 'ember-classic'
+          - 'no-deprecations'
+          - 'ember-release-no-deprecations'
 
     steps:
       - uses: actions/checkout@v2

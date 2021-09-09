@@ -8,3 +8,20 @@
   position: absolute !important;
   width: 1px !important;
 }
+
+.old-version-warning {
+  background-color: var(--color-gray-900);
+  padding: 8px 12px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+.old-version-warning-text {
+  display: flex;
+  align-items: center;
+}
+.old-version-warning .warning-icon {
+  height: 1.5rem;
+  margin-right: 8px;
+}

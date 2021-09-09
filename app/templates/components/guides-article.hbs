@@ -1,9 +1,12 @@
 {{!-- template-lint-disable link-rel-noopener no-curly-component-invocation no-implicit-this --}}
 {{#if (not (eq version currentVersion))}}
   <div class="old-version-warning">
-    <i class="icon-attention-circled"></i><strong>Old Guides - </strong>You are viewing the guides for Ember {{version}}.
+    <div class="old-version-warning-text">
+      <img src="/images/exclamation-circle-solid.svg" alt="warning icon" class="warning-icon" />
+      <div><strong>Old Guides - </strong>You are viewing the guides for Ember {{version}}.</div>
+    </div>
 
-    {{#link-to "version.show" "release" path class="btn"}} VIEW {{currentVersion}} {{/link-to}}
+    {{#link-to "version.show" "release" path class="es-button-secondary"}} VIEW {{currentVersion}} {{/link-to}}
   </div>
 {{/if}}
 

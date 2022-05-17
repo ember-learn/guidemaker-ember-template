@@ -1,8 +1,8 @@
 /* All the .es-sidebar styling should probably move to the ember-styleguide when we agree this is the right thing to do */
 .es-sidebar {
   border-right: 1px solid var(--color-gray-700);
-  padding: 24px 24px 0 0;
-  margin: -70px 0 -70px 0;
+  padding: var(--spacing-4) var(--spacing-4) 0 0;
+  margin: calc(-1 * var(--spacing-6)) 0 calc(-1 * var(--spacing-6) - 32px); /* the -32 is a bit magical */
 }
 
 .table-of-contents {

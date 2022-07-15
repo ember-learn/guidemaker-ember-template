@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: 12
+  NODE_VERSION: 14
   FORCE_COLOR: 1
 
 jobs:
@@ -19,11 +19,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
+      - run: npm i -g npm@8
       - run: npm ci
       - run: npm run lint
 
@@ -33,11 +34,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
+      - run: npm i -g npm@8
       - run: npm install --no-package-lock
       - run: npm test
 
@@ -54,11 +56,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: mansona/npm-lockfile-version@v1
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
+      - run: npm i -g npm@8
       - run: npm ci
       - run: npx percy exec -- npm run test
 
@@ -68,23 +71,29 @@ jobs:
     needs: test
 
     strategy:
+      fail-fast: false
       matrix:
         ember-try-scenario:
           - 'ember-lts-3.16'
           - 'ember-lts-3.20'
+          - 'ember-lts-3.24'
+          - 'ember-lts-3.28'
           - 'ember-release'
           - 'ember-beta'
           - 'ember-canary'
           - 'ember-default-with-jquery'
           - 'ember-classic'
+          - 'embroider-safe'
+          - 'embroider-optimized'
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
+      - run: npm i -g npm@8
       - run: npm ci
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup

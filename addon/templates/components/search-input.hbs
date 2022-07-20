@@ -1,10 +1,10 @@
-{{!-- template-lint-disable link-rel-noopener no-action no-curly-component-invocation no-implicit-this --}}
-{{#if searchService.index}}
+{{!-- template-lint-disable link-rel-noopener no-action no-curly-component-invocation --}}
+{{#if this.searchService.index}}
   <input
     id="search-input"
     type="search"
-    value={{value}}
-    oninput={{perform search value="target.value"}}
+    value={{this.value}}
+    oninput={{perform this.search value="target.value"}}
     placeholder="Search the guides"
     autocomplete="off"
     onfocus={{action "onfocus"}}
@@ -16,24 +16,24 @@
     target="#search-input"
     targetAttachment="bottom left"
     attachment="top left"
-    constraints=_resultTetherConstraints
+    constraints=this._resultTetherConstraints
     class="ds-dropdown-results"
   }}
-    {{#if showDropdown}}
+    {{#if this.showDropdown}}
       <span class="ds-suggestions ds-dropdown-menu">
         {{#dropdown-header}}
           Search Results
         {{/dropdown-header}}
 
-        {{#each searchService.results as |result|}}
+        {{#each this.searchService.results as |result|}}
           {{search-result result=result}}
         {{else}}
           <div class="algolia-docsearch-suggestion">
             <div class="algolia-docsearch-suggestion--noresults">
               <p>
                 No results found.
-                {{#if deprecationsGuideURL}}
-                  Try searching the <a href={{deprecationsGuideURL}} target="_deprecations">deprecations guide</a>.
+                {{#if this.deprecationsGuideURL}}
+                  Try searching the <a href={{this.deprecationsGuideURL}} target="_deprecations">deprecations guide</a>.
                 {{/if}}
               </p>
             </div>

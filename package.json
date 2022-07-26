@@ -38,7 +38,7 @@
     "ember-href-to": "^4.1.0",
     "ember-power-select": "^6.0.0",
     "ember-showdown-prism": "^3.2.0",
-    "ember-styleguide": "^6.1.2",
+    "ember-styleguide": "^8.0.1",
     "ember-tether": "^2.0.0",
     "ember-truth-helpers": "^3.0.0"
   },

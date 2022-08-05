@@ -3,7 +3,6 @@ import Service from '@ember/service';
 import { task } from 'ember-concurrency';
 import { get, set } from '@ember/object';
 import { A as emberArray } from '@ember/array';
-import { denodeify } from 'rsvp';
 import algoliasearch from 'algoliasearch';
 import { getOwner } from '@ember/application';
 
@@ -17,10 +16,9 @@ export default Service.extend({
 
     const { algoliaId, algoliaKey, indexName } = config['algolia'] || {};
 
-    if(algoliaId && algoliaKey && indexName) {
+    if (algoliaId && algoliaKey && indexName) {
       this.client = algoliasearch(algoliaId, algoliaKey);
       this.index = this.client.initIndex(indexName);
-      this.searchFunction = denodeify(this.index.search.bind(this.index));
     }
   },
 
@@ -28,19 +26,18 @@ export default Service.extend({
     const searchObj = {
       hitsPerPage: 15,
       restrictSearchableAttributes: ['content'],
-      query
     };
 
     if(projectVersion && projectVersion.match(/\d+\.\d+\.\d+/)) {
       searchObj.facetFilters = [[`version:${projectVersion}`]];
     }
 
-    return set(this, 'results', yield this.doSearch(searchObj));
+    return set(this, 'results', yield this.doSearch(query, searchObj));
 
   }).restartable(),
 
-  doSearch(searchObj) {
-    return this.searchFunction(searchObj).then((results) => {
+  doSearch(query, searchObj) {
+    return this.index.search(query, searchObj).then((results) => {
       return get(results, 'hits');
     });
   }

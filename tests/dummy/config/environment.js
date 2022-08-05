@@ -30,6 +30,12 @@ module.exports = function (environment) {
       title: 'Ember Guidemaker Template'
     },
 
+    algolia: {
+      algoliaId: 'FAKEKEY',
+      algoliaKey: 'alsofake',
+      indexName: 'ember-guides'
+    },
+
     // you can comment out these lines if you want to test the info banner implementation
 //     survey: {
 //       content: `Take the [Ember Community Survey](https://emberjs.com/ember-community-survey-2019/)`
@@ -65,6 +71,10 @@ module.exports = function (environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV['ember-tether'] = {
+      bodyElementId: 'ember-testing'
+    };
   }
 
   if (environment === 'production') {

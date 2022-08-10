@@ -13,7 +13,7 @@
   >
 
   {{!-- Search results dropdown --}}
-  <EmberTether @target="#search-input" @targetAttachment="bottom left" @attachment="top left" @constraints={{this._resultTetherConstraints}} @class="ds-dropdown-results">
+  <EmberTether @target="#search-input" @targetAttachment="bottom right" @attachment="top right" @constraints={{this._resultTetherConstraints}} @class="ds-dropdown-results">
     {{#if this.showDropdown}}
       <div class="ds-suggestions ds-dropdown-menu">
         <DropdownHeader>

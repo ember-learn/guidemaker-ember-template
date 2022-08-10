@@ -7,6 +7,9 @@
 }
 
 /* Dropdown styling */
+.ds-dropdown-results {
+  z-index: 1; // makes sure that the search is above the version selector
+}
 .ds-dropdown-menu {
   width: 500px;
   background-color: white;
@@ -14,6 +17,7 @@
   border-radius: 8px;
   margin-top: 10px;
   border: 2px solid var(--color-card-border);
+  overflow-x: hidden;
 }
 
 /* Dropdown header styling */
@@ -59,4 +63,16 @@
 }
 .powered-by-algolia > a {
   display: flex;
+}
+
+@media (min-width: 1008px) {
+  .navbar-list {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 1007px) {
+  .ds-dropdown-menu {
+    width: calc(100vw - 2rem);
+  }
 }

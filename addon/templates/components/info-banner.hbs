@@ -1,8 +1,8 @@
 {{!-- template-lint-disable no-implicit-this --}}
-{{#if config}}
+{{#if this.config}}
   <div class="info-banner-wrapper">
     <div class="info-banner-container">
-      {{markdown-to-html config.content}}
+      {{markdown-to-html this.config.content}}
     </div>
   </div>
 {{/if}}

@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+      - website-redesign
       - "v*"
   pull_request:
 

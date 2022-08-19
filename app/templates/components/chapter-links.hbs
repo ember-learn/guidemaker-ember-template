@@ -1,16 +1,16 @@
 {{! template-lint-disable no-link-to-positional-params no-curly-component-invocation no-implicit-this }}
-{{#if page.previousPage}}
-  {{#link-to "version.show" page.previousPage.url class="previous-guide"}}{{page.previousPage.title}}{{/link-to}}
+{{#if this.page.previousPage}}
+  {{#link-to "version.show" this.page.previousPage.url class="previous-guide"}}{{this.page.previousPage.title}}{{/link-to}}
 {{/if}}
 
-{{#if page.nextPage}}
-  {{#link-to "version.show" page.nextPage.url class="next-guide"}}
-    {{#if page.isLastPage}}
-      We've finished covering {{page.currentSection.title}}. Next up: {{page.nextSection.title}} - {{page.nextPage.title}}
-    {{else if page.nextIsFirstPage}}
-      {{page.nextSection.title}} - {{page.nextPage.title}}
+{{#if this.page.nextPage}}
+  {{#link-to "version.show" this.page.nextPage.url class="next-guide"}}
+    {{#if this.page.isLastPage}}
+      We've finished covering {{this.page.currentSection.title}}. Next up: {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
+    {{else if this.page.nextIsFirstPage}}
+      {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
     {{else}}
-      {{page.nextPage.title}}
+      {{this.page.nextPage.title}}
     {{/if}}
   {{/link-to}}
 {{/if}}

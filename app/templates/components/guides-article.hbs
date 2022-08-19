@@ -6,7 +6,7 @@
       <div><strong>Old Guides - </strong>You are viewing the guides for Ember {{this.version}}.</div>
     </div>
 
-    {{#link-to "version.show" "release" this.path class="es-button-secondary"}} VIEW {{this.currentVersion}} {{/link-to}}
+    <LinkTo @route="version.show" @models={{array "release" this.path}} class="es-button-secondary"> VIEW {{this.currentVersion}} </LinkTo>
   </div>
 {{/if}}
 
@@ -26,6 +26,6 @@
 </h1>
 <hr>
 
-{{markdown-to-html this.model.content extensions="showdown-section-groups"}}
+<MarkdownToHtml @markdown={{this.model.content}} @extensions="showdown-section-groups" />
 
-{{chapter-links pages=this.pages}}
+<ChapterLinks @pages={{this.pages}} />

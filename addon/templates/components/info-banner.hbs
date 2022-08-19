@@ -2,7 +2,7 @@
 {{#if this.config}}
   <div class="info-banner-wrapper">
     <div class="info-banner-container">
-      {{markdown-to-html this.config.content}}
+      <MarkdownToHtml @markdown={{this.config.content}} />
     </div>
   </div>
 {{/if}}

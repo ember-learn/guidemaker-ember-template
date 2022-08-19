@@ -13,21 +13,15 @@
   >
 
   {{!-- Search results dropdown --}}
-  {{#ember-tether
-    target="#search-input"
-    targetAttachment="bottom left"
-    attachment="top left"
-    constraints=this._resultTetherConstraints
-    class="ds-dropdown-results"
-  }}
+  <EmberTether @target="#search-input" @targetAttachment="bottom left" @attachment="top left" @constraints={{this._resultTetherConstraints}} @class="ds-dropdown-results">
     {{#if this.showDropdown}}
       <div class="ds-suggestions ds-dropdown-menu">
-        {{#dropdown-header}}
+        <DropdownHeader>
           Search Results
-        {{/dropdown-header}}
+        </DropdownHeader>
 
         {{#each this.searchService.results as |result|}}
-          {{search-result result=result}}
+          <SearchResult @result={{result}} />
         {{else}}
           <div class="algolia-docsearch-suggestion">
             <div class="algolia-docsearch-suggestion--noresults">
@@ -47,5 +41,5 @@
         </div>
       </div>
     {{/if}}
-  {{/ember-tether}}
+  </EmberTether>
 {{/if}}

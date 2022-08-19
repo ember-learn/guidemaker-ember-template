@@ -1,10 +1,10 @@
 {{! template-lint-disable no-link-to-positional-params no-curly-component-invocation no-implicit-this }}
 {{#if this.page.previousPage}}
-  {{#link-to "version.show" this.page.previousPage.url class="previous-guide"}}{{this.page.previousPage.title}}{{/link-to}}
+  <LinkTo @route="version.show" @model={{this.page.previousPage.url}} class="previous-guide">{{this.page.previousPage.title}}</LinkTo>
 {{/if}}
 
 {{#if this.page.nextPage}}
-  {{#link-to "version.show" this.page.nextPage.url class="next-guide"}}
+  <LinkTo @route="version.show" @model={{this.page.nextPage.url}} class="next-guide">
     {{#if this.page.isLastPage}}
       We've finished covering {{this.page.currentSection.title}}. Next up: {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
     {{else if this.page.nextIsFirstPage}}
@@ -12,5 +12,5 @@
     {{else}}
       {{this.page.nextPage.title}}
     {{/if}}
-  {{/link-to}}
+  </LinkTo>
 {{/if}}

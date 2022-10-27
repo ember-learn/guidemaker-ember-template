@@ -25,3 +25,18 @@
   height: 1.5rem;
   margin-right: 8px;
 }
+
+.article-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-page:link, .edit-page:visited {
+  background: none;
+  margin-bottom: var(--spacing-2);
+}
+
+.edit-icon {
+  height: 1rem;
+}

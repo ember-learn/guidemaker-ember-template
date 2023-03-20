@@ -10,20 +10,22 @@
   </div>
 {{/if}}
 
-{{#if this.guidemaker.sourceRepo}}
-  <a
-    href="{{this.guidemaker.sourceRepo}}/edit/master/guides/{{this.editVersion}}{{this.model.id}}.md"
-    target="_blank"
-    class="edit-page icon-pencil"
-    rel="noopener"
-  >
-    Edit Page
-  </a>
-{{/if}}
+<div class="article-title">
+  <h1>
+    {{this.page.currentPage.title}}
+  </h1>
 
-<h1>
-  {{this.page.currentPage.title}}
-</h1>
+  {{#if this.guidemaker.sourceRepo}}
+    <a
+      href="{{this.guidemaker.sourceRepo}}/edit/master/guides/{{this.editVersion}}{{this.model.id}}.md"
+      target="_blank"
+      class="edit-page"
+      rel="noopener"
+    >
+      <img class="edit-icon" src="/images/pen.svg" alt="Edit pencil">
+    </a>
+  {{/if}}
+</div>
 <hr>
 
 <MarkdownToHtml @markdown={{this.model.content}} @extensions="showdown-section-groups" />

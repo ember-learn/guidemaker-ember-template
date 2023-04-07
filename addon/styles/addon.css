@@ -32,6 +32,10 @@
   align-items: center;
 }
 
+.article-title > h1 {
+  margin: 0;
+}
+
 .edit-page:link, .edit-page:visited {
   background: none;
   margin-bottom: var(--spacing-2);

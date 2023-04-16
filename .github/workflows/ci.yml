@@ -5,9 +5,11 @@ on:
     branches:
       - master
       - main
-      - website-redesign
       - "v*"
   pull_request:
+    branches:
+      - main
+      - website-redesign
 
 env:
   NODE_VERSION: 14

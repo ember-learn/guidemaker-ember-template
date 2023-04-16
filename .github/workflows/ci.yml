@@ -3,13 +3,17 @@ name: CI
 on:
   push:
     branches:
-      - master
       - main
+      - master
       - "v*"
   pull_request:
     branches:
       - main
       - website-redesign
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 env:
   NODE_VERSION: 18
@@ -22,7 +26,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -36,7 +40,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -57,7 +61,7 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: mansona/npm-lockfile-version@v1
       - uses: actions/setup-node@v3
         with:
@@ -80,7 +84,6 @@ jobs:
           - 'ember-lts-3.24'
           - 'ember-lts-3.28'
           - 'ember-release'
-          - 'ember-default-with-jquery'
           - 'ember-classic'
           - 'embroider-safe'
           - 'embroider-optimized'
@@ -115,7 +118,7 @@ jobs:
           - ember-release-no-deprecations
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}

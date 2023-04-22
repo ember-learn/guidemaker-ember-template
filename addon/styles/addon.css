@@ -155,3 +155,25 @@ main {
 .edit-icon {
   height: 1rem;
 }
+
+main h1 > a:link, main h2 > a:link, main h3 > a:link, main h4 > a:link, main h5 > a:link, main h6 > a:link {
+  background: none;
+}
+
+h1 > a  {
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+h1 > a > svg {
+  height: 18px;
+  fill: var(--color-gray-600);
+  transform: rotate(45deg);
+}
+
+h1 > a:hover > svg {
+  fill: var(--color-brand);
+}
+
+
+

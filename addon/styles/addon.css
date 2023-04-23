@@ -85,6 +85,33 @@ main {
   }
 }
 
+/* TODO figure out how much of this media query needs to go into the styleguide */
+@media (max-width: 768px) {
+  main .es-sidebar[aria-expanded="true"] {
+    border: none;
+    padding: var(--spacing-2);
+    z-index: 1;
+    margin-top: var(--spacing-2);
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  main .es-sidebar-toggle {
+    z-index: 2;
+  }
+
+  main .es-sidebar-content {
+    flex-grow: 1;
+    margin-top: var(--spacing-2);
+  }
+
+  main .es-sidebar-close {
+    float: none;
+    height: 52px;
+    margin-left: var(--spacing-1);
+  }
+}
+
 @media screen and (min-width: 54em) {
   .sidebar {
     border-bottom: 0;

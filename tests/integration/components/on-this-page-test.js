@@ -7,11 +7,13 @@ module('Integration | Component | on-this-page', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('toc', [
+      { text: 'Introduction', id: '1' },
+      { text: 'Follow-up item', id: '2' },
+    ]);
 
-    await render(hbs`<OnThisPage />`);
+    await render(hbs`<OnThisPage @toc={{this.toc}} />`);
 
-    assert.dom(this.element).hasText('On this page');
+    assert.dom(this.element).containsText('On this page');
   });
 });

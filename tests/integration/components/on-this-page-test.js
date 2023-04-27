@@ -12,15 +12,6 @@ module('Integration | Component | on-this-page', function (hooks) {
 
     await render(hbs`<OnThisPage />`);
 
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <OnThisPage>
-        template block text
-      </OnThisPage>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('On this page');
   });
 });

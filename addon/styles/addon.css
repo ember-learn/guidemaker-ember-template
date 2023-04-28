@@ -64,7 +64,7 @@ main {
 }
 
 .guides-article-content {
-  max-width: 100%;
+  min-width: 100%;
 }
 
 .pagination-wrapper {
@@ -75,7 +75,7 @@ main {
   margin-top: .6em;
 }
 
-@media (max-width: 85em) {
+@media (max-width: 80em) {
   .guides-article-wrapper {
     display: flex;
   }

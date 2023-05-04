@@ -1,0 +1,14 @@
+{{#if @toc}}
+  <div class="on-this-page-wrapper">
+    <div class="on-this-page-wrapper-header">On this page</div>
+    <hr>
+    <ul>
+      {{#each @toc as |toc|}}
+        <li>
+          <a href="#{{toc.id}}">{{toc.text}}</a>
+        </li>
+      {{/each}}
+    </ul>
+    {{yield}}
+  </div>
+{{/if}}

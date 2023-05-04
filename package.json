@@ -110,5 +110,8 @@
   },
   "fastbootDependencies": [
     "crypto"
-  ]
+  ],
+  "overrides": {
+    "@embroider/macros": "1.10.0"
+  }
 }

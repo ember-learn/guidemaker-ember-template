@@ -1,3 +1,4 @@
+/* stylelint-disable prettier/prettier, media-feature-range-notation, rule-empty-line-before */
 .visually-hidden {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;

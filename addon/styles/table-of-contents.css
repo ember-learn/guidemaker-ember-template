@@ -1,3 +1,5 @@
+/* stylelint-disable prettier/prettier */
+
 /* All the .es-sidebar styling should probably move to the ember-styleguide when we agree this is the right thing to do */
 .es-sidebar {
   padding: var(--spacing-4) var(--spacing-4);

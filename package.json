@@ -15,7 +15,7 @@
   "scripts": {
     "build": "ember build --environment=production",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
-    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css": "stylelint \"addon/**/*.css\"",
     "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
     "lint:hbs": "ember-template-lint .",
@@ -85,6 +85,7 @@
     "lint-to-the-future": "^1.1.0",
     "lint-to-the-future-ember-template": "^1.2.0",
     "lint-to-the-future-eslint": "^1.0.0",
+    "lint-to-the-future-stylelint": "^1.1.0",
     "loader.js": "^4.7.0",
     "prember": "^2.0.0",
     "prettier": "^2.8.7",

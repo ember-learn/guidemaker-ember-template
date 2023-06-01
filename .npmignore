@@ -20,6 +20,8 @@
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
+/.percy.yml
+/.github/
 /bower.json
 /config/ember-try.js
 /CONTRIBUTING.md

@@ -7,13 +7,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
-      - run: npm install
+          node-version: 16
+          cache: npm
+      - run: npm ci
       - run: npx lint-to-the-future output -o lttfOutput --rootUrl guidemaker-ember-template --previous-results https://ember-learn.github.io/guidemaker-ember-template/data.json
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

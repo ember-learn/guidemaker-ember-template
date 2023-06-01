@@ -17,10 +17,12 @@
   justify-content: space-between;
   border-radius: 4px;
 }
+
 .old-version-warning-text {
   display: flex;
   align-items: center;
 }
+
 .old-version-warning .warning-icon {
   height: 1.5rem;
   margin-right: 8px;
@@ -147,7 +149,8 @@ main {
   line-height: var(--font-size-xl);
 }
 
-.edit-page:link, .edit-page:visited {
+.edit-page:link,
+.edit-page:visited {
   background: none;
   margin-bottom: var(--spacing-2);
 }
@@ -156,24 +159,43 @@ main {
   height: 1rem;
 }
 
-main h1 > a:link, main h2 > a:link, main h3 > a:link, main h4 > a:link, main h5 > a:link, main h6 > a:link {
-  background: none;
-}
+/* Header links */
 
-h1 > a  {
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
   margin-left: 12px;
   vertical-align: middle;
 }
 
-h1 > a > svg {
+main h1 > a:link,
+main h2 > a:link,
+main h3 > a:link,
+main h4 > a:link,
+main h5 > a:link,
+main h6 > a:link {
+  background: none;
+}
+
+h1 > a > svg,
+h2 > a > svg,
+h3 > a > svg,
+h4 > a > svg,
+h5 > a > svg,
+h6 > a > svg {
   height: 18px;
   fill: var(--color-gray-600);
   transform: rotate(45deg);
 }
 
-h1 > a:hover > svg {
+h1 > a:hover > svg,
+h2 > a:hover > svg,
+h3 > a:hover > svg,
+h4 > a:hover > svg,
+h5 > a:hover > svg,
+h6 > a:hover > svg {
   fill: var(--color-brand);
 }
-
-
-

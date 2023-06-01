@@ -29,7 +29,7 @@
 
       {{#if this.guidemaker.sourceRepo}}
         <a
-          href='{{this.guidemaker.sourceRepo}}/edit/master/guides/{{this.editVersion}}{{this.model.id}}.md'
+          href="{{this.guidemaker.sourceRepo}}/edit/{{or this.guidemaker.sourceBranch "master"}}/guides/{{this.editVersion}}{{this.model.id}}.md"
           target='_blank'
           class='edit-page'
           rel='noopener'

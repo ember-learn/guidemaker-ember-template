@@ -27,9 +27,9 @@ has the learning content itself.
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.13 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
+* Ember.js v3.16 or above
+* Ember CLI v3.16 or above
+* Node.js v14 or above
 
 
 Installation

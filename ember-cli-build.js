@@ -1,30 +1,15 @@
+/* eslint-disable prettier/prettier */
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     sourcemaps: {
       enabled: false
     },
-    // TODO: remove once https://github.com/ember-cli/ember-cli/issues/8448 is fixed
-    'ember-prism': {
-      theme: 'okaidia',
-
-      components: [
-        'apacheconf',
-        'bash',
-        'css',
-        'handlebars',
-        'http',
-        'javascript',
-        'json',
-        'markup-templating',
-        'ruby',
-        'scss'
-      ],
-
-      plugins: ['line-numbers', 'normalize-whitespace']
+    fingerprint: {
+      extensions: ['js', 'css', 'map'],
     }
   });
 
@@ -35,5 +20,12 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

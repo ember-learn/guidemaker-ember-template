@@ -1,15 +1,18 @@
-{{#if page.previousPage}}
-  {{#link-to "version.show" page.previousPage.url class="previous-guide"}}{{page.previousPage.title}}{{/link-to}}
-{{/if}}
+{{! template-lint-disable no-link-to-positional-params no-curly-component-invocation no-implicit-this }}
+<EsPagination @showPrevious={{this.page.previousPage}} @showNext={{this.page.nextPage}}>
+   <:previous>
+    <LinkTo @route="version.show" @model={{this.page.previousPage.url}} class="previous-guide">{{this.page.previousPage.title}}</LinkTo>
+   </:previous>
 
-{{#if page.nextPage}}
-  {{#link-to "version.show" page.nextPage.url class="next-guide"}}
-    {{#if page.isLastPage}}
-      We've finished covering {{page.currentSection.title}}. Next up: {{page.nextSection.title}} - {{page.nextPage.title}}
-    {{else if page.nextIsFirstPage}}
-      {{page.nextSection.title}} - {{page.nextPage.title}}
-    {{else}}
-      {{page.nextPage.title}}
-    {{/if}}
-  {{/link-to}}
-{{/if}}
+    <:next>
+      <LinkTo @route="version.show" @model={{this.page.nextPage.url}} class="next-guide">
+        {{#if this.page.isLastPage}}
+          We've finished covering {{this.page.currentSection.title}}. Next up: {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
+        {{else if this.page.nextIsFirstPage}}
+          {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
+        {{else}}
+          {{this.page.nextPage.title}}
+        {{/if}}
+      </LinkTo>
+    </:next>
+</EsPagination>

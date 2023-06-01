@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-classes, ember/require-computed-property-dependencies, prettier/prettier */
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 

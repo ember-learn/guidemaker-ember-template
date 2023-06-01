@@ -1,27 +1,53 @@
-{{#if (not (eq version currentVersion))}}
-  <div class="old-version-warning">
-    <i class="icon-attention-circled"></i><strong>Old Guides - </strong>You are viewing the guides for Ember {{version}}.
+{{! template-lint-disable no-link-to-positional-params link-rel-noopener no-curly-component-invocation no-implicit-this }}
+<div class='guides-article-wrapper'>
+  <div class='guides-article-content'>
+    {{#if (not (eq this.version this.currentVersion))}}
+      <div class='old-version-warning'>
+        <div class='old-version-warning-text'>
+          <img
+            src='/images/exclamation-circle-solid.svg'
+            alt='warning icon'
+            class='warning-icon'
+          />
+          <div><strong>Old Guides - </strong>You are viewing the guides for
+            Ember
+            {{this.version}}.</div>
+        </div>
 
-    {{#link-to "version.show" "release" path class="btn"}} VIEW {{currentVersion}} {{/link-to}}
+        <LinkTo
+          @route='version.show'
+          @models={{array 'release' this.path}}
+          class='es-button-secondary'
+        > VIEW {{this.currentVersion}} </LinkTo>
+      </div>
+    {{/if}}
+
+    <div class='article-title'>
+      <h1>
+        {{this.page.currentPage.title}}
+      </h1>
+
+      {{#if this.guidemaker.sourceRepo}}
+        <a
+          href="{{this.guidemaker.sourceRepo}}/edit/{{or this.guidemaker.sourceBranch "master"}}/guides/{{this.editVersion}}{{this.model.id}}.md"
+          target='_blank'
+          class='edit-page'
+          rel='noopener'
+        >
+          <img class='edit-icon' src='/images/pen.svg' alt='Edit pencil' />
+        </a>
+      {{/if}}
+    </div>
+    <hr />
+
+    <MarkdownToHtml
+      @markdown={{this.model.content}}
+      @extensions='showdown-section-groups header-links'
+    />
+
+    <ChapterLinks @pages={{this.pages}} />
   </div>
-{{/if}}
-
-{{#if guidemaker.sourceRepo}}
-  <a
-    href="{{guidemaker.sourceRepo}}/edit/{{or guidemaker.sourceBranch "master"}}/guides/{{editVersion}}{{model.id}}.md"
-    target="_blank"
-    class="edit-page icon-pencil"
-    rel="noopener"
-  >
-    Edit Page
-  </a>
-{{/if}}
-
-<h1>
-  {{page.currentPage.title}}
-</h1>
-<hr>
-
-{{markdown-to-html model.content extensions="showdown-section-groups"}}
-
-{{chapter-links pages=pages}}
+  <div class='guides-article-toc'>
+    <OnThisPage @toc={{@model.toc}} />
+  </div>
+</div>

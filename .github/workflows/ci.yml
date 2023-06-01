@@ -7,43 +7,48 @@ on:
       - main
       - "v*"
   pull_request:
+    branches:
+      - main
+      - website-redesign
 
 env:
-  NODE_VERSION: 10
+  NODE_VERSION: 14
   FORCE_COLOR: 1
 
 jobs:
   lint:
     name: Linting
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - run: npm i -g npm@7
+          cache: npm
       - run: npm ci
       - run: npm run lint
 
   floating-dependencies:
     name: Floating Dependencies
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
       - run: npm install --no-package-lock
       - run: npm test
 
   test:
     name: Tests
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
       PERCY_PARALLEL_TOTAL: 1
@@ -54,36 +59,75 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: mansona/npm-lockfile-version@v1
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - run: npm i -g npm@7
+          cache: npm
       - run: npm ci
-      - uses: percy/exec-action@v0.3.1
-        with:
-          custom-command: npm run test
+      - run: npx percy exec -- npm run test
 
   try-scenarios:
     name: "ember-try: ${{ matrix.ember-try-scenario }}"
     runs-on: ubuntu-latest
     needs: test
+    timeout-minutes: 10
 
     strategy:
+      fail-fast: false
       matrix:
         ember-try-scenario:
+          - 'ember-lts-3.20'
+          - 'ember-lts-3.24'
+          - 'ember-lts-3.28'
           - 'ember-release'
-          - 'ember-beta'
-          - 'ember-canary'
           - 'ember-default-with-jquery'
+          - 'ember-classic'
+          - 'embroider-safe'
+          - 'embroider-optimized'
+          - 'no-deprecations'
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - run: npm i -g npm@7
       - run: npm ci
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
+
+  allow-fail-try-scenarios:
+    name: ${{ matrix.try-scenario }} - Allowed to fail
+    runs-on: ubuntu-latest
+    needs: 'test'
+    timeout-minutes: 10
+
+    permissions:
+      pull-requests: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        try-scenario:
+          - ember-beta
+          - ember-canary
+          - ember-release-no-deprecations
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm i -g npm@8
+      - run: npm ci
+      - name: Run Tests
+        id: tests
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        continue-on-error: true
+      - uses: mainmatter/continue-on-error-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          outcome: ${{ steps.tests.outcome }}
+          test-id: ${{ matrix.try-scenario }}

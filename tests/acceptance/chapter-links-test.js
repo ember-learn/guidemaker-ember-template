@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit, find } from '@ember/test-helpers';
@@ -6,7 +7,7 @@ module('Acceptance | chapter-links', function(hooks) {
   setupApplicationTest(hooks);
 
   test('chapter links are correct', async function(assert) {
-    await visit('/v1.2.0');
+    await visit('/release');
 
     let prevLinkTexts = [];
     let nextLinkTexts = [];
@@ -28,17 +29,23 @@ module('Acceptance | chapter-links', function(hooks) {
 
     assert.deepEqual(
       prevLinkTexts,
-      [null, 'Guides', 'Introduction', 'Editing', 'Page 1', 'Page 2'],
+      [null, 'Guides', 'Introduction', 'Editing', 'Introduction', 'Page 1', 'Introduction', 'Page 2', 'Page 3','Basic Markdown','Code Syntax Highlighting'],
       'previous link texts were correct'
     );
+
     assert.deepEqual(
       nextLinkTexts,
       [
         "We've finished covering Guides and Tutorials. Next up: Getting Started - Introduction",
-        'Editing',
-        "We've finished covering Getting Started. Next up: Another Section - Page 1",
-        'Subsection - Page 2',
+        "Editing",
+        "We've finished covering Getting Started. Next up: Another Section - Introduction",
+        "Page 1",
+        "Subsection - Introduction",
+        "Page 2",
         "We've finished covering Subsection. Next up: Another Section - Page 3",
+        "We've finished covering Another Section. Next up: Examples - Basic Markdown",
+        "Code Syntax Highlighting",
+        "Callouts",
         null,
       ],
       'next link texts were correct'

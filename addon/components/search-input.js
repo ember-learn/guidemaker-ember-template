@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, prettier/prettier, ember/no-get, ember/no-actions-hash */
 import { getOwner } from '@ember/application';
 import Component from '@ember/component';
 import { get, set } from '@ember/object';

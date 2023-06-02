@@ -1,15 +1,8 @@
-/* eslint-disable ember/no-classic-components, ember/no-classic-classes */
-import Component from '@ember/component';
-import layout from '../templates/components/info-banner';
+import Component from '@glimmer/component';
+import config from 'ember-get-config';
 
-import { getOwner } from '@ember/application';
-
-export default Component.extend({
-  layout,
-  tagName: '',
-  init() {
-    this._super(...arguments);
-    const config = getOwner(this).resolveRegistration('config:environment');
-    this.config = config[this.configName];
-  },
-});
+export default class InfoBannerComponent extends Component {
+  get config() {
+    return config[this.args.configName];
+  }
+}

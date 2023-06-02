@@ -36,11 +36,11 @@ module.exports = function (environment) {
       indexName: 'ember-guides'
     },
 
-    // you can comment out these lines if you want to test the info banner implementation
+//     // you can comment out these lines if you want to test the info banner implementation
 //     survey: {
 //       content: `Take the [Ember Community Survey](https://emberjs.com/ember-community-survey-2019/)`
 //     },
-//
+
 //     infoBanner: {
 //       content: `Thanks for taking the Octane preview for a test drive! Visit
 // <a href="https://emberjs.com" target="_blank" rel="noopener">thingy</a>

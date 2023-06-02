@@ -35,6 +35,7 @@
     "ember-collapsible-panel": "^5.0.0",
     "ember-composable-helpers": "^4.4.1",
     "ember-concurrency": "^2.0.1",
+    "ember-get-config": "^2.1.1",
     "ember-href-to": "^5.0.0",
     "ember-power-select": "^6.0.0",
     "ember-showdown-prism": "^3.2.0",

@@ -152,7 +152,6 @@ main {
 .edit-page:link,
 .edit-page:visited {
   background: none;
-  margin-bottom: var(--spacing-2);
 }
 
 .edit-icon {

@@ -52,6 +52,13 @@ main {
   margin: 0;
 }
 
+.info-banner-wrapper {
+  margin: var(--spacing-1);
+  padding: var(--spacing-1);
+  background-color: var(--color-info);
+  border-radius: var(--radius-lg);
+}
+
 @media (min-width: 30em) and (max-width: 85em) {
   main {
     grid-template-columns: 18em 1fr;

@@ -159,6 +159,12 @@ main {
   height: 1rem;
 }
 
+/* Error page */
+.error-page {
+  padding: var(--spacing-3) 0;
+  text-align: center;
+}
+
 /* Header links */
 
 h1 > a,

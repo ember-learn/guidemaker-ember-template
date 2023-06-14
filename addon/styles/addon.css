@@ -54,7 +54,7 @@ main {
 
 .sidebar-container {
   margin: 0;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-columns: 18.5rem minmax(0, 1fr);
   max-width: 100%;
   padding: 0;
 }
@@ -78,13 +78,10 @@ main {
 
 .guides-article-wrapper {
   display: grid;
-  gap: 2em;
-  grid-template-columns: 1fr 18em;
+  gap: 3em;
+  grid-template-columns: 80ch 18em;
   padding-top: var(--spacing-4);
-}
-
-.guides-article-content {
-  min-width: 100%;
+  justify-content: center;
 }
 
 .pagination-wrapper {

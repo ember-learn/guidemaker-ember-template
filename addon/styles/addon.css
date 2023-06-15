@@ -79,7 +79,7 @@ main {
 .guides-article-wrapper {
   display: grid;
   gap: 3em;
-  grid-template-columns: 80ch 18em;
+  grid-template-columns: 80ch 16em;
   padding-top: var(--spacing-4);
   justify-content: center;
 }
@@ -92,9 +92,11 @@ main {
   margin-top: .6em;
 }
 
-@media (max-width: 80em) {
+@media (max-width: 94em) {
   .guides-article-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80ch;
+    justify-content: center;
   }
 
   .on-this-page-wrapper {

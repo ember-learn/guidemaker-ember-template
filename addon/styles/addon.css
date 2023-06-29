@@ -78,13 +78,10 @@ main {
 
 .guides-article-wrapper {
   display: grid;
-  gap: 2em;
-  grid-template-columns: 1fr 18em;
+  gap: 3em;
+  grid-template-columns: minmax(20ch, 80ch) 16em;
   padding-top: var(--spacing-4);
-}
-
-.guides-article-content {
-  min-width: 100%;
+  justify-content: center;
 }
 
 .pagination-wrapper {
@@ -97,7 +94,9 @@ main {
 
 @media (max-width: 80em) {
   .guides-article-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(20ch, 80ch);
+    justify-content: center;
   }
 
   .on-this-page-wrapper {
@@ -106,7 +105,7 @@ main {
 }
 
 /* TODO figure out how much of this media query needs to go into the styleguide */
-@media (max-width: 768px) {
+@media (max-width: 844px) {
   main .es-sidebar[aria-expanded="true"] {
     border: none;
     padding: var(--spacing-2);

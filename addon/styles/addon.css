@@ -54,7 +54,7 @@ main {
 
 .sidebar-container {
   margin: 0;
-  grid-template-columns: 18.5rem minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   max-width: 100%;
   padding: 0;
 }
@@ -106,19 +106,6 @@ main {
 
 /* TODO figure out how much of this media query needs to go into the styleguide */
 @media (max-width: 844px) {
-  main .es-sidebar {
-    display: none;
-  }
-
-  .sidebar-container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar-container > .es-sidebar + .es-sidebar-toggle + * {
-    grid-column: unset;
-  }
-
   main .es-sidebar[aria-expanded="true"] {
     border: none;
     padding: var(--spacing-2);
@@ -129,19 +116,6 @@ main {
   }
 
   main .es-sidebar-toggle {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-    padding: 0;
-
-    border-radius: 30px;
-    box-shadow: 0 0 1px 0 rgba(73, 79, 95, 0.6), 0 2px 10px -5px rgba(73, 79, 95, 0.55), 0 3px 30px -15px rgba(73, 79, 95, 0.8), 0 0 50px -5px rgba(73, 79, 95, 0.5);
-    box-shadow: var(--es-sidebar-shadow);
     z-index: 2;
   }
 

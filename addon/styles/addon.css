@@ -86,7 +86,7 @@ main {
 }
 
 .pagination-wrapper {
-  margin: var(--spacing-2) 0;
+  margin: var(--spacing-4) 0;
 }
 
 .on-this-page-wrapper {

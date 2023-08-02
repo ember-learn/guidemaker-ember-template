@@ -103,7 +103,6 @@ main {
 /* TODO figure out how much of this media query needs to go into the styleguide */
 @media (max-width: 844px) {
   main .es-sidebar[aria-expanded="true"] {
-    border: none;
     padding: var(--spacing-2);
     z-index: 1;
     display: flex;

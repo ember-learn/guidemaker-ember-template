@@ -59,3 +59,9 @@ li.toc-heading {
 li.toc-heading:first-child {
   margin-top: 0;
 }
+
+@media (max-width: 844px) {
+  .table-of-contents {
+    font-size: var(--font-size-lg);
+  }
+}

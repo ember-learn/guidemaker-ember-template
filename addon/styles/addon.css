@@ -98,10 +98,15 @@ main {
     display: grid;
     grid-template-columns: minmax(20ch, 80ch);
     justify-content: center;
+    padding-bottom: 0;
   }
 
   .on-this-page-wrapper {
     display: none;
+  }
+
+  .pagination-wrapper {
+    margin: var(--spacing-2) 0;
   }
 }
 

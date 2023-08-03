@@ -98,10 +98,10 @@ main {
     display: grid;
     grid-template-columns: minmax(20ch, 80ch);
     justify-content: center;
-    padding-bottom: 0;
+    padding-bottom: var(--spacing-2);
   }
 
-  .on-this-page-wrapper {
+  .guides-article-toc {
     display: none;
   }
 

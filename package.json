@@ -28,7 +28,6 @@
   "dependencies": {
     "@docsearch/css": "^3.5.1",
     "@docsearch/js": "^3.5.1",
-    "algoliasearch": "^4.14.1",
     "broccoli-funnel": "^3.0.3",
     "ember-auto-import": "^2.4.2",
     "ember-cli-babel": "^7.26.10",

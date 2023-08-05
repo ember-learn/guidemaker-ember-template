@@ -1,3 +1,19 @@
+.DocSearch {
+  --docsearch-primary-color: var(--color-brand);
+  --docsearch-highlight-color: var(--color-brand-hc-dark);
+  --docsearch-text-color: var(--color-gray-700);
+  --docsearch-muted-color: var(--color-gray-600);
+  --docsearch-searchbox-shadow: var(--focus);
+  --docsearch-modal-background: var(--color-gray-200);
+  --docsearch-footer-background: var(--color-gray-100);
+  --docsearch-modal-shadow: none;
+  --docsearch-footer-shadow: none;
+  --docsearch-logo-color: var(--color-gray-500);
+  --docsearch-hit-background: var(--color-gray-200);
+  --docsearch-hit-color: var(--color-gray-500);
+  --docsearch-hit-shadow: none;
+}
+
 .DocSearch-Input:focus{
   outline: none;
   box-shadow: initial;

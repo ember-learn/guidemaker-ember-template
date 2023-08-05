@@ -16,6 +16,7 @@ export default Component.extend({
   didInsertElement() {
     const config = getOwner(this).resolveRegistration('config:environment');
     const { algoliaId, algoliaKey, indexName } = config['algolia'] || {};
+    const deprecationsGuideURL = config['deprecationsGuideURL'];
 
     const docsearchParams = {
       container: '#docsearch',
@@ -23,6 +24,19 @@ export default Component.extend({
       appId: algoliaId,
       indexName: indexName,
       apiKey: algoliaKey,
+      translations: {
+        modal: {
+          noResultsScreen: {
+            noResultsText: 'No results for',
+            suggestedQueryText: 'Try searching for',
+            reportMissingResultsText: 'Try searching the',
+            reportMissingResultsLinkText: 'deprecations guide.',
+          },
+        },
+      },
+      getMissingResultsUrl() {
+        return deprecationsGuideURL;
+      },
       searchParameters: {
         hitsPerPage: 15,
         restrictSearchableAttributes: ['content'],

@@ -24,19 +24,6 @@ export default Component.extend({
       appId: algoliaId,
       indexName: indexName,
       apiKey: algoliaKey,
-      translations: {
-        modal: {
-          noResultsScreen: {
-            noResultsText: 'No results for',
-            suggestedQueryText: 'Try searching for',
-            reportMissingResultsText: 'Try searching the',
-            reportMissingResultsLinkText: 'deprecations guide.',
-          },
-        },
-      },
-      getMissingResultsUrl() {
-        return deprecationsGuideURL;
-      },
       searchParameters: {
         hitsPerPage: 15,
         restrictSearchableAttributes: ['content'],
@@ -47,6 +34,20 @@ export default Component.extend({
       docsearchParams.searchParameters.facetFilters = [
         [`version:${this.projectVersion}`],
       ];
+    }
+
+    if (deprecationsGuideURL) {
+      docsearchParams.getMissingResultsUrl = () => deprecationsGuideURL;
+      docsearchParams.translations = {
+        modal: {
+          noResultsScreen: {
+            noResultsText: 'No results for',
+            suggestedQueryText: 'Try searching for',
+            reportMissingResultsText: 'Try searching the',
+            reportMissingResultsLinkText: 'deprecations guide.',
+          },
+        },
+      };
     }
 
     docsearch(docsearchParams);

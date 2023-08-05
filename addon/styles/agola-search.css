@@ -1,3 +1,8 @@
+.DocSearch-Input:focus{
+  outline: none;
+  box-shadow: initial;
+}
+
 #search-input {
   border-radius: 18px;
   border: 2px solid var(--color-card-border);

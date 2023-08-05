@@ -8,6 +8,10 @@ import { task, timeout } from 'ember-concurrency';
 
 import layout from '../templates/components/search-input';
 
+import docsearch from '@docsearch/js';
+
+import '@docsearch/css';
+
 const SEARCH_DEBOUNCE_PERIOD = 300;
 const SEARCH_CLOSE_PERIOD = 200;
 
@@ -21,8 +25,8 @@ export default Component.extend({
   _resultTetherConstraints: Object.freeze([
     {
       to: 'window',
-      pin: ['left','right']
-    }
+      pin: ['left', 'right'],
+    },
   ]),
 
   _focused: false,
@@ -33,10 +37,34 @@ export default Component.extend({
     this.deprecationsGuideURL = config['deprecationsGuideURL'];
   },
 
+  didInsertElement() {
+    const config = getOwner(this).resolveRegistration('config:environment');
+    const { algoliaId, algoliaKey, indexName } = config['algolia'] || {};
+
+    const docsearchParams = {
+      container: '#docsearch',
+      placeholder: 'Search the guides',
+      appId: algoliaId,
+      indexName: indexName,
+      apiKey: algoliaKey,
+      searchParameters: {
+        hitsPerPage: 15,
+        restrictSearchableAttributes: ['content'],
+      },
+    };
+
+    if (this.projectVersion && this.projectVersion.match(/\d+\.\d+\.\d+/)) {
+      docsearchParams.searchParameters.facetFilters = [
+        [`version:${this.projectVersion}`],
+      ];
+    }
+
+    docsearch(docsearchParams);
+  },
+
   showDropdown: and('query', '_focused'),
 
-  search: task(function * (query) {
-
+  search: task(function* (query) {
     yield timeout(SEARCH_DEBOUNCE_PERIOD);
 
     set(this, 'query', query);
@@ -50,10 +78,9 @@ export default Component.extend({
     set(this, '_focused', true);
 
     yield get(this, 'searchService.search').perform(query, this.projectVersion);
-
   }).restartable(),
 
-  closeMenu: task(function * () {
+  closeMenu: task(function* () {
     yield timeout(SEARCH_CLOSE_PERIOD);
 
     set(this, '_focused', false);
@@ -66,7 +93,6 @@ export default Component.extend({
 
     onblur() {
       this.get('closeMenu').perform();
-    }
-
-  }
+    },
+  },
 });

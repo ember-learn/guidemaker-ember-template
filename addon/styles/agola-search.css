@@ -8,10 +8,14 @@
   --docsearch-footer-background: var(--color-gray-100);
   --docsearch-modal-shadow: none;
   --docsearch-footer-shadow: none;
-  --docsearch-logo-color: var(--color-gray-500);
+  --docsearch-logo-color: var(--color-gray-600);
   --docsearch-hit-background: var(--color-gray-200);
-  --docsearch-hit-color: var(--color-gray-500);
+  --docsearch-hit-color: var(--color-gray-700);
   --docsearch-hit-shadow: none;
+}
+
+.DocSearch .cls-1, .cls-2 {
+  fill: var(--color-gray-600) !important;
 }
 
 .DocSearch-Input:focus{

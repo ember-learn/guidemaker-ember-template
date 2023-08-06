@@ -3,7 +3,7 @@
   --docsearch-highlight-color: var(--color-brand-hc-dark);
   --docsearch-text-color: var(--color-gray-700);
   --docsearch-muted-color: var(--color-gray-600);
-  --docsearch-searchbox-shadow: var(--focus);
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
   --docsearch-modal-background: var(--color-gray-200);
   --docsearch-footer-background: var(--color-gray-100);
   --docsearch-modal-shadow: none;

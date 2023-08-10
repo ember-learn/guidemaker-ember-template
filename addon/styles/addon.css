@@ -59,10 +59,6 @@ main {
   padding: 0;
 }
 
-.sidebar-container > .es-sidebar {
-  margin: 0;
-}
-
 .info-banner-wrapper {
   margin: var(--spacing-1);
   padding: var(--spacing-1);
@@ -107,12 +103,12 @@ main {
 /* TODO figure out how much of this media query needs to go into the styleguide */
 @media (max-width: 844px) {
   main .es-sidebar[aria-expanded="true"] {
-    border: none;
     padding: var(--spacing-2);
     z-index: 1;
-    margin-top: var(--spacing-2);
     display: flex;
     flex-direction: row-reverse;
+    margin: var(--spacing-2) 0 0 0;
+    background: var(--color-white);
   }
 
   main .es-sidebar-toggle {

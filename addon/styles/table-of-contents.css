@@ -1,20 +1,20 @@
 /* All the .es-sidebar styling should probably move to the ember-styleguide when we agree this is the right thing to do */
 .es-sidebar {
-  border-right: 2px solid var(--color-gray-300);
-  padding: var(--spacing-4) var(--spacing-4) 0 0;
-  margin: calc(-1 * var(--spacing-6)) 0 calc(-1 * var(--spacing-6));
+  padding: var(--spacing-4) var(--spacing-4);
+  margin-left: calc(-1 * var(--spacing-4));
+  background-color: var(--color-gray-200);
 }
 
 .table-of-contents {
   list-style-type: none;
   padding-left: 0;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-3);
 }
 
 .sub-table-of-contents {
   padding-left: var(--spacing-1);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-2);
 }
 
@@ -58,4 +58,10 @@ li.toc-heading {
 
 li.toc-heading:first-child {
   margin-top: 0;
+}
+
+@media (max-width: 844px) {
+  .table-of-contents {
+    font-size: var(--font-size-lg);
+  }
 }

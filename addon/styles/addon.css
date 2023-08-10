@@ -77,11 +77,12 @@ main {
   gap: 3em;
   grid-template-columns: minmax(20ch, 80ch) 16em;
   padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
   justify-content: center;
 }
 
 .pagination-wrapper {
-  margin: var(--spacing-2) 0;
+  margin: var(--spacing-4) 0;
 }
 
 .on-this-page-wrapper {
@@ -93,10 +94,15 @@ main {
     display: grid;
     grid-template-columns: minmax(20ch, 80ch);
     justify-content: center;
+    padding-bottom: var(--spacing-2);
   }
 
-  .on-this-page-wrapper {
+  .guides-article-toc {
     display: none;
+  }
+
+  .pagination-wrapper {
+    margin: var(--spacing-2) 0;
   }
 }
 

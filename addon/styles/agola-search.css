@@ -1,68 +1,34 @@
+.DocSearch {
+  --docsearch-primary-color: var(--color-brand);
+  --docsearch-highlight-color: var(--color-brand-hc-dark);
+  --docsearch-text-color: var(--color-gray-700);
+  --docsearch-muted-color: var(--color-gray-600);
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+  --docsearch-modal-background: var(--color-gray-200);
+  --docsearch-footer-background: var(--color-gray-100);
+  --docsearch-modal-shadow: none;
+  --docsearch-footer-shadow: none;
+  --docsearch-logo-color: var(--color-gray-600);
+  --docsearch-hit-background: var(--color-gray-200);
+  --docsearch-hit-color: var(--color-gray-700);
+  --docsearch-hit-shadow: none;
+}
+
+.DocSearch .cls-1, .cls-2 {
+  fill: var(--color-gray-600) !important;
+}
+
+.DocSearch-Input:focus{
+  outline: none;
+  box-shadow: initial;
+}
+
 #search-input {
   border-radius: 18px;
   border: 2px solid var(--color-card-border);
   line-height: 30px;
   padding-left: 8px;
   width: 100%;
-}
-
-/* Dropdown styling */
-.ds-dropdown-results {
-  z-index: 1; // makes sure that the search is above the version selector
-}
-.ds-dropdown-menu {
-  width: 500px;
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  margin-top: 10px;
-  border: 2px solid var(--color-card-border);
-  overflow-x: hidden;
-}
-
-/* Dropdown header styling */
-.algolia-docsearch-suggestion__main {
-  background-color: var(--color-info);
-  padding: 8px 16px;
-}
-
-.algolia-docsearch-suggestion__main > .algolia-docsearch-suggestion--wrapper {
-  border: none;
-  padding: 0;
-}
-
-/* No results styling */
-.algolia-docsearch-suggestion--noresults {
-  color: var(--color-gray-600);
-  padding: 8px 16px;
-}
-
-/* Result styling */
-.algolia-docsearch-suggestion--wrapper {
-  display: flex;
-  border-bottom: 1px solid var(--color-card-border);
-  gap: 10px;
-  font-size: 14px;
-  padding: 8px 16px;
-}
-
-.algolia-docsearch-suggestion--subcategory-column {
-  flex-basis: 80px;
-  min-width: 80px;
-}
-
-.algolia-docsearch-suggestion--subcategory-column-text {
-  font-weight: bold;
-}
-
-/* Search sponsor styling */
-.powered-by-algolia {
-  display: flex;
-  justify-content: end;
-  margin: 8px;
-}
-.powered-by-algolia > a {
-  display: flex;
 }
 
 @media (min-width: 1008px) {
@@ -72,6 +38,15 @@
 }
 
 @media (max-width: 1007px) {
+  .DocSearch-Button {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .DocSearch-Button-Placeholder {
+    display: flex !important;
+  }
+
   .ds-dropdown-menu {
     width: calc(100vw - 2rem);
   }

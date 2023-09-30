@@ -5,6 +5,29 @@ You can do code blocks or `inline code in backticks`.
 mkdir super-rentals
 ```
 
+```json5 {data-filename=app/random.json}
+// This is an example of a json file with comments and trailing commas
+{ 
+  "name": "something", // A comment saying something about something 
+  "stuff": {
+    "another-name": "something else",
+  }
+  // See, we survived a trailing comma - huzzah
+}
+```
+
+```typescript {data-filename=app/router.ts}
+import EmberRouter from '@ember/routing/router';
+import config from './config/environment';
+
+export default class Router extends EmberRouter {
+  location = config.locationType;
+  rootURL = config.rootURL;
+}
+
+Router.map(function() {});
+```
+
 ```javascript {data-filename=app/router.js}
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';

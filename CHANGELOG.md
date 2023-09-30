@@ -1,3 +1,12 @@
+
+## v3.5.0 (2023-09-30)
+
+#### :rocket: Enhancement
+* [#164](https://github.com/ember-learn/guidemaker-ember-template/pull/164) Bumped e-showdown-prism dep to 4.4 ([@lupestro](https://github.com/lupestro))
+
+#### Committers: 1
+- Ralph Mack ([@lupestro](https://github.com/lupestro))
+
 2.0.0 / 2021-05-06
 ==================
 

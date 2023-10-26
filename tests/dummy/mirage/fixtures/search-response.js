@@ -4,11 +4,7 @@ export default {
       html: '<section aria-labelledby="toc_sideloaded-data">\n<p>Data that is not a part of the primary request but includes linked\nrelationships should be placed in an array under the \nkey. For example, if you request  and the backend also\nreturned any comments associated with that person the response\nshould look like this:</p>\n\n</section>',
       content:
         '\nData that is not a part of the primary request but includes linked\nrelationships should be placed in an array under the \nkey. For example, if you request  and the backend also\nreturned any comments associated with that person the response\nshould look like this:\n\n',
-      headings: [
-        '\n  Customizing Serializers\n',
-        'JSONAPISerializer Conventions',
-        'Sideloaded Data',
-      ],
+      headings: ['<Input>', 'JSONAPISerializer Conventions', 'Sideloaded Data'],
       anchor: 'toc_sideloaded-data',
       node: {},
       customRanking: {
@@ -28,7 +24,7 @@ export default {
         },
         headings: [
           {
-            value: '\n  Customizing Serializers\n',
+            value: '<Input>',
             matchLevel: 'none',
             matchedWords: [],
           },

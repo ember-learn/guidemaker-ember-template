@@ -41,7 +41,8 @@
     "ember-showdown-prism": "^4.4.0",
     "ember-styleguide": "^8.3.0",
     "ember-tether": "^2.0.1",
-    "ember-truth-helpers": "^3.0.0"
+    "ember-truth-helpers": "^3.0.0",
+    "sanitize-html": "^2.11.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

@@ -72,8 +72,12 @@ export async function initialize(application) {
           '<code>',
           `<code class="language-${language} line-numbers">`
         );
-        const highlightedCodeBlockWithEnd = `${highlightedCodeBlockWithClass}${end}`;
+        let highlightedCodeBlockWithEnd = `${highlightedCodeBlockWithClass}${end}`;
 
+        if (attributes['data-filename']) {
+          const fileName = attributes['data-filename'] ?? '';
+          highlightedCodeBlockWithEnd = `<div><div class="filename ${language}">${fileName}</div>${highlightedCodeBlockWithEnd}</div>`;
+        }
         const codeblockHashed = showdown.subParser('hashBlock')(
           highlightedCodeBlockWithEnd,
           options,

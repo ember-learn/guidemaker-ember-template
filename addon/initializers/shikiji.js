@@ -70,7 +70,7 @@ export async function initialize(application) {
         });
         const highlightedCodeBlockWithClass = highlightedCodeBlock.replace(
           '<code>',
-          `<code class="language-${language}">`
+          `<code class="language-${language} line-numbers">`
         );
         const highlightedCodeBlockWithEnd = `${highlightedCodeBlockWithClass}${end}`;
 

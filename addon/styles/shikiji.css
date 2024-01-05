@@ -1,0 +1,4 @@
+pre.shiki {
+  padding: var(--spacing-2);
+  border-radius: var(--radius-lg);
+}

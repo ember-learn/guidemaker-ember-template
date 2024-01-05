@@ -5,6 +5,22 @@ You can do code blocks or `inline code in backticks`.
 mkdir super-rentals
 ```
 
+It even supports template tag components via `gjs` or `gts`:
+
+```gjs
+import { on } from '@ember/modifier';
+import FancyButton from './fancy-button';
+
+function greet() {
+  alert("AHOY!")
+}
+
+<template>
+  <p>Hello, {{@name}}!</p>
+  <FancyButton @label="Say hello!" {{on "click" greet}} />
+</template>
+```
+
 ```json5 {data-filename=app/random.json}
 // This is an example of a json file with comments and trailing commas
 { 

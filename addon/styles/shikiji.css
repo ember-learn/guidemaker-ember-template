@@ -1,6 +1,15 @@
 pre.shiki {
-  padding: var(--spacing-2);
   border-radius: var(--radius-lg);
+}
+
+.shiki code {
+  overflow-x: auto;
+  display: block;
+  padding: var(--spacing-2) 0;
+}
+
+.shiki .line {
+  padding: 0 var(--spacing-2);
 }
 
 .line-numbers {
@@ -15,7 +24,7 @@ code.line-numbers .line::before {
   content: counter(step);
   counter-increment: step;
   width: 1em;
-  margin-right: 1.5em;
+  margin-right: var(--spacing-2);
   display: inline-block;
   text-align: right;
   color: rgb(115 138 148 / 40%);

@@ -56,29 +56,28 @@ function transformCodeBlock(
   globals
 ) {
   const end = options.omitExtraWLInCodeBlocks ? '' : '\n';
-  const codeblock = showdown.subParser('detab')(
-    inputCodeblock,
-    options,
-    globals
-  );
+  let codeblock = showdown.subParser('detab')(inputCodeblock, options, globals);
+  codeblock = codeblock.replace(/^\n+/g, ''); // trim leading newlines
+  codeblock = codeblock.replace(/\n+$/g, ''); // trim trailing whitespace
+
   const { language, attributes } = extractCodeBlockHeader(languageBlock);
 
-  const highlightedCodeBlock = highlighter.codeToHtml(codeblock, {
+  codeblock = highlighter.codeToHtml(codeblock, {
     lang: language,
     theme: 'github-dark',
   });
-  const highlightedCodeBlockWithClass = highlightedCodeBlock.replace(
+  codeblock = codeblock.replace(
     '<code>',
     `<code class="language-${language} line-numbers">`
   );
-  let highlightedCodeBlockWithEnd = `${highlightedCodeBlockWithClass}${end}`;
+  codeblock = `${codeblock}${end}`;
 
   if (attributes['data-filename']) {
     const fileName = attributes['data-filename'] ?? '';
-    highlightedCodeBlockWithEnd = `<div><div class="filename ${language}">${fileName}</div>${highlightedCodeBlockWithEnd}</div>`;
+    codeblock = `<div><div class="filename ${language}">${fileName}</div>${codeblock}</div>`;
   }
   const codeblockHashed = showdown.subParser('hashBlock')(
-    highlightedCodeBlockWithEnd,
+    codeblock,
     options,
     globals
   );

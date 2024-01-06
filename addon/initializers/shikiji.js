@@ -1,5 +1,6 @@
 import showdown from 'showdown';
 import { bundledLanguages, getHighlighter } from 'shikiji';
+import { transformerNotationDiff } from 'shikiji-transformers';
 
 const CODE_BLOCK_REGEX =
   /(?:^|\n)(?: {0,3})(```+|~~~+)(?: *)([^\n`~]*)\n([\s\S]*?)\n(?: {0,3})\1/g;
@@ -46,6 +47,22 @@ function extractCodeBlockHeader(languageBlock) {
   };
 }
 
+function addDiffInfo(codeblock, diffInfoArgs) {
+  const lines = codeblock.split('\n');
+
+  diffInfoArgs.forEach((diffInfoArg) => {
+    const operator = diffInfoArg[0];
+    const lineNo = +diffInfoArg.replace(operator, '');
+    const text = lines[lineNo - 1];
+    if (operator === '+') {
+      lines[lineNo - 1] = text + '// [!code ++]';
+    } else {
+      lines[lineNo - 1] = text + '// [!code --]';
+    }
+  });
+  return lines.join('\n');
+}
+
 function transformCodeBlock(
   wholeMatch,
   _delim,
@@ -62,9 +79,15 @@ function transformCodeBlock(
 
   const { language, attributes } = extractCodeBlockHeader(languageBlock);
 
+  const diffInfoArgs = attributes['data-diff']?.split(',');
+  if (diffInfoArgs) {
+    codeblock = addDiffInfo(codeblock, diffInfoArgs);
+  }
+
   codeblock = highlighter.codeToHtml(codeblock, {
     lang: language,
     theme: 'github-dark',
+    transformers: [transformerNotationDiff()],
   });
   codeblock = codeblock.replace(
     '<code>',

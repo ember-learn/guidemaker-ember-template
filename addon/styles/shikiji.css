@@ -48,3 +48,19 @@ code.line-numbers .line::before {
   text-align: right;
   color: var(--code-line-numbers-color);
 }
+
+/* Line highlighting */
+.shiki .line.remove {
+  background-color: rgba(244, 63, 94, .16);
+  opacity: 0.8;
+}
+
+.shiki .line.add {
+  background-color: rgba(16, 185, 129, .16);
+}
+
+.shiki code > .line {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 100%;
+}

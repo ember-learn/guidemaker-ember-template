@@ -20,21 +20,7 @@ function stripQuotes(string) {
   return string;
 }
 
-function transformCodeBlock(
-  wholeMatch,
-  delim,
-  languageBlock,
-  inputCodeblock,
-  highlighter,
-  options,
-  globals
-) {
-  const end = options.omitExtraWLInCodeBlocks ? '' : '\n';
-  const codeblock = showdown.subParser('detab')(
-    inputCodeblock,
-    options,
-    globals
-  );
+function extractCodeBlockHeader(languageBlock) {
   let match = languageBlock.match(/(\w+) ?(\{([^}]*)\})?/);
   let language = '';
   let attributeString = '';
@@ -53,6 +39,29 @@ function transformCodeBlock(
     let keyValue = attribute.split('=');
     attributes[keyValue[0]] = stripQuotes(keyValue[1]);
   });
+
+  return {
+    language,
+    attributes,
+  };
+}
+
+function transformCodeBlock(
+  wholeMatch,
+  _delim,
+  languageBlock,
+  inputCodeblock,
+  highlighter,
+  options,
+  globals
+) {
+  const end = options.omitExtraWLInCodeBlocks ? '' : '\n';
+  const codeblock = showdown.subParser('detab')(
+    inputCodeblock,
+    options,
+    globals
+  );
+  const { language, attributes } = extractCodeBlockHeader(languageBlock);
 
   const highlightedCodeBlock = highlighter.codeToHtml(codeblock, {
     lang: language,

@@ -21,9 +21,11 @@ It even supports template tag components via `gjs` or `gts`:
 ```gjs
 import { on } from '@ember/modifier';
 import FancyButton from './fancy-button';
+
 function greet() {
   alert("AHOY!")
 }
+
 <template>
   <p>Hello, {{@name}}!</p>
   <FancyButton @label="Say hello!" {{on "click" greet}} />

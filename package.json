@@ -43,7 +43,8 @@
     "ember-tether": "^2.0.1",
     "ember-truth-helpers": "^3.0.0",
     "sanitize-html": "^2.11.0",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "showdown-section-groups": "^0.3.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

@@ -16,6 +16,22 @@ mkdir super-rentals
 }
 ```
 
+It even supports template tag components via `gjs` or `gts`:
+
+```gjs {data-filename=app/components/hello.gjs}
+import { on } from '@ember/modifier';
+import FancyButton from './fancy-button';
+
+function greet() {
+  alert("AHOY!")
+}
+
+<template>
+  <p>Hello, {{@name}}!</p>
+  <FancyButton @label="Say hello!" {{on "click" greet}} />
+</template>
+```
+
 ```typescript {data-filename=app/router.ts}
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';

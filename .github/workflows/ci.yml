@@ -12,7 +12,7 @@ on:
       - website-redesign
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 18
   FORCE_COLOR: 1
 
 jobs:

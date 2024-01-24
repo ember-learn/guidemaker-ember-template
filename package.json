@@ -31,14 +31,14 @@
     "ember-auto-import": "^2.4.2",
     "ember-cli-babel": "^7.26.10",
     "ember-cli-htmlbars": "^5.7.2",
-    "ember-cli-showdown": "^6.0.1",
+    "ember-cli-showdown": "^7.0.0",
     "ember-collapsible-panel": "^5.0.0",
     "ember-composable-helpers": "^4.4.1",
     "ember-concurrency": "^2.0.1",
     "ember-get-config": "^2.1.1",
     "ember-href-to": "^5.0.0",
     "ember-power-select": "^6.0.0",
-    "ember-showdown-prism": "^4.4.0",
+    "ember-showdown-shikiji": "^0.3.0",
     "ember-styleguide": "^8.3.0",
     "ember-tether": "^2.0.1",
     "ember-truth-helpers": "^3.0.0",
@@ -86,7 +86,7 @@
     "lint-to-the-future-eslint": "^1.0.0",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
-    "prember": "^1.1.1",
+    "prember": "^2.0.0",
     "prettier": "^2.5.1",
     "qunit": "^2.17.2",
     "qunit-dom": "^1.6.0",
@@ -94,7 +94,7 @@
     "webpack": "^5.74.0"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": "18.* || >= 20"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

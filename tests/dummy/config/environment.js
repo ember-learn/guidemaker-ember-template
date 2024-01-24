@@ -36,6 +36,24 @@ module.exports = function (environment) {
       indexName: 'ember-guides'
     },
 
+    'ember-showdown-shikiji': {
+      languages: [
+        'bash',
+        'css',
+        'http',
+        'javascript',
+        'json',
+        'json5',
+        'ruby',
+        'scss',
+        'yaml',
+        'typescript',
+        'glimmer-js',
+        'glimmer-ts',
+        'handlebars',
+      ],
+    },
+
 //     // you can comment out these lines if you want to test the info banner implementation
 //     survey: {
 //       content: `Take the [Ember Community Survey](https://emberjs.com/ember-community-survey-2019/)`

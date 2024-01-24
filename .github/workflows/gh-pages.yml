@@ -9,13 +9,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: 16
-          cache: npm
-      - run: npm ci
-      - run: npx lint-to-the-future output -o lttfOutput --rootUrl guidemaker-ember-template --previous-results https://ember-learn.github.io/guidemaker-ember-template/data.json
+          cache: pnpm
+      - run: pnpm --frozen-lockfile
+      - run: pnpm lint-to-the-future output -o lttfOutput --rootUrl guidemaker-ember-template --previous-results https://ember-learn.github.io/guidemaker-ember-template/data.json
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

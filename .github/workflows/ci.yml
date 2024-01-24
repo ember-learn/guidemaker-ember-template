@@ -22,13 +22,16 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
+          cache: pnpm
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm run lint
 
   floating-dependencies:
     name: Floating Dependencies
@@ -36,14 +39,17 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: pnpm
 
-      - run: npm install --no-package-lock
-      - run: npm test
+      - run: pnpm install --no-lockfile
+      - run: pnpm run test
 
   test:
     name: Tests
@@ -57,14 +63,16 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: mansona/npm-lockfile-version@v1
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm ci
-      - run: npx percy exec -- npm run test
+          cache: pnpm
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm percy exec -- npm run test
 
   try-scenarios:
     name: "ember-try: ${{ matrix.ember-try-scenario }}"
@@ -87,15 +95,17 @@ jobs:
           - 'no-deprecations'
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
 
-      - run: npm ci
+      - run: pnpm i --frozen-lockfile
       - name: test
-        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
+        run: pnpm ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
 
   allow-fail-try-scenarios:
     name: ${{ matrix.try-scenario }} - Allowed to fail
@@ -115,16 +125,17 @@ jobs:
           - ember-release-no-deprecations
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm i -g npm@8
-      - run: npm ci
+      - run: pnpm i --frozen-lockfile
       - name: Run Tests
         id: tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: pnpm ember try:one ${{ matrix.try-scenario }} --skip-cleanup
         continue-on-error: true
       - uses: mainmatter/continue-on-error-comment@v1
         with:

@@ -39,10 +39,6 @@ a.old-version-button:hover, a.old-version-button:active {
   color: var(--color-button-secondary-text-hover);
 }
 
-main {
-  padding: 0 2em;
-}
-
 .es-header {
   padding: 0 var(--spacing-4);
   justify-content: start;

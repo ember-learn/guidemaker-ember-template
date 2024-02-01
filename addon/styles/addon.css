@@ -50,6 +50,7 @@ a.old-version-button:hover, a.old-version-button:active {
 
 .sidebar-container {
   margin: 0;
+  grid-gap: 0;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   max-width: 100%;
   padding: 0;
@@ -72,8 +73,7 @@ a.old-version-button:hover, a.old-version-button:active {
   display: grid;
   gap: 3em;
   grid-template-columns: minmax(20ch, 80ch) 16em;
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-4);
+  padding: var(--spacing-4);
   justify-content: center;
 }
 

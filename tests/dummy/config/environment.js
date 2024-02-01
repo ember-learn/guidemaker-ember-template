@@ -36,7 +36,7 @@ module.exports = function (environment) {
       indexName: 'ember-guides'
     },
 
-    'ember-showdown-shikiji': {
+    'ember-showdown-shiki': {
       languages: [
         'bash',
         'css',

@@ -1,10 +1,18 @@
+.on-this-page-wrapper {
+  font-size: var(--font-size-sm);
+}
+
 .on-this-page-wrapper ul {
   list-style: none;
   padding: 0;
+  padding-left: var(--spacing-2);
+  margin-top: var(--spacing-2);
+  border-left: 2px solid var(--color-gray-300);
 }
 
 .on-this-page-wrapper-header {
   color: var(--color-gray-600);
+  font-weight: var(--font-weight-3);
 }
 
 .on-this-page-wrapper hr {
@@ -14,6 +22,13 @@
 
 main .on-this-page-wrapper a {
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-gray-600);
   background: none;
+  padding: 2px 0;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+main .on-this-page-wrapper a:hover {
+  color: var(--color-gray-800);
 }

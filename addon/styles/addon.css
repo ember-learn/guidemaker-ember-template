@@ -74,7 +74,7 @@ main {
 
 .guides-article-wrapper {
   display: grid;
-  gap: 3em;
+  gap: 6em;
   grid-template-columns: minmax(20ch, 80ch) 16em;
   padding-top: var(--spacing-4);
   padding-bottom: var(--spacing-4);

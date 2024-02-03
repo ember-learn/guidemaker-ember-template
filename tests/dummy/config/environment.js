@@ -23,17 +23,18 @@ module.exports = function (environment) {
       // when it is created
     },
     'ember-meta': {
-      description: 'Ember Guidemaker Template'
+      description: 'Ember Guidemaker Template',
     },
 
     guidemaker: {
-      title: 'Ember Guidemaker Template'
+      title: 'Ember Guidemaker Template',
+      sourceRepo: 'https://github.com/ember-learn/guidemaker-ember-template',
     },
 
     algolia: {
       algoliaId: 'FAKEKEY',
       algoliaKey: 'alsofake',
-      indexName: 'ember-guides'
+      indexName: 'ember-guides',
     },
 
     'ember-showdown-shikiji': {
@@ -54,19 +55,19 @@ module.exports = function (environment) {
       ],
     },
 
-//     // you can comment out these lines if you want to test the info banner implementation
-//     survey: {
-//       content: `Take the [Ember Community Survey](https://emberjs.com/ember-community-survey-2019/)`
-//     },
+    //     // you can comment out these lines if you want to test the info banner implementation
+    //     survey: {
+    //       content: `Take the [Ember Community Survey](https://emberjs.com/ember-community-survey-2019/)`
+    //     },
 
-//     infoBanner: {
-//       content: `Thanks for taking the Octane preview for a test drive! Visit
-// <a href="https://emberjs.com" target="_blank" rel="noopener">thingy</a>
-// for more info and ways you can help out.
-// These preview guides URLs are subject to change, so point your bookmarks at that landing page.
-// If you are looking for the latest stable release of Ember, please instead visit
-// <a href="https://guides.emberjs.com" target="_blank" rel="noopener">guides.emberjs.com</a>.`
-//     },
+    //     infoBanner: {
+    //       content: `Thanks for taking the Octane preview for a test drive! Visit
+    // <a href="https://emberjs.com" target="_blank" rel="noopener">thingy</a>
+    // for more info and ways you can help out.
+    // These preview guides URLs are subject to change, so point your bookmarks at that landing page.
+    // If you are looking for the latest stable release of Ember, please instead visit
+    // <a href="https://guides.emberjs.com" target="_blank" rel="noopener">guides.emberjs.com</a>.`
+    //     },
 
     runPercyTest: process.env.RUN_PERCY_TESTS,
   };
@@ -91,7 +92,7 @@ module.exports = function (environment) {
     ENV.APP.autoboot = false;
 
     ENV['ember-tether'] = {
-      bodyElementId: 'ember-testing'
+      bodyElementId: 'ember-testing',
     };
   }
 

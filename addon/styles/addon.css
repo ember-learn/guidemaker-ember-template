@@ -175,6 +175,12 @@ main {
 
 .edit-icon {
   height: 1rem;
+  color: var(--color-gray-600);
+  fill: currentColor;
+}
+
+.edit-icon:hover {
+  color: var(--color-gray-800);
 }
 
 /* Error page */

@@ -48,20 +48,6 @@ for an example of how to use this addon.
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-Releases
-------------------------------------------------------------------------------
-
-To release a new version of this addon:
-
-```
-git checkout master
-git pull origin master
-npm install -g np
-np
-```
-
-This command will run checks and tests, and ask you what version you want
-to do the release as (major, minor, patch).
 
 ## License
 

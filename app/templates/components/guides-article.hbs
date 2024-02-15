@@ -1,5 +1,5 @@
 {{! template-lint-disable no-link-to-positional-params link-rel-noopener no-curly-component-invocation no-implicit-this }}
-<div class='guides-article-wrapper'>
+<div class='content-wrapper'>
   <div class='guides-article-content'>
     {{#if (not (eq this.version this.currentVersion))}}
       <div class='old-version-warning'>
@@ -43,7 +43,7 @@
 
     <ChapterLinks @pages={{this.pages}} />
   </div>
-  <div class='guides-article-toc'>
+  <div class='on-this-page-wrapper'>
     <OnThisPage @toc={{@model.toc}} />
   </div>
 </div>

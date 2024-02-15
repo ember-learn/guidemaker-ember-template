@@ -39,10 +39,6 @@ a.old-version-button:hover, a.old-version-button:active {
   color: var(--color-button-secondary-text-hover);
 }
 
-main {
-  padding: 0 2em;
-}
-
 .es-header {
   padding: 0 var(--spacing-4);
   justify-content: start;
@@ -50,13 +46,6 @@ main {
 
 .es-navbar {
   max-width: 100%;
-}
-
-.sidebar-container {
-  margin: 0;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-  max-width: 100%;
-  padding: 0;
 }
 
 .info-banner-wrapper {
@@ -72,88 +61,13 @@ main {
   }
 }
 
-.guides-article-wrapper {
-  display: grid;
-  gap: 3em;
-  grid-template-columns: minmax(20ch, 80ch) 16em;
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-4);
-  justify-content: center;
-}
-
 .pagination-wrapper {
   margin: var(--spacing-4) 0;
 }
 
-.on-this-page-wrapper {
-  margin-top: .6em;
-}
-
 @media (max-width: 80em) {
-  .guides-article-wrapper {
-    display: grid;
-    grid-template-columns: minmax(20ch, 80ch);
-    justify-content: center;
-    padding-bottom: var(--spacing-2);
-  }
-
-  .guides-article-toc {
-    display: none;
-  }
-
   .pagination-wrapper {
     margin: var(--spacing-2) 0;
-  }
-}
-
-/* TODO figure out how much of this media query needs to go into the styleguide */
-@media (max-width: 844px) {
-  main .es-sidebar[aria-expanded="true"] {
-    padding: var(--spacing-2);
-    z-index: 1;
-    display: flex;
-    flex-direction: row-reverse;
-    margin: var(--spacing-2) 0 0 0;
-    background: var(--color-white);
-  }
-
-  main .es-sidebar-toggle {
-    z-index: 2;
-  }
-
-  main .es-sidebar-content {
-    flex-grow: 1;
-    margin-top: var(--spacing-2);
-  }
-
-  main .es-sidebar-close {
-    float: none;
-    height: 52px;
-    margin-left: var(--spacing-1);
-  }
-}
-
-@media screen and (min-width: 54em) {
-  .sidebar {
-    border-bottom: 0;
-    border-right: 1px solid #F8E7CF;
-    padding: 3em 1.618em 3em 0;
-  }
-
-  .sidebar:last-child {
-    margin-right: 0;
-  }
-
-  label[for="toc-toggle"] {
-    display: none;
-  }
-
-  .toc-container {
-    display: block;
-  }
-
-  .toc-container[style] {
-    display: block !important;
   }
 }
 

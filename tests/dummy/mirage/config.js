@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import searchResponse from './fixtures/search-response';
 
 import { createServer } from 'miragejs';

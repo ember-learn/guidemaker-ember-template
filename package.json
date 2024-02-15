@@ -85,6 +85,7 @@
     "lint-to-the-future": "^2.0.0",
     "lint-to-the-future-ember-template": "^1.2.0",
     "lint-to-the-future-eslint": "^2.0.1",
+    "lint-to-the-future-stylelint": "^1.1.0",
     "loader.js": "^4.7.0",
     "miragejs": "^0.1.48",
     "prember": "^2.0.0",

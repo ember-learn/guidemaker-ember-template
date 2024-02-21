@@ -3,13 +3,10 @@
   padding: var(--spacing-4) var(--spacing-4);
   margin-left: calc(-1 * var(--spacing-4));
   background-color: var(--color-gray-200);
-}
-
-.es-sidebar-content {
-  max-height: calc(100vh - var(--spacing-4));
+  max-height: 100vh;
   overflow-y: auto;
   position: sticky;
-  top: var(--spacing-4);
+  top: 0;
   scrollbar-width: thin;
 }
 

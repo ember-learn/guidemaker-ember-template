@@ -1,6 +1,6 @@
 import { modifier } from 'ember-modifier';
 
-export default modifier(function highlightActiveTitle(element) {
+export default modifier(function highlightActiveTitle(element, [toc]) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const id = entry.target.getAttribute('id');
@@ -16,14 +16,10 @@ export default modifier(function highlightActiveTitle(element) {
     });
   });
 
-  // Track all headers in content with an id
-  document
-    .querySelectorAll(
-      '.guides-article-content h1[id], .guides-article-content h2[id], .guides-article-content h3[id], .guides-article-content h4[id]'
-    )
-    .forEach((header) => {
-      observer.observe(header);
-    });
+  // Track all headers in content by id
+  toc.forEach((tocItem) => {
+    observer.observe(document.getElementById(tocItem.id));
+  });
 
   return () => {
     observer.disconnect();

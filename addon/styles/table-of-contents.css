@@ -5,6 +5,14 @@
   background-color: var(--color-gray-200);
 }
 
+.es-sidebar-content {
+  max-height: calc(100vh - var(--spacing-4));
+  overflow-y: auto;
+  position: sticky;
+  top: var(--spacing-4);
+  scrollbar-width: thin;
+}
+
 .table-of-contents {
   list-style-type: none;
   padding-left: 0;

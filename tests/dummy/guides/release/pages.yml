@@ -47,3 +47,9 @@
       url: "syntax-highlighting"
     - title: "Callouts"
       url: 'callouts'
+
+- title: "Guide test"
+  url: 'guide-test'
+  pages:
+    - title: "Sidebar stress test"
+      url: "index"

@@ -5,7 +5,6 @@
 .on-this-page-wrapper ul {
   list-style: none;
   padding: 0;
-  padding-left: var(--spacing-2);
   margin-top: var(--spacing-2);
   border-left: 2px solid var(--color-gray-300);
 }
@@ -28,6 +27,7 @@ main .on-this-page-wrapper a {
   padding-bottom: 2px;
   display: block;
   transition: color 0.2s ease;
+  padding-left: var(--spacing-2);
 }
 
 main .on-this-page-wrapper a:hover {
@@ -35,5 +35,5 @@ main .on-this-page-wrapper a:hover {
 }
 
 .on-this-page-depth-3 {
-  padding-left: var(--spacing-2);
+  padding-left: var(--spacing-4);
 }

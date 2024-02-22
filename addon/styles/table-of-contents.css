@@ -3,6 +3,11 @@
   padding: var(--spacing-4) var(--spacing-4);
   margin-left: calc(-1 * var(--spacing-4));
   background-color: var(--color-gray-200);
+  max-height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  scrollbar-width: thin;
 }
 
 .table-of-contents {
@@ -63,5 +68,9 @@ li.toc-heading:first-child {
 @media (max-width: 844px) {
   .table-of-contents {
     font-size: var(--font-size-lg);
+  }
+
+  .es-sidebar {
+    position: fixed;
   }
 }

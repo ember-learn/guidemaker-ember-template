@@ -69,4 +69,8 @@ li.toc-heading:first-child {
   .table-of-contents {
     font-size: var(--font-size-lg);
   }
+
+  .es-sidebar {
+    position: fixed;
+  }
 }

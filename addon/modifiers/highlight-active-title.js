@@ -1,17 +1,14 @@
 import { modifier } from 'ember-modifier';
 
 export default modifier(function highlightActiveTitle(element, [toc]) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.getAttribute('aria-labelledby');
-      if (entry.intersectionRatio > 0) {
-        element
-          .querySelector(`a[href="#${id}"]`)
-          ?.parentElement.classList.add('in-viewport');
+  const observer = new IntersectionObserver((tocSections) => {
+    tocSections.forEach((tocSection) => {
+      const tocId = tocSection.target.getAttribute('aria-labelledby');
+      const tocHeader = element.querySelector(`a[href="#${tocId}"]`);
+      if (tocSection.intersectionRatio > 0) {
+        tocHeader?.parentElement.classList.add('in-viewport');
       } else {
-        element
-          .querySelector(`a[href="#${id}"]`)
-          ?.parentElement.classList.remove('in-viewport');
+        tocHeader?.parentElement.classList.remove('in-viewport');
       }
     });
   });

@@ -5,7 +5,6 @@
 .on-this-page-wrapper ul {
   list-style: none;
   padding: 0;
-  padding-left: var(--spacing-2);
   margin-top: var(--spacing-2);
   border-left: 2px solid var(--color-gray-300);
 }
@@ -24,11 +23,17 @@ main .on-this-page-wrapper a {
   text-decoration: none;
   color: var(--color-gray-600);
   background: none;
-  padding: 2px 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
   display: block;
   transition: color 0.2s ease;
+  padding-left: var(--spacing-2);
 }
 
 main .on-this-page-wrapper a:hover {
   color: var(--color-gray-800);
+}
+
+main .on-this-page-wrapper a.on-this-page-depth-3 {
+  padding-left: var(--spacing-4);
 }

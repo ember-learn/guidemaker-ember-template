@@ -3,10 +3,10 @@ import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit, find } from '@ember/test-helpers';
 
-module('Acceptance | chapter-links', function(hooks) {
+module('Acceptance | chapter-links', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('chapter links are correct', async function(assert) {
+  test('chapter links are correct', async function (assert) {
     await visit('/release');
 
     let prevLinkTexts = [];
@@ -29,7 +29,20 @@ module('Acceptance | chapter-links', function(hooks) {
 
     assert.deepEqual(
       prevLinkTexts,
-      [null, 'Guides', 'Introduction', 'Editing', 'Introduction', 'Page 1', 'Introduction', 'Page 2', 'Page 3','Basic Markdown','Code Syntax Highlighting'],
+      [
+        null,
+        'Guides',
+        'Introduction',
+        'Editing',
+        'Introduction',
+        'Page 1',
+        'Introduction',
+        'Page 2',
+        'Page 3',
+        'Basic Markdown',
+        'Code Syntax Highlighting',
+        'Callouts',
+      ],
       'previous link texts were correct'
     );
 
@@ -37,15 +50,16 @@ module('Acceptance | chapter-links', function(hooks) {
       nextLinkTexts,
       [
         "We've finished covering Guides and Tutorials. Next up: Getting Started - Introduction",
-        "Editing",
+        'Editing',
         "We've finished covering Getting Started. Next up: Another Section - Introduction",
-        "Page 1",
-        "Subsection - Introduction",
-        "Page 2",
+        'Page 1',
+        'Subsection - Introduction',
+        'Page 2',
         "We've finished covering Subsection. Next up: Another Section - Page 3",
         "We've finished covering Another Section. Next up: Examples - Basic Markdown",
-        "Code Syntax Highlighting",
-        "Callouts",
+        'Code Syntax Highlighting',
+        'Callouts',
+        "We've finished covering Examples. Next up: Guide test - Sidebar stress test",
         null,
       ],
       'next link texts were correct'

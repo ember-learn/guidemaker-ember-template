@@ -1,5 +1,10 @@
 .on-this-page-wrapper {
   font-size: var(--font-size-sm);
+  max-height: calc(100vh - var(--spacing-4));
+  overflow-y: auto;
+  position: sticky;
+  top: var(--spacing-4);
+  scrollbar-width: thin;
 }
 
 .on-this-page-wrapper ul {

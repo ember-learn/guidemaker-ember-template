@@ -41,7 +41,7 @@ a.old-version-button:hover, a.old-version-button:active {
 
 main {
   padding: 0 2em;
-  --header-height: 56px;
+  --header-height: 90px;
 }
 
 .es-header {
@@ -233,8 +233,8 @@ h6 > a:hover > svg {
   fill: var(--color-brand);
 }
 
-@media (min-width: 1008px) {
+@media (max-width: 1007px) {
   main {
-    --header-height: 90px;
+    --header-height: 56px;
   }
 }

@@ -3,7 +3,7 @@
   max-height: calc(100vh - var(--spacing-4));
   overflow-y: auto;
   position: sticky;
-  top: calc(90px + var(--spacing-4));
+  top: calc(var(--header-height) + var(--spacing-4));
   scrollbar-width: thin;
 }
 

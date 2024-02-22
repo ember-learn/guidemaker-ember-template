@@ -41,6 +41,7 @@ a.old-version-button:hover, a.old-version-button:active {
 
 main {
   padding: 0 2em;
+  --header-height: 90px;
 }
 
 .es-header {
@@ -90,7 +91,7 @@ main {
 .guides-article-wrapper h4,
 .guides-article-wrapper h5,
 .guides-article-wrapper h6 {
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--header-height);
 }
 
 .pagination-wrapper {

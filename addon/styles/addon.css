@@ -46,6 +46,9 @@ main {
 .es-header {
   padding: 0 var(--spacing-4);
   justify-content: start;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .es-navbar {
@@ -79,6 +82,15 @@ main {
   padding-top: var(--spacing-4);
   padding-bottom: var(--spacing-4);
   justify-content: center;
+}
+
+.guides-article-wrapper h1,
+.guides-article-wrapper h2,
+.guides-article-wrapper h3,
+.guides-article-wrapper h4,
+.guides-article-wrapper h5,
+.guides-article-wrapper h6 {
+  scroll-margin-top: 90px;
 }
 
 .pagination-wrapper {

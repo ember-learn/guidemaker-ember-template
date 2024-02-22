@@ -6,7 +6,7 @@
   max-height: 100vh;
   overflow-y: auto;
   position: sticky;
-  top: 0;
+  top: 90px;
   scrollbar-width: thin;
 }
 

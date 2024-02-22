@@ -3,7 +3,7 @@ import { modifier } from 'ember-modifier';
 export default modifier(function highlightActiveTitle(element, [toc]) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      const id = entry.target.getAttribute('id');
+      const id = entry.target.getAttribute('aria-labelledby');
       if (entry.intersectionRatio > 0) {
         element
           .querySelector(`a[href="#${id}"]`)
@@ -16,9 +16,14 @@ export default modifier(function highlightActiveTitle(element, [toc]) {
     });
   });
 
-  // Track all headers in content by id
+  // Track all content sections by id
   toc.forEach((tocItem) => {
-    observer.observe(document.getElementById(tocItem.id));
+    const tocSection = document.querySelector(
+      `section[aria-labelledby=${tocItem.id}]`
+    );
+    if (tocSection) {
+      observer.observe(tocSection);
+    }
   });
 
   return () => {

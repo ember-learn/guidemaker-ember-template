@@ -52,7 +52,6 @@
     "@glimmer/tracking": "^1.0.4",
     "@percy/cli": "^1.0.0-beta.60",
     "@percy/ember": "^3.0.0-beta.1",
-    "@release-it-plugins/lerna-changelog": "^5.0.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.28.5",
@@ -90,7 +89,7 @@
     "prettier": "^2.5.1",
     "qunit": "^2.17.2",
     "qunit-dom": "^1.6.0",
-    "release-it": "^15.5.0",
+    "release-plan": "^0.7.0",
     "webpack": "^5.74.0"
   },
   "engines": {
@@ -104,20 +103,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/lerna-changelog": {
-        "infile": "CHANGELOG.md",
-        "launchEditor": true
-      }
-    },
-    "git": {
-      "tagName": "v${version}"
-    },
-    "github": {
-      "release": true,
-      "tokenRef": "GITHUB_AUTH"
-    }
   }
 }

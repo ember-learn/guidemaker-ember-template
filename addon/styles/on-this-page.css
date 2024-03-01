@@ -1,10 +1,22 @@
+.on-this-page-wrapper {
+  font-size: var(--font-size-sm);
+  max-height: calc(100vh - var(--spacing-4));
+  overflow-y: auto;
+  position: sticky;
+  top: var(--spacing-4);
+  scrollbar-width: thin;
+}
+
 .on-this-page-wrapper ul {
   list-style: none;
   padding: 0;
+  margin-top: var(--spacing-2);
+  border-left: 2px solid var(--color-gray-300);
 }
 
 .on-this-page-wrapper-header {
   color: var(--color-gray-600);
+  font-weight: var(--font-weight-3);
 }
 
 .on-this-page-wrapper hr {
@@ -14,6 +26,19 @@
 
 main .on-this-page-wrapper a {
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-gray-600);
   background: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: block;
+  transition: color 0.2s ease;
+  padding-left: var(--spacing-2);
+}
+
+main .on-this-page-wrapper a:hover {
+  color: var(--color-gray-800);
+}
+
+main .on-this-page-wrapper a.on-this-page-depth-3 {
+  padding-left: var(--spacing-4);
 }

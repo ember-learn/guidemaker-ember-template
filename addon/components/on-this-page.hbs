@@ -4,9 +4,11 @@
     <hr>
     <ul>
       {{#each @toc as |toc|}}
-        <li>
-          <a href="#{{toc.id}}">{{toc.text}}</a>
-        </li>
+       {{#if (or (eq toc.depth '1') (eq toc.depth '2') (eq toc.depth '3'))}}
+          <li>
+            <a href="#{{toc.id}}" class="on-this-page-depth-{{toc.depth}}">{{toc.text}}</a>
+          </li>
+        {{/if}}
       {{/each}}
     </ul>
     {{yield}}

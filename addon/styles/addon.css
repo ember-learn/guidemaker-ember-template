@@ -85,10 +85,6 @@ main {
   margin: var(--spacing-4) 0;
 }
 
-.on-this-page-wrapper {
-  margin-top: .6em;
-}
-
 @media (max-width: 80em) {
   .guides-article-wrapper {
     display: grid;
@@ -175,6 +171,12 @@ main {
 
 .edit-icon {
   height: 1rem;
+  color: var(--color-gray-600);
+  fill: currentColor;
+}
+
+.edit-icon:hover {
+  color: var(--color-brand);
 }
 
 /* Error page */

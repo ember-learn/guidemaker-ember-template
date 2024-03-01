@@ -1,8 +1,8 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ember-learn/guidemaker-ember-template/workflows/CI/badge.svg)](https://github.com/ember-learn/guidemaker-ember-template/actions?query=workflow%3ACI)
 [![This project uses Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ember/guidemaker-ember-template)
 
-guidemaker-ember-template
-==============================================================================
+# guidemaker-ember-template
+
 
 This addon provides the general layout and some styles that are used for
 [guides.emberjs.com](https://guides.emberjs.com/release).
@@ -24,31 +24,27 @@ assembles guides content into queryable records.
 [guides-source](https://github.com/ember-learn/guides-source)
 has the learning content itself.
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
 * Ember.js v3.16 or above
 * Ember CLI v3.16 or above
 * Node.js v14 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install guidemaker-ember-template
 ```
 
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 See [guides-source](https://github.com/ember-learn/guides-source)
 for an example of how to use this addon.
 
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
@@ -67,7 +63,6 @@ np
 This command will run checks and tests, and ask you what version you want
 to do the release as (major, minor, patch).
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

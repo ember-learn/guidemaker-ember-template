@@ -3,99 +3,88 @@ name: CI
 on:
   push:
     branches:
+      - main
       - master
-      - main
-      - "v*"
-  pull_request:
-    branches:
-      - main
-      - website-redesign
+  pull_request: {}
 
-env:
-  NODE_VERSION: 18
-  FORCE_COLOR: 1
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  lint:
-    name: Linting
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-
-  floating-dependencies:
-    name: Floating Dependencies
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - run: npm install --no-package-lock
-      - run: npm test
-
   test:
-    name: Tests
+    name: "Tests"
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
-      PERCY_PARALLEL_TOTAL: 1
-      PERCY_TOKEN: e01f89bea06d5ccd1207a5cd2799645e4942ecd0d8da739502a206d0fc7392fc
-      RUN_PERCY_TESTS: true
-
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: mansona/npm-lockfile-version@v1
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm ci
-      - run: npx percy exec -- npm run test
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Run Tests
+        run: pnpm test
+
+  floating:
+    name: "Floating Dependencies"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install --no-lockfile
+      - name: Run Tests
+        run: pnpm test
 
   try-scenarios:
-    name: "ember-try: ${{ matrix.ember-try-scenario }}"
+    name: ${{ matrix.try-scenario }}
     runs-on: ubuntu-latest
-    needs: test
+    needs: 'test'
     timeout-minutes: 10
 
     strategy:
       fail-fast: false
       matrix:
-        ember-try-scenario:
-          - 'ember-lts-3.20'
-          - 'ember-lts-3.24'
-          - 'ember-lts-3.28'
-          - 'ember-release'
-          - 'ember-default-with-jquery'
-          - 'ember-classic'
-          - 'embroider-safe'
-          - 'embroider-optimized'
-          - 'no-deprecations'
+        try-scenario:
+          - ember-lts-3.28
+          - ember-lts-4.4
+          - ember-lts-4.8
+          - ember-lts-4.12
+          - ember-lts-5.4
+          - ember-release
+          - embroider-safe
+          - no-deprecations
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - run: npm ci
-      - name: test
-        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Run Tests
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: test-app
 
   allow-fail-try-scenarios:
     name: ${{ matrix.try-scenario }} - Allowed to fail
@@ -113,18 +102,23 @@ jobs:
           - ember-beta
           - ember-canary
           - ember-release-no-deprecations
+          - embroider-optimized # will fail until ember-cli-fastboot fixes the staticEmberSource issue
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm i -g npm@8
-      - run: npm ci
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
       - name: Run Tests
         id: tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: test-app
         continue-on-error: true
       - uses: mainmatter/continue-on-error-comment@v1
         with:

@@ -8,7 +8,7 @@
 
 /* Dropdown styling */
 .ds-dropdown-results {
-  z-index: 1; // makes sure that the search is above the version selector
+  z-index: 1;
 }
 .ds-dropdown-menu {
   width: 500px;

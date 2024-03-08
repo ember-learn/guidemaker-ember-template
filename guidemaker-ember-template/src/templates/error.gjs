@@ -1,5 +1,10 @@
+// app/templates/my-route.gjs
+import RouteTemplate from 'ember-route-template';
+
+// This adapter converts the `<template>` into a route template
+export default RouteTemplate(<template>
 <article class="error-page" data-test-error-page>
-  {{#if this.hasErrors}}
+  {{#if @controller.hasErrors}}
     <img src="/images/fishy.png" title="ACK! 404 FRIEND, YOU'RE IN THE WRONG PLACE" alt="A Tomster mascot holding a fish that has been outside in the sun too long!">
     <h1 class="whoops" data-test-error-message>Ack! 404 friend, you're in the wrong place</h1>
 
@@ -19,3 +24,4 @@
     </p>
   {{/if}}
 </article>
+</template>);

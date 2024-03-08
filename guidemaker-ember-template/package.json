@@ -36,9 +36,16 @@
     "@embroider/addon-shim": "^1.8.7",
     "algoliasearch": "^4.22.1",
     "decorator-transforms": "^1.0.1",
+    "ember-collapsible-panel": "^6.1.0",
     "ember-concurrency": "^4.0.0",
     "ember-get-config": "^2.1.1",
     "ember-modifier": "^4.1.0",
+    "ember-power-select": "^7.2.0",
+    "ember-route-template": "^1.0.3",
+    "ember-showdown-shiki": "^1.0.4",
+    "ember-styleguide": "^10.0.0",
+    "ember-tether": "github:mansona/ember-tether#ember-5",
+    "ember-truth-helpers": "^4.0.3",
     "sanitize-html": "^2.12.1"
   },
   "devDependencies": {
@@ -61,6 +68,8 @@
     "rollup-plugin-copy": "^3.5.0"
   },
   "peerDependencies": {
+    "ember-cli-head": "*",
+    "guidemaker": "^4.0.1",
     "showdown": "^2.0.0"
   },
   "publishConfig": {
@@ -85,8 +94,14 @@
       "./components/table-of-contents.js": "./dist/_app_/components/table-of-contents.js",
       "./helpers/html-safe.js": "./dist/_app_/helpers/html-safe.js",
       "./helpers/starts-with.js": "./dist/_app_/helpers/starts-with.js",
+      "./initializers/ember-template-showdown-extensions.js": "./dist/_app_/initializers/ember-template-showdown-extensions.js",
       "./modifiers/highlight-active-title.js": "./dist/_app_/modifiers/highlight-active-title.js",
-      "./services/search.js": "./dist/_app_/services/search.js"
+      "./services/search.js": "./dist/_app_/services/search.js",
+      "./templates/application.js": "./dist/_app_/templates/application.js",
+      "./templates/error.js": "./dist/_app_/templates/error.js",
+      "./templates/version.js": "./dist/_app_/templates/version.js",
+      "./templates/version/index.js": "./dist/_app_/templates/version/index.js",
+      "./templates/version/show.js": "./dist/_app_/templates/version/show.js"
     }
   }
 }

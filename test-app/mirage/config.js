@@ -13,7 +13,7 @@ function routes() {
     'https://FAKEKEY-dsn.algolia.net/1/indexes/ember-guides/query',
     () => {
       return searchResponse;
-    }
+    },
   );
 
   this.passthrough();

@@ -25,6 +25,7 @@
 }
 
 main .on-this-page-wrapper a {
+  position: relative;
   text-decoration: none;
   color: var(--color-gray-600);
   background: none;
@@ -33,6 +34,28 @@ main .on-this-page-wrapper a {
   display: block;
   transition: color 0.2s ease;
   padding-left: var(--spacing-2);
+}
+
+main .on-this-page-wrapper .in-viewport a::before {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  bottom: 0;
+  width: 4px;
+  content: '';
+  background-color: var(--color-brand);
+}
+
+main .on-this-page-wrapper .in-viewport ~ .in-viewport a::before {
+  content: unset;
+}
+
+main .on-this-page-wrapper .in-viewport a {
+  color: var(--color-gray-800);
+}
+
+main .on-this-page-wrapper .in-viewport ~ .in-viewport a {
+  color: var(--color-gray-600);
 }
 
 main .on-this-page-wrapper a:hover {

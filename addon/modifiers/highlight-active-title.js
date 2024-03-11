@@ -14,7 +14,7 @@ export default modifier(function highlightActiveTitle(element, [toc]) {
   });
 
   // Track all content sections by id
-  toc.forEach((tocItem) => {
+  toc?.forEach((tocItem) => {
     const tocSection = document.querySelector(
       `section[aria-labelledby="${tocItem.id}"]`
     );

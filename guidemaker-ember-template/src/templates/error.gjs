@@ -1,7 +1,5 @@
-// app/templates/my-route.gjs
 import RouteTemplate from 'ember-route-template';
 
-// This adapter converts the `<template>` into a route template
 export default RouteTemplate(<template>
 <article class="error-page" data-test-error-page>
   {{#if @controller.hasErrors}}

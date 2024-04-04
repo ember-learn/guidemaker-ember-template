@@ -1,4 +1,3 @@
-// app/templates/my-route.gjs
 import RouteTemplate from 'ember-route-template';
 
 import HeadLayout from 'ember-cli-head/components/head-layout';
@@ -13,7 +12,6 @@ import '../styles/addon.css';
 import '../styles/agola-search.css';
 import '../styles/on-this-page.css';
 
-// This adapter converts the `<template>` into a route template
 export default RouteTemplate(<template>
 <HeadLayout />
 

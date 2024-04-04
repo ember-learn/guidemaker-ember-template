@@ -10,7 +10,6 @@ function includes(needle, haystack) {
   return haystack.includes(needle);
 }
 
-// This adapter converts the `<template>` into a route template
 export default RouteTemplate(<template>
 {{!-- template-lint-disable no-action --}}
 <div class="sidebar-container">

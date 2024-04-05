@@ -16,6 +16,11 @@ jobs:
     name: "Tests"
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      PERCY_PARALLEL_NONCE: ${{ github.run_id }}-${{ github.run_number }}
+      PERCY_PARALLEL_TOTAL: 1
+      PERCY_TOKEN: e01f89bea06d5ccd1207a5cd2799645e4942ecd0d8da739502a206d0fc7392fc
+      RUN_PERCY_TESTS: true
 
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +36,8 @@ jobs:
       - name: Lint
         run: pnpm lint
       - name: Run Tests
-        run: pnpm test
+        run: pnpm percy exec -- pnpm run test:ember
+        working-directory: test-app
 
   floating:
     name: "Floating Dependencies"

@@ -7,6 +7,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['guidemaker-ember-template'],
     },
+    fingerprint: {
+      extensions: ['js', 'css', 'map'],
+    },
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

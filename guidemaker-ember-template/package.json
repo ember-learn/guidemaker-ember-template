@@ -53,7 +53,7 @@
     "@babel/core": "^7.23.6",
     "@babel/eslint-parser": "^7.23.3",
     "@babel/runtime": "^7.17.0",
-    "@embroider/addon-dev": "^4.1.0",
+    "@embroider/addon-dev": "^4.3.1",
     "@rollup/plugin-babel": "^6.0.4",
     "babel-plugin-ember-template-compilation": "^2.2.1",
     "concurrently": "^8.2.2",
@@ -103,6 +103,28 @@
       "./templates/version.js": "./dist/_app_/templates/version.js",
       "./templates/version/index.js": "./dist/_app_/templates/version/index.js",
       "./templates/version/show.js": "./dist/_app_/templates/version/show.js"
+    },
+    "public-assets": {
+      "./public/fonts/config.json": "/fonts/config.json",
+      "./public/fonts/fontello.eot": "/fonts/fontello.eot",
+      "./public/fonts/fontello.svg": "/fonts/fontello.svg",
+      "./public/fonts/fontello.ttf": "/fonts/fontello.ttf",
+      "./public/fonts/fontello.woff": "/fonts/fontello.woff",
+      "./public/fonts/fontello.woff2": "/fonts/fontello.woff2",
+      "./public/images/chapter-mark.png": "/images/chapter-mark.png",
+      "./public/images/chapter-mark_x2.png": "/images/chapter-mark_x2.png",
+      "./public/images/exclamation-circle-solid.svg": "/images/exclamation-circle-solid.svg",
+      "./public/images/favicon.png": "/images/favicon.png",
+      "./public/images/fishy.png": "/images/fishy.png",
+      "./public/images/header.svg": "/images/header.svg",
+      "./public/images/link.png": "/images/link.png",
+      "./public/images/logos/ember.png": "/images/logos/ember.png",
+      "./public/images/logos/search-by-algolia.svg": "/images/logos/search-by-algolia.svg",
+      "./public/images/ribbon-hbs.svg": "/images/ribbon-hbs.svg",
+      "./public/images/ribbon-html.svg": "/images/ribbon-html.svg",
+      "./public/images/ribbon-js.svg": "/images/ribbon-js.svg",
+      "./public/images/search-icon.svg": "/images/search-icon.svg",
+      "./public/rect.svg": "/rect.svg"
     }
   }
 }

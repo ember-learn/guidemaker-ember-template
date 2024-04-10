@@ -60,6 +60,8 @@ export default {
     // to leave alone and keep in the published output.
     addon.keepAssets(['**/*.css']),
 
+    addon.publicAssets('public', { namespace: '' }),
+
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
 

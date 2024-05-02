@@ -1,108 +1,28 @@
 {
-  "name": "guidemaker-ember-template",
-  "version": "3.5.0",
-  "description": "The default blueprint for ember-cli addons.",
-  "keywords": [
-    "ember-addon"
-  ],
+  "private": true,
   "repository": "https://github.com/ember-learn/guidemaker-ember-template",
   "license": "MIT",
   "author": "",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
   "scripts": {
-    "build": "ember build --environment=production",
-    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
-    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
-    "lint:hbs": "ember-template-lint .",
-    "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
-    "test": "npm-run-all lint test:*",
-    "test:ember": "ember test",
-    "ember-compatibility-tests": "ember try:one"
-  },
-  "dependencies": {
-    "algoliasearch": "^4.14.1",
-    "broccoli-funnel": "^3.0.3",
-    "ember-auto-import": "^2.4.2",
-    "ember-cli-babel": "^7.26.10",
-    "ember-cli-htmlbars": "^5.7.2",
-    "ember-cli-showdown": "^7.0.0",
-    "ember-collapsible-panel": "^5.0.0",
-    "ember-composable-helpers": "^4.4.1",
-    "ember-concurrency": "^2.0.1",
-    "ember-get-config": "^2.1.1",
-    "ember-href-to": "^5.0.0",
-    "ember-modifier": "^4.1.0",
-    "ember-power-select": "^6.0.0",
-    "ember-showdown-shiki": "^1.0.3",
-    "ember-styleguide": "^10.0.0",
-    "ember-tether": "^2.0.1",
-    "ember-truth-helpers": "^3.0.0",
-    "sanitize-html": "^2.11.0"
+    "build": "pnpm --filter guidemaker-ember-template build",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter guidemaker-ember-template start --no-watch.clearScreen",
+    "start:test-app": "pnpm --filter test-app start",
+    "test": "pnpm --filter '*' test",
+    "test:ember": "pnpm --filter '*' test:ember"
   },
   "devDependencies": {
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.6.0",
-    "@embroider/test-setup": "^2.1.1",
-    "@glimmer/component": "^1.0.4",
-    "@glimmer/tracking": "^1.0.4",
-    "@percy/cli": "^1.0.0-beta.60",
-    "@percy/ember": "^3.0.0-beta.1",
-    "babel-eslint": "^10.1.0",
-    "broccoli-asset-rev": "^3.0.0",
-    "ember-cli": "~3.28.5",
-    "ember-cli-dependency-checker": "^3.2.0",
-    "ember-cli-fastboot": "^4.1.0",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-mirage": "^2.4.0",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-data": "~3.28.0",
-    "ember-disable-prototype-extensions": "^1.1.3",
-    "ember-export-application-global": "^2.0.1",
-    "ember-fetch": "^8.1.2",
-    "ember-load-initializers": "^2.1.2",
-    "ember-maybe-import-regenerator": "^1.0.0",
-    "ember-qunit": "^5.1.5",
-    "ember-resolver": "^8.0.3",
-    "ember-source": "~3.28.8",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^3.15.0",
-    "ember-try": "https://git@github.com/ember-cli/ember-try.git#master",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-ember": "^10.5.8",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-qunit": "^6.2.0",
-    "guidemaker": "^3.1.0",
-    "lint-to-the-future": "^1.1.0",
-    "lint-to-the-future-ember-template": "^1.1.0",
-    "lint-to-the-future-eslint": "^1.0.0",
-    "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5",
-    "prember": "^2.0.0",
-    "prettier": "^2.5.1",
-    "qunit": "^2.17.2",
-    "qunit-dom": "^1.6.0",
-    "release-plan": "^0.7.0",
-    "webpack": "^5.74.0"
+    "concurrently": "^8.2.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "release-plan": "^0.9.0"
   },
-  "engines": {
-    "node": "18.* || >= 20"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
+  "pnpm": {
+    "overrides": {
+      "@types/eslint": "^7.0.0"
+    }
   }
 }

@@ -1,0 +1,130 @@
+{
+  "name": "guidemaker-ember-template",
+  "version": "3.5.0",
+  "description": "Guidemaker template for Ember Guides websites",
+  "keywords": [
+    "ember-addon",
+    "guidemaker",
+    "empress"
+  ],
+  "repository": "https://github.com/ember-learn/guidemaker-ember-template",
+  "license": "MIT",
+  "author": "",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.7",
+    "algoliasearch": "^4.22.1",
+    "decorator-transforms": "^1.0.1",
+    "ember-collapsible-panel": "^6.1.0",
+    "ember-concurrency": "^4.0.0",
+    "ember-get-config": "^2.1.1",
+    "ember-href-to": "^5.0.1",
+    "ember-modifier": "^4.1.0",
+    "ember-power-select": "^7.2.0",
+    "ember-route-template": "^1.0.3",
+    "ember-showdown-shiki": "^1.0.4",
+    "ember-styleguide": "^11.0.0",
+    "ember-tether": "github:mansona/ember-tether#ember-5",
+    "ember-truth-helpers": "^4.0.3",
+    "sanitize-html": "^2.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/runtime": "^7.17.0",
+    "@embroider/addon-dev": "^4.3.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "babel-plugin-ember-template-compilation": "^2.2.1",
+    "concurrently": "^8.2.2",
+    "ember-template-lint": "^5.13.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-ember": "^11.12.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "rollup": "^4.9.1",
+    "rollup-plugin-copy": "^3.5.0"
+  },
+  "peerDependencies": {
+    "ember-cli-head": "*",
+    "guidemaker": "^4.0.1",
+    "showdown": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./components/chapter-links.js": "./dist/_app_/components/chapter-links.js",
+      "./components/dropdown-header.js": "./dist/_app_/components/dropdown-header.js",
+      "./components/guides-article.js": "./dist/_app_/components/guides-article.js",
+      "./components/index.js": "./dist/_app_/components/index.js",
+      "./components/info-banner.js": "./dist/_app_/components/info-banner.js",
+      "./components/on-this-page.js": "./dist/_app_/components/on-this-page.js",
+      "./components/search-input.js": "./dist/_app_/components/search-input.js",
+      "./components/search-result.js": "./dist/_app_/components/search-result.js",
+      "./components/table-of-contents.js": "./dist/_app_/components/table-of-contents.js",
+      "./helpers/html-safe.js": "./dist/_app_/helpers/html-safe.js",
+      "./helpers/starts-with.js": "./dist/_app_/helpers/starts-with.js",
+      "./initializers/ember-template-showdown-extensions.js": "./dist/_app_/initializers/ember-template-showdown-extensions.js",
+      "./modifiers/highlight-active-title.js": "./dist/_app_/modifiers/highlight-active-title.js",
+      "./services/search.js": "./dist/_app_/services/search.js",
+      "./templates/application.js": "./dist/_app_/templates/application.js",
+      "./templates/error.js": "./dist/_app_/templates/error.js",
+      "./templates/version.js": "./dist/_app_/templates/version.js",
+      "./templates/version/index.js": "./dist/_app_/templates/version/index.js",
+      "./templates/version/show.js": "./dist/_app_/templates/version/show.js"
+    },
+    "public-assets": {
+      "./public/fonts/config.json": "/fonts/config.json",
+      "./public/fonts/fontello.eot": "/fonts/fontello.eot",
+      "./public/fonts/fontello.svg": "/fonts/fontello.svg",
+      "./public/fonts/fontello.ttf": "/fonts/fontello.ttf",
+      "./public/fonts/fontello.woff": "/fonts/fontello.woff",
+      "./public/fonts/fontello.woff2": "/fonts/fontello.woff2",
+      "./public/images/chapter-mark.png": "/images/chapter-mark.png",
+      "./public/images/chapter-mark_x2.png": "/images/chapter-mark_x2.png",
+      "./public/images/exclamation-circle-solid.svg": "/images/exclamation-circle-solid.svg",
+      "./public/images/favicon.png": "/images/favicon.png",
+      "./public/images/fishy.png": "/images/fishy.png",
+      "./public/images/header.svg": "/images/header.svg",
+      "./public/images/link.png": "/images/link.png",
+      "./public/images/logos/ember.png": "/images/logos/ember.png",
+      "./public/images/logos/search-by-algolia.svg": "/images/logos/search-by-algolia.svg",
+      "./public/images/ribbon-hbs.svg": "/images/ribbon-hbs.svg",
+      "./public/images/ribbon-html.svg": "/images/ribbon-html.svg",
+      "./public/images/ribbon-js.svg": "/images/ribbon-js.svg",
+      "./public/images/search-icon.svg": "/images/search-icon.svg",
+      "./public/rect.svg": "/rect.svg"
+    }
+  }
+}

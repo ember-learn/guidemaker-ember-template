@@ -1,6 +1,6 @@
 {
   "name": "guidemaker-ember-template",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "description": "Guidemaker template for Ember Guides websites",
   "keywords": [
     "ember-addon",

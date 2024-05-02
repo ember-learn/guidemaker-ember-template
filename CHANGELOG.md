@@ -1,5 +1,36 @@
 # Changelog
 
+## Release (2024-05-02)
+
+guidemaker-ember-template 4.0.0 (major)
+
+#### :boom: Breaking Change
+* `guidemaker-ember-template`, `test-app`
+  * [#188](https://github.com/ember-learn/guidemaker-ember-template/pull/188) Convert to a V2 addon and drop support for Ember < 3.28 ([@mansona](https://github.com/mansona))
+* Other
+  * [#168](https://github.com/ember-learn/guidemaker-ember-template/pull/168) feat: Use `ember-showdown-shikiji` for syntax highlighting ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
+#### :rocket: Enhancement
+* [#186](https://github.com/ember-learn/guidemaker-ember-template/pull/186) feat: highlight active title in "On This Page" ([@IgnaceMaes](https://github.com/IgnaceMaes))
+* [#184](https://github.com/ember-learn/guidemaker-ember-template/pull/184) style: make on-this-page sticky ([@IgnaceMaes](https://github.com/IgnaceMaes))
+* [#180](https://github.com/ember-learn/guidemaker-ember-template/pull/180) style: update "on this page" to only show headers up until level 3 and indent ([@IgnaceMaes](https://github.com/IgnaceMaes))
+* [#173](https://github.com/ember-learn/guidemaker-ember-template/pull/173) style: inline pen svg and make color gray ([@IgnaceMaes](https://github.com/IgnaceMaes))
+* [#174](https://github.com/ember-learn/guidemaker-ember-template/pull/174) style: on-this-page tweaks ([@IgnaceMaes](https://github.com/IgnaceMaes))
+* [#170](https://github.com/ember-learn/guidemaker-ember-template/pull/170) deps: upgrade to ember-showdown-shiki ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
+#### :bug: Bug Fix
+* [#171](https://github.com/ember-learn/guidemaker-ember-template/pull/171) Sidebar weirdness (#486) ([@lukasnys](https://github.com/lukasnys))
+* [#166](https://github.com/ember-learn/guidemaker-ember-template/pull/166) Use Sanitize-HTML to not render input fields in our search response ([@MinThaMie](https://github.com/MinThaMie))
+
+#### :house: Internal
+* [#175](https://github.com/ember-learn/guidemaker-ember-template/pull/175) start using release-plan ([@mansona](https://github.com/mansona))
+
+#### Committers: 4
+- Anne-Greeth Schot-van Herwijnen ([@MinThaMie](https://github.com/MinThaMie))
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))
+- Lukas Nys ([@lukasnys](https://github.com/lukasnys))
+
 
 ## v3.5.0 (2023-09-30)
 

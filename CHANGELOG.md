@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-05-03)
+
+guidemaker-ember-template 4.0.1 (patch)
+
+#### :bug: Bug Fix
+* `guidemaker-ember-template`
+  * [#189](https://github.com/ember-learn/guidemaker-ember-template/pull/189) make sure public folder is in npm files ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2024-05-02)
 
 guidemaker-ember-template 4.0.0 (major)

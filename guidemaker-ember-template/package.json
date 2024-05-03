@@ -18,7 +18,8 @@
   "files": [
     "addon-main.cjs",
     "declarations",
-    "dist"
+    "dist",
+    "public"
   ],
   "scripts": {
     "build": "rollup --config",

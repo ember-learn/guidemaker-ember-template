@@ -279,3 +279,20 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Toggle css */
+body .classic-component {
+  display: none;
+}
+
+body.classic-component .classic-component {
+  display: block;
+}
+
+body .template-tag {
+  display: none;
+}
+
+body.template-tag .template-tag {
+  display: block;
+}

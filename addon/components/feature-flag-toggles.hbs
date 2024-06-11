@@ -1,12 +1,13 @@
 {{! template-lint-disable no-inline-styles }}
 <div
   style='margin-top: 12px; background: #DCE0E6; padding: 12px; border-radius: 6px; font-size: 0.875em;'
+  {{did-insert this.setup}}
 >
   <div style='font-weight: 600; margin-bottom: 4px;'>Component syntax</div>
   <div style='display: flex; gap: 6px;'>
     <span>Classic</span>
     <label class='switch'>
-      <input type='checkbox' />
+      <input type='checkbox' {{on 'change' this.toggle}}/>
       <span class='slider round'></span>
     </label>
     <span>Template tag</span>

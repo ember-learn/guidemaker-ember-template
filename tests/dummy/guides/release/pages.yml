@@ -47,6 +47,8 @@
       url: "syntax-highlighting"
     - title: "Callouts"
       url: 'callouts'
+    - title: "Feature Flags"
+      url: 'feature-flags'
 
 - title: "Guide test"
   url: 'guide-test'

@@ -42,6 +42,7 @@ module('Acceptance | chapter-links', function (hooks) {
         'Basic Markdown',
         'Code Syntax Highlighting',
         'Callouts',
+        'Feature Flags',
       ],
       'previous link texts were correct'
     );

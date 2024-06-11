@@ -12,6 +12,7 @@
         {{shorten-version version}} {{#if (includes version this.application.model.ltsVersions)}}(LTS){{/if}}
       </PowerSelect>
     {{/if}}
+    <FeatureFlagToggles />
     <nav class="toc-container {{if this.versions "versions"}}" aria-label="table of contents">
       <TableOfContents
         @data={{@model.pages}}

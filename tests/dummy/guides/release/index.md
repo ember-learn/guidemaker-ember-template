@@ -5,3 +5,20 @@ So if this isn't the **real** Ember Guides then what is it? This is the [Guidema
 ## So what is this site for?
 
 This site is used to develop the template that is used for the Ember Guides, the next few pages will be a set of examples that show off the capabilities of this template such as code samples and "callouts". To get started let's see what basic markdown looks like in the [Basic Markdown](./release/examples/) Guide.
+
+## Feature flags
+
+The guides support feature toggling to switch between different editions of Ember.
+
+<div class="classic">
+
+This section is only shown when toggling to the classic feature flag.
+
+</div>
+
+
+<div class="template-tag">
+
+This section is onl shown in when toggling to the template tag feature flag.
+
+</div>

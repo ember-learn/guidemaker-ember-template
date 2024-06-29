@@ -47,6 +47,8 @@
       url: "syntax-highlighting"
     - title: "Callouts"
       url: 'callouts'
+    - title: "Video"
+      url: 'video'
 
 - title: "Guide test"
   url: 'guide-test'

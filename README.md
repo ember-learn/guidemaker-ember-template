@@ -1,55 +1,56 @@
 [![This project uses GitHub Actions for continuous integration.](https://github.com/ember-learn/guidemaker-ember-template/workflows/CI/badge.svg)](https://github.com/ember-learn/guidemaker-ember-template/actions?query=workflow%3ACI)
 [![This project uses Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ember/guidemaker-ember-template)
 
-guidemaker-ember-template
-==============================================================================
+# guidemaker-ember-template
 
 This addon provides the general layout and some styles that are used for
 [guides.emberjs.com](https://guides.emberjs.com/release).
 
-Its responsibilities include:
+Its responsibilities include
 - CSS for the sidebar
-- HTML markup specifics (i.e. the classes that go on various divs in the text of the
-guide itself)
+- HTML markup specifics (i.e. the classes that go on various divs in the text of the guide itself)
 
 ## Related apps
 
-Most aspects of the Guides are styled via
-[ember-styleguide](https://github.com/ember-learn/ember-styleguide),
-not this repository.
+Most aspects of the Guides are styled via [ember-styleguide](https://github.com/ember-learn/ember-styleguide),not this repository.
 
-[guidemaker](https://github.com/empress/guidemaker) is what
-assembles guides content into queryable records.
+[guidemaker](https://github.com/empress/guidemaker) is what assembles guides content into queryable records.
 
-[guides-source](https://github.com/ember-learn/guides-source)
-has the learning content itself.
+[guides-source](https://github.com/ember-learn/guides-source) has the learning content itself.
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
+- Ember.js v4.12 or above
+- Embroider or ember-auto-import v2
 
-* Ember.js v3.16 or above
-* Ember CLI v3.16 or above
-* Node.js v14 or above
+## Installation
+- `git clone <repository-url>`
+- `cd guidemaker-ember-template`
+- `pnpm install`
 
+## Linting
+- `pnpm lint`
+- `pnpm lint:fix`
 
-Installation
-------------------------------------------------------------------------------
+## Building the addon
+- `cd guidemaker-ember-template`
+- `pnpm build`
 
-```
-ember install guidemaker-ember-template
-```
+## Running tests
+- `cd test-app`
+- `pnpm test` – Runs the test suite on the current Ember version
+- `pnpm test:watch` – Runs the test suite in "watch mode"
 
+## Running the test application
+- `cd test-app`
+- `pnpm start`
+- Visit the test application at [http://localhost:4200](http://localhost:4200).
 
-Usage
-------------------------------------------------------------------------------
+## Usage
+See [guides-source](https://github.com/ember-learn/guides-source) for an example of how to use this addon.
 
-See [guides-source](https://github.com/ember-learn/guides-source)
-for an example of how to use this addon.
+[Longer description of how to use the addon in apps.]
 
-
-Contributing
-------------------------------------------------------------------------------
-
+## Contributing
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 Releases
@@ -67,7 +68,6 @@ np
 This command will run checks and tests, and ask you what version you want
 to do the release as (major, minor, patch).
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

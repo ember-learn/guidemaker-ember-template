@@ -2,8 +2,8 @@
   "solution": {
     "guidemaker-ember-template": {
       "impact": "patch",
-      "oldVersion": "4.0.0",
-      "newVersion": "4.0.1",
+      "oldVersion": "4.0.1",
+      "newVersion": "4.0.2",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./guidemaker-ember-template/package.json"
     }
   },
-  "description": "## Release (2024-05-03)\n\nguidemaker-ember-template 4.0.1 (patch)\n\n#### :bug: Bug Fix\n* `guidemaker-ember-template`\n  * [#189](https://github.com/ember-learn/guidemaker-ember-template/pull/189) make sure public folder is in npm files ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2024-07-01)\n\nguidemaker-ember-template 4.0.2 (patch)\n\n#### :bug: Bug Fix\n* `guidemaker-ember-template`, `test-app`\n  * [#194](https://github.com/ember-learn/guidemaker-ember-template/pull/194) fix: add styling for video element ([@IgnaceMaes](https://github.com/IgnaceMaes))\n\n#### Committers: 1\n- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))\n"
 }

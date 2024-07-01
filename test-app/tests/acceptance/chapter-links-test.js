@@ -42,8 +42,9 @@ module('Acceptance | chapter-links', function (hooks) {
         'Basic Markdown',
         'Code Syntax Highlighting',
         'Callouts',
+        'Video',
       ],
-      'previous link texts were correct'
+      'previous link texts were correct',
     );
 
     assert.deepEqual(
@@ -59,10 +60,11 @@ module('Acceptance | chapter-links', function (hooks) {
         "We've finished covering Another Section. Next up: Examples - Basic Markdown",
         'Code Syntax Highlighting',
         'Callouts',
+        'Video',
         "We've finished covering Examples. Next up: Guide test - Sidebar stress test",
         null,
       ],
-      'next link texts were correct'
+      'next link texts were correct',
     );
   });
 });

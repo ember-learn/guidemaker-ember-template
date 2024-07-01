@@ -173,6 +173,11 @@ a.old-version-button:hover, a.old-version-button:active {
   color: var(--color-brand);
 }
 
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
 /* Error page */
 .error-page {
   padding: var(--spacing-3) 0;

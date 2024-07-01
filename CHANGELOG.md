@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-07-01)
+
+guidemaker-ember-template 4.0.2 (patch)
+
+#### :bug: Bug Fix
+* `guidemaker-ember-template`, `test-app`
+  * [#194](https://github.com/ember-learn/guidemaker-ember-template/pull/194) fix: add styling for video element ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
+#### Committers: 1
+- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
 ## Release (2024-05-03)
 
 guidemaker-ember-template 4.0.1 (patch)

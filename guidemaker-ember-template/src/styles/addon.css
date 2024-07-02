@@ -237,6 +237,6 @@ thead th{
 }
 td, th {
   border: 1px solid var(--color-gray-300);
-  padding: 4px;
+  padding: var(--spacing-1);
 }
 

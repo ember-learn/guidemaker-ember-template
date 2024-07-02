@@ -3,8 +3,7 @@
 
 # guidemaker-ember-template
 
-This addon provides the general layout and some styles that are used for
-[guides.emberjs.com](https://guides.emberjs.com/release).
+This addon provides the general layout and some styles that are used for documentation websites such as [guides.emberjs.com](https://guides.emberjs.com/release/), and [cli.emberjs.com](https://cli.emberjs.com/release/).
 
 Its responsibilities include
 - CSS for the sidebar

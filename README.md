@@ -52,21 +52,6 @@ See [guides-source](https://github.com/ember-learn/guides-source) for an example
 ## Contributing
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-Releases
-------------------------------------------------------------------------------
-
-To release a new version of this addon:
-
-```
-git checkout master
-git pull origin master
-npm install -g np
-np
-```
-
-This command will run checks and tests, and ask you what version you want
-to do the release as (major, minor, patch).
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).

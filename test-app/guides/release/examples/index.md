@@ -70,3 +70,17 @@ Asterisks
 ___
 
 Underscores
+
+# Tables
+<table>
+  <thead>
+    <tr><th>Action</th><th>HTTP Verb</th><th>URL</th></tr>
+  </thead>
+  <tbody>
+    <tr><th>Find Record</th><td>GET</td><td>/posts/123</td></tr>
+    <tr><th>Find All</th><td>GET</td><td>/posts</td></tr>
+    <tr><th>Update</th><td>PUT</td><td>/posts/123</td></tr>
+    <tr><th>Create</th><td>POST</td><td>/posts</td></tr>
+    <tr><th>Delete</th><td>DELETE</td><td>/posts/123</td></tr>
+  </tbody>
+</table>

@@ -11,7 +11,7 @@ Its responsibilities include
 
 ## Related apps
 
-Most aspects of the Guides are styled via [ember-styleguide](https://github.com/ember-learn/ember-styleguide),not this repository.
+Most aspects of the Guides are styled via [ember-styleguide](https://github.com/ember-learn/ember-styleguide), not this repository.
 
 [guidemaker](https://github.com/empress/guidemaker) is what assembles guides content into queryable records.
 

@@ -193,7 +193,7 @@ h4 > a,
 h5 > a,
 h6 > a {
   margin-left: 12px;
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 main h1 > a:link,
@@ -211,9 +211,11 @@ h3 > a > svg,
 h4 > a > svg,
 h5 > a > svg,
 h6 > a > svg {
-  height: 18px;
+  height: 0.8em;
   fill: var(--color-gray-600);
   transform: rotate(45deg);
+  transition: fill 0.2s ease-in-out;
+  vertical-align: middle;
 }
 
 h1 > a:hover > svg,

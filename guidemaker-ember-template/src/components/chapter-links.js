@@ -1,9 +1,6 @@
-/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components */
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 
-export default Component.extend({
-  tagName: 'footer',
-
-  page: service(),
-});
+export default class ChapterLinksComponent extends Component {
+  @service page;
+}

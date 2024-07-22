@@ -1,18 +1,37 @@
 {{! template-lint-disable no-link-to-positional-params no-curly-component-invocation no-implicit-this }}
-<EsPagination @showPrevious={{this.page.previousPage}} @showNext={{this.page.nextPage}}>
-   <:previous>
-    <LinkTo @route="version.show" @model={{this.page.previousPage.url}} class="previous-guide">{{this.page.previousPage.title}}</LinkTo>
-   </:previous>
+<EsPagination
+  @showPrevious={{this.page.previousPage}}
+  @showNext={{this.page.nextPage}}
+>
+  <:previous>
+    <LinkTo
+      @route="version.show"
+      @model={{this.page.previousPage.url}}
+      class="previous-guide"
+    >
+      {{this.page.previousPage.title}}
+    </LinkTo>
+  </:previous>
 
-    <:next>
-      <LinkTo @route="version.show" @model={{this.page.nextPage.url}} class="next-guide">
-        {{#if this.page.isLastPage}}
-          We've finished covering {{this.page.currentSection.title}}. Next up: {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
-        {{else if this.page.nextIsFirstPage}}
-          {{this.page.nextSection.title}} - {{this.page.nextPage.title}}
-        {{else}}
-          {{this.page.nextPage.title}}
-        {{/if}}
-      </LinkTo>
-    </:next>
+  <:next>
+    <LinkTo
+      @route="version.show"
+      @model={{this.page.nextPage.url}}
+      class="next-guide"
+    >
+      {{#if this.page.isLastPage}}
+        We've finished covering
+        {{this.page.currentSection.title}}. Next up:
+        {{this.page.nextSection.title}}
+        -
+        {{this.page.nextPage.title}}
+      {{else if this.page.nextIsFirstPage}}
+        {{this.page.nextSection.title}}
+        -
+        {{this.page.nextPage.title}}
+      {{else}}
+        {{this.page.nextPage.title}}
+      {{/if}}
+    </LinkTo>
+  </:next>
 </EsPagination>

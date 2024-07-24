@@ -1,4 +1,4 @@
-{{!-- template-lint-disable link-rel-noopener no-action no-curly-component-invocation --}}
+{{! template-lint-disable no-action }}
 {{#if this.searchService.index}}
   <input
     id="search-input"
@@ -10,10 +10,16 @@
     onfocus={{action "onfocus"}}
     onblur={{action "onblur"}}
     data-test-search-input
-  >
+  />
 
-  {{!-- Search results dropdown --}}
-  <EmberTether @target="#search-input" @targetAttachment="bottom right" @attachment="top right" @constraints={{this._resultTetherConstraints}} @class="ds-dropdown-results">
+  {{! Search results dropdown }}
+  <EmberTether
+    @target="#search-input"
+    @targetAttachment="bottom right"
+    @attachment="top right"
+    @constraints={{this._resultTetherConstraints}}
+    @class="ds-dropdown-results"
+  >
     {{#if this.showDropdown}}
       <div class="ds-suggestions ds-dropdown-menu">
         <DropdownHeader>
@@ -28,15 +34,25 @@
               <p>
                 No results found.
                 {{#if this.deprecationsGuideURL}}
-                  Try searching the <a href={{this.deprecationsGuideURL}} target="_deprecations">deprecations guide</a>.
+                  Try searching the
+                  <a href={{this.deprecationsGuideURL}} target="_deprecations">
+                    deprecations guide
+                  </a>.
                 {{/if}}
               </p>
             </div>
           </div>
         {{/each}}
         <div class="powered-by-algolia">
-          <a href="https://www.algolia.com/" target="_blank" rel="noopener">
-            <img src="/images/logos/search-by-algolia.svg" alt="Search Powered by Algolia">
+          <a
+            href="https://www.algolia.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/images/logos/search-by-algolia.svg"
+              alt="Search Powered by Algolia"
+            />
           </a>
         </div>
       </div>

@@ -1,69 +1,59 @@
-/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, prettier/prettier, ember/no-get, ember/no-actions-hash */
-import { getOwner } from '@ember/application';
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
-import { and } from '@ember/object/computed';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
+import config from 'ember-get-config';
 
 const SEARCH_DEBOUNCE_PERIOD = 300;
 const SEARCH_CLOSE_PERIOD = 200;
 
-export default Component.extend({
+export default class SearchInputComponent extends Component {
+  @service('search') searchService;
 
-  classNames: ['search-input'],
-
-  searchService: service('search'),
-
-  _resultTetherConstraints: Object.freeze([
+  _resultTetherConstraints = [
     {
       to: 'window',
-      pin: ['left','right']
-    }
-  ]),
+      pin: ['left', 'right'],
+    },
+  ];
 
-  _focused: false,
+  @tracked _focused = false;
+  @tracked query;
+  @tracked value = '';
 
-  init() {
-    this._super(...arguments);
-    const config = getOwner(this).resolveRegistration('config:environment');
-    this.deprecationsGuideURL = config['deprecationsGuideURL'];
-  },
+  get deprecationsGuideURL() {
+    return config['deprecationsGuideURL'];
+  }
 
-  showDropdown: and('query', '_focused'),
+  get showDropdown() {
+    return this.query && this._focused;
+  }
 
-  search: task(function * (query) {
+  search = task(async (query) => {
+    await timeout(SEARCH_DEBOUNCE_PERIOD);
 
-    yield timeout(SEARCH_DEBOUNCE_PERIOD);
-
-    set(this, 'query', query);
+    this.query = query;
 
     // Hide and don't run query if there's no search query
     if (!query) {
-      return set(this, '_focused', false);
+      return (this._focused = false);
     }
 
     // ensure search results are visible if the menu was previously closed above
-    set(this, '_focused', true);
+    this._focused = true;
 
-    yield get(this, 'searchService.search').perform(query, this.projectVersion);
+    await this.searchService.search.perform(query, this.args.projectVersion);
+  });
 
-  }).restartable(),
+  closeMenu = task({ restartable: true }, async () => {
+    await timeout(SEARCH_CLOSE_PERIOD);
 
-  closeMenu: task(function * () {
-    yield timeout(SEARCH_CLOSE_PERIOD);
+    this._focused = false;
+  });
 
-    set(this, '_focused', false);
-  }),
-
-  actions: {
-    onfocus() {
-      set(this, '_focused', true);
-    },
-
-    onblur() {
-      this.get('closeMenu').perform();
-    }
-
+  @action
+  onfocus() {
+    this._focused = true;
   }
-});
+}

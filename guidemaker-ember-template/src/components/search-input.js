@@ -30,7 +30,7 @@ export default class SearchInputComponent extends Component {
     return this.query && this._focused;
   }
 
-  search = task(async (query) => {
+  search = task({ restartable: true }, async (query) => {
     await timeout(SEARCH_DEBOUNCE_PERIOD);
 
     this.query = query;
@@ -46,7 +46,7 @@ export default class SearchInputComponent extends Component {
     await this.searchService.search.perform(query, this.args.projectVersion);
   });
 
-  closeMenu = task({ restartable: true }, async () => {
+  closeMenu = task(async () => {
     await timeout(SEARCH_CLOSE_PERIOD);
 
     this._focused = false;

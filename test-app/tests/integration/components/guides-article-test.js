@@ -98,4 +98,41 @@ module('Integration | Component | guides-article', function (hooks) {
         'https://github.com/ember-learn/guidemaker-ember-template/edit/master/guides/v1.0.0/model-id.md',
       );
   });
+
+  test('it renders content based on feature flags', async function (assert) {
+    this.owner.register('service:page', PageStub);
+    this.owner.lookup('service:features').setupFeatures({
+      'template-tag': true,
+    });
+
+    this.model = {
+      id: 'model-id',
+      content: `
+<feature-flag-on-template-tag>
+  This is template tag content.
+</feature-flag-on-template-tag>
+
+<feature-flag-off-template-tag>
+  This is classic template content.
+</feature-flag-off-template-tag>`,
+    };
+
+    await render(hbs`
+          <GuidesArticle @model={{this.model}} @version="v1.0.0" />
+      `);
+
+    assert
+      .dom('.guides-article-content')
+      .includesText('This is template tag content.');
+    assert
+      .dom('.guides-article-content')
+      .doesNotIncludeText('This is classic template content.');
+
+    assert
+      .dom('feature-flag-off-template-tag')
+      .doesNotExist('Feature flag tags are stripped');
+    assert
+      .dom('feature-flag-on-template-tag')
+      .doesNotExist('Feature flag tags are stripped');
+  });
 });

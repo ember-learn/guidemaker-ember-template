@@ -1,5 +1,33 @@
 # Changelog
 
+## Release (2024-12-03)
+
+guidemaker-ember-template 4.1.0 (minor)
+
+#### :rocket: Enhancement
+* `guidemaker-ember-template`, `test-app`
+  * [#206](https://github.com/ember-learn/guidemaker-ember-template/pull/206) Add a showdown extension to strip non-enabled feature flags. Feature … ([@kategengler](https://github.com/kategengler))
+  * [#204](https://github.com/ember-learn/guidemaker-ember-template/pull/204) refactor: transoform search-result to glimmer component ([@kennstenicht](https://github.com/kennstenicht))
+  * [#203](https://github.com/ember-learn/guidemaker-ember-template/pull/203) Transform chapter-links to glimmer component ([@kennstenicht](https://github.com/kennstenicht))
+  * [#202](https://github.com/ember-learn/guidemaker-ember-template/pull/202) Transform guides-article to glimmer component ([@kennstenicht](https://github.com/kennstenicht))
+  * [#198](https://github.com/ember-learn/guidemaker-ember-template/pull/198) Fix : #192 Added styles for table element ([@ArunPragadeeswar007](https://github.com/ArunPragadeeswar007))
+* `guidemaker-ember-template`
+  * [#200](https://github.com/ember-learn/guidemaker-ember-template/pull/200) fix: align anchors icons and adjust size ([@kennstenicht](https://github.com/kennstenicht))
+
+#### :memo: Documentation
+* [#201](https://github.com/ember-learn/guidemaker-ember-template/pull/201) Update README.md ([@driesdl](https://github.com/driesdl))
+
+#### :house: Internal
+* `test-app`
+  * [#208](https://github.com/ember-learn/guidemaker-ember-template/pull/208) adjust test matrix to reflect current supported ember versions ([@ef4](https://github.com/ef4))
+
+#### Committers: 5
+- Arun Pragadeeswar ([@ArunPragadeeswar007](https://github.com/ArunPragadeeswar007))
+- Christoph Wiedenmann ([@kennstenicht](https://github.com/kennstenicht))
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+- Katie Gengler ([@kategengler](https://github.com/kategengler))
+- driesdl ([@driesdl](https://github.com/driesdl))
+
 ## Release (2024-07-01)
 
 guidemaker-ember-template 4.0.2 (patch)

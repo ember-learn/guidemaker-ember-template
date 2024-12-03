@@ -1,17 +1,17 @@
 {
   "solution": {
     "guidemaker-ember-template": {
-      "impact": "patch",
-      "oldVersion": "4.0.1",
-      "newVersion": "4.0.2",
+      "impact": "minor",
+      "oldVersion": "4.0.2",
+      "newVersion": "4.1.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./guidemaker-ember-template/package.json"
     }
   },
-  "description": "## Release (2024-07-01)\n\nguidemaker-ember-template 4.0.2 (patch)\n\n#### :bug: Bug Fix\n* `guidemaker-ember-template`, `test-app`\n  * [#194](https://github.com/ember-learn/guidemaker-ember-template/pull/194) fix: add styling for video element ([@IgnaceMaes](https://github.com/IgnaceMaes))\n\n#### Committers: 1\n- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))\n"
+  "description": "## Release (2024-12-03)\n\nguidemaker-ember-template 4.1.0 (minor)\n\n#### :rocket: Enhancement\n* `guidemaker-ember-template`, `test-app`\n  * [#206](https://github.com/ember-learn/guidemaker-ember-template/pull/206) Add a showdown extension to strip non-enabled feature flags. Feature … ([@kategengler](https://github.com/kategengler))\n  * [#204](https://github.com/ember-learn/guidemaker-ember-template/pull/204) refactor: transoform search-result to glimmer component ([@kennstenicht](https://github.com/kennstenicht))\n  * [#203](https://github.com/ember-learn/guidemaker-ember-template/pull/203) Transform chapter-links to glimmer component ([@kennstenicht](https://github.com/kennstenicht))\n  * [#202](https://github.com/ember-learn/guidemaker-ember-template/pull/202) Transform guides-article to glimmer component ([@kennstenicht](https://github.com/kennstenicht))\n  * [#198](https://github.com/ember-learn/guidemaker-ember-template/pull/198) Fix : #192 Added styles for table element ([@ArunPragadeeswar007](https://github.com/ArunPragadeeswar007))\n* `guidemaker-ember-template`\n  * [#200](https://github.com/ember-learn/guidemaker-ember-template/pull/200) fix: align anchors icons and adjust size ([@kennstenicht](https://github.com/kennstenicht))\n\n#### :memo: Documentation\n* [#201](https://github.com/ember-learn/guidemaker-ember-template/pull/201) Update README.md ([@driesdl](https://github.com/driesdl))\n\n#### :house: Internal\n* `test-app`\n  * [#208](https://github.com/ember-learn/guidemaker-ember-template/pull/208) adjust test matrix to reflect current supported ember versions ([@ef4](https://github.com/ef4))\n\n#### Committers: 5\n- Arun Pragadeeswar ([@ArunPragadeeswar007](https://github.com/ArunPragadeeswar007))\n- Christoph Wiedenmann ([@kennstenicht](https://github.com/kennstenicht))\n- Edward Faulkner ([@ef4](https://github.com/ef4))\n- Katie Gengler ([@kategengler](https://github.com/kategengler))\n- driesdl ([@driesdl](https://github.com/driesdl))\n"
 }

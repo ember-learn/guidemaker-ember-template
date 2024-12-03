@@ -73,7 +73,7 @@ jobs:
           - ember-lts-4.8
           - ember-lts-4.12
           - ember-lts-5.4
-          - ember-release
+          - ember-lts-5.12
           - embroider-safe
           - no-deprecations
 
@@ -105,6 +105,7 @@ jobs:
       fail-fast: false
       matrix:
         try-scenario:
+          - ember-release
           - ember-beta
           - ember-canary
           - ember-release-no-deprecations

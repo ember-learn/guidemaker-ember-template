@@ -1,17 +1,14 @@
-/* eslint-disable ember/no-classic-classes, prettier/prettier, ember/no-get */
 import Service from '@ember/service';
-import { task } from 'ember-concurrency';
+import { restartableTask, task, timeout } from 'ember-concurrency';
 import { get, set } from '@ember/object';
-import { A as emberArray } from '@ember/array';
 import algoliasearch from 'algoliasearch';
 import { getOwner } from '@ember/application';
 
-export default Service.extend({
-
-  results: emberArray(),
+export default class SearchService extends Service {
+  results = [];
 
   init() {
-    this._super(...arguments);
+    super.init(...arguments);
     const config = getOwner(this).resolveRegistration('config:environment');
 
     const { algoliaId, algoliaKey, indexName } = config['algolia'] || {};
@@ -20,9 +17,9 @@ export default Service.extend({
       this.client = algoliasearch(algoliaId, algoliaKey);
       this.index = this.client.initIndex(indexName);
     }
-  },
+  }
 
-  search: task(function * (query, projectVersion) {
+  search = task(async (query, projectVersion) => {
     const searchObj = {
       hitsPerPage: 15,
       restrictSearchableAttributes: ['content'],
@@ -32,13 +29,12 @@ export default Service.extend({
       searchObj.facetFilters = [[`version:${projectVersion}`]];
     }
 
-    return set(this, 'results', yield this.doSearch(query, searchObj));
-
-  }).restartable(),
+    return set(this, 'results', await this.doSearch(query, searchObj));
+  });
 
   doSearch(query, searchObj) {
     return this.index.search(query, searchObj).then((results) => {
       return get(results, 'hits');
     });
   }
-});
+}

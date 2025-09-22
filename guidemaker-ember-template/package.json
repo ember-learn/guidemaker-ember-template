@@ -46,7 +46,7 @@
     "ember-route-template": "^1.0.3",
     "ember-showdown-shiki": "^1.0.4",
     "ember-styleguide": "^11.0.0",
-    "ember-tether": "github:mansona/ember-tether#ember-5",
+    "ember-tether": "^3.1.0",
     "ember-truth-helpers": "^4.0.3",
     "sanitize-html": "^2.12.1"
   },

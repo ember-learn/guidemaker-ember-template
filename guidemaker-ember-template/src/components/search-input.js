@@ -2,7 +2,7 @@ import { inject as service } from '@ember/service';
 import { and } from '@ember/object/computed';
 import { getOwner } from '@ember/application';
 import Component from '@ember/component';
-import { get, set, action } from '@ember/object';
+import { set, action } from '@ember/object';
 import { restartableTask, task, timeout } from 'ember-concurrency';
 
 const SEARCH_DEBOUNCE_PERIOD = 300;
@@ -15,14 +15,14 @@ export default class SearchInput extends Component {
   _resultTetherConstraints = Object.freeze([
     {
       to: 'window',
-      pin: ['left','right']
-    }
+      pin: ['left', 'right'],
+    },
   ]);
 
   _focused = false;
 
-  init() {
-    super.init(...arguments);
+  constructor() {
+    super(...arguments);
     const config = getOwner(this).resolveRegistration('config:environment');
     this.deprecationsGuideURL = config['deprecationsGuideURL'];
   }
@@ -31,7 +31,6 @@ export default class SearchInput extends Component {
   showDropdown;
 
   search = restartableTask(async (query) => {
-
     await timeout(SEARCH_DEBOUNCE_PERIOD);
 
     set(this, 'query', query);
@@ -44,14 +43,14 @@ export default class SearchInput extends Component {
     // ensure search results are visible if the menu was previously closed above
     set(this, '_focused', true);
 
-    await get(this, 'searchService.search').perform(query, this.projectVersion);
-  })
+    await this.searchService.search.perform(query, this.projectVersion);
+  });
 
   closeMenu = task(async () => {
     await timeout(SEARCH_CLOSE_PERIOD);
 
     set(this, '_focused', false);
-  })
+  });
 
   @action
   onfocus() {

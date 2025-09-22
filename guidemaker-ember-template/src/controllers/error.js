@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-computed-properties-in-native-classes, ember/use-brace-expansion, getter-return */
 import { computed } from '@ember/object';
 import Controller from '@ember/controller';
 

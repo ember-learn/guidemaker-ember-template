@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2025-09-26)
+
+* guidemaker-ember-template 4.2.0 (minor)
+
+#### :rocket: Enhancement
+* `guidemaker-ember-template`
+  * [#210](https://github.com/ember-learn/guidemaker-ember-template/pull/210) [FEATURE GJS Banner] add GJS Format banner for currentVersion ([@coremore35](https://github.com/coremore35))
+
+#### :house: Internal
+* Other
+  * [#212](https://github.com/ember-learn/guidemaker-ember-template/pull/212) Update release plan ([@mansona](https://github.com/mansona))
+* `guidemaker-ember-template`
+  * [#211](https://github.com/ember-learn/guidemaker-ember-template/pull/211) convert remaining non-native classes ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- [@coremore35](https://github.com/coremore35)
+
 ## Release (2024-12-03)
 
 guidemaker-ember-template 4.1.0 (minor)

@@ -34,7 +34,7 @@
           </LinkTo>
         </div>
       {{/unless}}
-      {{#if (eq @version @currentVersion)}}
+      {{#if this.showGJSBanner}}
         <div
           class="info-banner-wrapper"
           role="region"
@@ -61,7 +61,9 @@
               This guide is written assuming you are using GJS in your app. See
               this
               <a
-                href="/components/template-tag-format/"
+                href={{this.gjsLink}}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="info-banner-link"
               >page</a>
               to read more about GJS.

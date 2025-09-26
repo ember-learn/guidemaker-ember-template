@@ -26,6 +26,9 @@ module.exports = function (environment) {
     guidemaker: {
       title: 'Ember Guidemaker Template',
       sourceRepo: 'https://github.com/ember-learn/guidemaker-ember-template',
+      gjsVersions: ['v1.2.0'],
+      gjsLink:
+        'https://guides.emberjs.com/release/components/template-tag-format/',
     },
 
     algolia: {

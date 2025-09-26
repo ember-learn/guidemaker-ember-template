@@ -23,8 +23,10 @@
   align-items: center;
 }
 
-.old-version-warning .warning-icon {
+.old-version-warning .warning-icon,
+.info-banner-wrapper .info-banner-icon {
   height: 1.5rem;
+  flex: none;
   margin-right: 8px;
   fill: var(--color-blue-dark);
 }
@@ -34,7 +36,8 @@ a.old-version-button, a.old-version-button:link, a.old-version-button:visited {
   color: var(--color-blue-dark);
 }
 
-a.old-version-button:hover, a.old-version-button:active {
+a.old-version-button:hover,
+a.old-version-button:active {
   background-color: var(--color-blue-dark);
   color: var(--color-button-secondary-text-hover);
 }
@@ -56,10 +59,20 @@ a.old-version-button:hover, a.old-version-button:active {
 }
 
 .info-banner-wrapper {
-  margin: var(--spacing-1);
-  padding: var(--spacing-1);
   background-color: var(--color-info);
-  border-radius: var(--radius-lg);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-3);
+}
+
+.info-banner-text {
+  display: flex;
+  align-items: center;
+}
+
+.info-banner-link {
+  color: var(--color-blue-dark);
+  text-decoration: underline;
 }
 
 @media (min-width: 30em) and (max-width: 85em) {
@@ -98,7 +111,7 @@ a.old-version-button:hover, a.old-version-button:active {
 
 /* TODO figure out how much of this media query needs to go into the styleguide */
 @media (max-width: 844px) {
-  main .es-sidebar[aria-expanded="true"] {
+  main .es-sidebar[aria-expanded='true'] {
     padding: var(--spacing-2);
     z-index: 1;
     display: flex;
@@ -126,7 +139,7 @@ a.old-version-button:hover, a.old-version-button:active {
 @media screen and (min-width: 54em) {
   .sidebar {
     border-bottom: 0;
-    border-right: 1px solid #F8E7CF;
+    border-right: 1px solid #f8e7cf;
     padding: 3em 1.618em 3em 0;
   }
 
@@ -134,7 +147,7 @@ a.old-version-button:hover, a.old-version-button:active {
     margin-right: 0;
   }
 
-  label[for="toc-toggle"] {
+  label[for='toc-toggle'] {
     display: none;
   }
 
@@ -227,18 +240,17 @@ h6 > a:hover > svg {
   fill: var(--color-brand);
 }
 
-
 /* table styles  */
 table {
   width: 100%;
   text-align: left;
   border-collapse: collapse;
 }
-thead th{
+thead th {
   background-color: var(--color-gray-200);
 }
-td, th {
+td,
+th {
   border: 1px solid var(--color-gray-300);
   padding: var(--spacing-1);
 }
-

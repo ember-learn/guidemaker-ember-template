@@ -1,40 +1,38 @@
-/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, prettier/prettier, ember/no-get, ember/no-actions-hash */
+/* eslint-disable ember/no-classic-components, ember/no-computed-properties-in-native-classes, ember/require-tagless-components */
+import { inject as service } from '@ember/service';
+import { and } from '@ember/object/computed';
 import { getOwner } from '@ember/application';
 import Component from '@ember/component';
-import { get, set } from '@ember/object';
-import { and } from '@ember/object/computed';
-import { inject as service } from '@ember/service';
-import { task, timeout } from 'ember-concurrency';
+import { set, action } from '@ember/object';
+import { restartableTask, task, timeout } from 'ember-concurrency';
 
 const SEARCH_DEBOUNCE_PERIOD = 300;
 const SEARCH_CLOSE_PERIOD = 200;
 
-export default Component.extend({
+export default class SearchInput extends Component {
+  @service('search')
+  searchService;
 
-  classNames: ['search-input'],
-
-  searchService: service('search'),
-
-  _resultTetherConstraints: Object.freeze([
+  _resultTetherConstraints = Object.freeze([
     {
       to: 'window',
-      pin: ['left','right']
-    }
-  ]),
+      pin: ['left', 'right'],
+    },
+  ]);
 
-  _focused: false,
+  _focused = false;
 
-  init() {
-    this._super(...arguments);
+  constructor() {
+    super(...arguments);
     const config = getOwner(this).resolveRegistration('config:environment');
     this.deprecationsGuideURL = config['deprecationsGuideURL'];
-  },
+  }
 
-  showDropdown: and('query', '_focused'),
+  @and('query', '_focused')
+  showDropdown;
 
-  search: task(function * (query) {
-
-    yield timeout(SEARCH_DEBOUNCE_PERIOD);
+  search = restartableTask(async (query) => {
+    await timeout(SEARCH_DEBOUNCE_PERIOD);
 
     set(this, 'query', query);
 
@@ -46,24 +44,22 @@ export default Component.extend({
     // ensure search results are visible if the menu was previously closed above
     set(this, '_focused', true);
 
-    yield get(this, 'searchService.search').perform(query, this.projectVersion);
+    await this.searchService.search.perform(query, this.projectVersion);
+  });
 
-  }).restartable(),
-
-  closeMenu: task(function * () {
-    yield timeout(SEARCH_CLOSE_PERIOD);
+  closeMenu = task(async () => {
+    await timeout(SEARCH_CLOSE_PERIOD);
 
     set(this, '_focused', false);
-  }),
+  });
 
-  actions: {
-    onfocus() {
-      set(this, '_focused', true);
-    },
-
-    onblur() {
-      this.get('closeMenu').perform();
-    }
-
+  @action
+  onfocus() {
+    set(this, '_focused', true);
   }
-});
+
+  @action
+  onblur() {
+    this.closeMenu.perform();
+  }
+}

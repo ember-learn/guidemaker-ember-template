@@ -46,7 +46,7 @@
     "ember-route-template": "^1.0.3",
     "ember-showdown-shiki": "^1.0.4",
     "ember-styleguide": "^11.0.0",
-    "ember-tether": "github:mansona/ember-tether#ember-5",
+    "ember-tether": "^3.1.0",
     "ember-truth-helpers": "^4.0.3",
     "sanitize-html": "^2.12.1"
   },
@@ -58,12 +58,16 @@
     "@rollup/plugin-babel": "^6.0.4",
     "babel-plugin-ember-template-compilation": "^2.2.1",
     "concurrently": "^8.2.2",
+    "ember-source": "~5.7.0",
     "ember-template-lint": "^5.13.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-ember": "^11.12.0",
     "eslint-plugin-n": "^16.4.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "lint-to-the-future": "^2.6.4",
+    "lint-to-the-future-ember-template": "^3.1.0",
+    "lint-to-the-future-eslint": "^3.2.0",
     "prettier": "^3.1.1",
     "prettier-plugin-ember-template-tag": "^1.1.0",
     "rollup": "^4.9.1",
@@ -71,7 +75,7 @@
   },
   "peerDependencies": {
     "ember-cli-head": "*",
-    "guidemaker": "^4.0.1",
+    "guidemaker": "^4.0.6",
     "showdown": "^2.0.0"
   },
   "publishConfig": {
@@ -88,7 +92,6 @@
       "./components/chapter-links.js": "./dist/_app_/components/chapter-links.js",
       "./components/dropdown-header.js": "./dist/_app_/components/dropdown-header.js",
       "./components/guides-article.js": "./dist/_app_/components/guides-article.js",
-      "./components/index.js": "./dist/_app_/components/index.js",
       "./components/info-banner.js": "./dist/_app_/components/info-banner.js",
       "./components/on-this-page.js": "./dist/_app_/components/on-this-page.js",
       "./components/search-input.js": "./dist/_app_/components/search-input.js",

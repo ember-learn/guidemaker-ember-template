@@ -1,5 +1,19 @@
 # Changelog
 
+## Release (2026-08-25)
+
+* guidemaker-ember-template 4.3.0 (minor)
+
+#### :rocket: Enhancement
+* `guidemaker-ember-template`
+  * [#214](https://github.com/ember-learn/guidemaker-ember-template/pull/214) add support for warning banners ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* [#216](https://github.com/ember-learn/guidemaker-ember-template/pull/216) update release-plan to support OIDC ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-09-26)
 
 * guidemaker-ember-template 4.2.0 (minor)

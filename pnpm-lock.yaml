@@ -21,8 +21,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(prettier@3.6.2)
       release-plan:
-        specifier: ^0.17.0
-        version: 0.17.2
+        specifier: ^0.18.0
+        version: 0.18.0
 
   guidemaker-ember-template:
     dependencies:
@@ -4908,8 +4908,8 @@ packages:
     resolution: {integrity: sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==}
     engines: {node: '>= 4.0'}
 
-  github-changelog@2.1.2:
-    resolution: {integrity: sha512-psDEGxwD5fWDLOW+BOORg1JgZOnbCuMhNLevsD/nP7QVXEVExUGnXBP6MmrFm0hAao9LgBLSBKfcNzGuwecRDA==}
+  github-changelog@2.1.4:
+    resolution: {integrity: sha512-mZQF/YC9OR8XMGpYlLQqG66RiKwlaQZ7rXTZug28oOYkzOXd0acszuvYHVzPlYmns1aDDSwQkbzFxNOYpWhmig==}
     engines: {node: 18.* || 20.* || >= 22}
     hasBin: true
 
@@ -7239,8 +7239,8 @@ packages:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
 
-  release-plan@0.17.2:
-    resolution: {integrity: sha512-LgE/3CU8sFZt28uJR886xvWdw/CL0g5g5YSFTAJUvUy5qdERZdcc1pu317nKpYFs/yEDjiUasLj3rxnXBJf1zA==}
+  release-plan@0.18.0:
+    resolution: {integrity: sha512-WzP+O+XRF4AqhTDQK84FovY+TxHyC8J7QWoOwxnrvVjyHns417l1FUldboRhBYua5Pej6Yg/2jH1dEH2MRNHeA==}
     hasBin: true
 
   remote-git-tags@3.0.0:
@@ -7983,6 +7983,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   temp@0.9.4:
     resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
@@ -9843,7 +9844,7 @@ snapshots:
     dependencies:
       '@ember/test-waiters': 3.1.0
       '@embroider/macros': 1.18.1
-      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3))
+      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
@@ -10118,7 +10119,7 @@ snapshots:
       '@embroider/core': 3.5.7
       '@embroider/webpack': 3.2.3(@embroider/core@3.5.7)(webpack@5.101.3)
 
-  '@embroider/util@1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3))':
+  '@embroider/util@1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))':
     dependencies:
       '@embroider/macros': 1.18.1
       broccoli-funnel: 3.0.8
@@ -13558,7 +13559,7 @@ snapshots:
   ember-basic-dropdown@7.3.0(@babel/core@7.28.4)(@ember/string@3.1.1)(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)):
     dependencies:
       '@embroider/macros': 1.18.1
-      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3))
+      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))
       '@glimmer/component': 1.1.2(@babel/core@7.28.4)
       '@glimmer/tracking': 1.1.2
       ember-auto-import: 2.10.0(webpack@5.101.3)
@@ -14108,7 +14109,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.28.4(supports-color@8.1.1)
       '@embroider/macros': 1.18.1
-      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3))
+      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))
       ember-cli-babel: 8.2.0(@babel/core@7.28.4)
       ember-cli-htmlbars: 6.3.0
       ember-source: 5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3)
@@ -14340,7 +14341,7 @@ snapshots:
     dependencies:
       '@ember/render-modifiers': 2.1.0(@babel/core@7.28.4)(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))
       '@ember/string': 3.1.1
-      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.101.3))
+      '@embroider/util': 1.13.4(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5))
       '@glimmer/component': 1.1.2(@babel/core@7.28.4)
       '@glimmer/tracking': 1.1.2
       ember-assign-helper: 0.4.0
@@ -15661,7 +15662,7 @@ snapshots:
 
   git-repo-info@2.1.1: {}
 
-  github-changelog@2.1.2:
+  github-changelog@2.1.4:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       chalk: 4.1.2
@@ -18328,7 +18329,7 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  release-plan@0.17.2:
+  release-plan@0.18.0:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       '@npmcli/package-json': 6.2.0
@@ -18338,7 +18339,7 @@ snapshots:
       cli-highlight: 2.1.11
       execa: 9.6.0
       fs-extra: 11.3.2
-      github-changelog: 2.1.2
+      github-changelog: 2.1.4
       js-yaml: 4.1.0
       latest-version: 9.0.0
       parse-github-repo-url: 1.4.1

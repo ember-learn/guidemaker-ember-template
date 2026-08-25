@@ -31,6 +31,17 @@
   fill: var(--color-blue-dark);
 }
 
+.info-banner-wrapper.info-banner-warning {
+  background-color: var(--color-warning);
+}
+
+.info-banner-container em {
+  font-weight: bold;
+  font-style: normal;
+  color: var(--color-brand-hc-dark);
+  font-family: 'Inter web';
+}
+
 a.old-version-button, a.old-version-button:link, a.old-version-button:visited {
   padding: 0.25rem var(--spacing-1);
   color: var(--color-blue-dark);
@@ -62,7 +73,6 @@ a.old-version-button:active {
   background-color: var(--color-info);
   padding: 8px 12px;
   border-radius: 4px;
-  margin-bottom: var(--spacing-3);
 }
 
 .info-banner-text {

@@ -1,5 +1,5 @@
 {{#if this.config}}
-  <div class="info-banner-wrapper">
+  <div class="info-banner-wrapper {{if this.config.style (concat 'info-banner-' this.config.style)}}">
     <div class="info-banner-container">
       <MarkdownToHtml @markdown={{this.config.content}} />
     </div>

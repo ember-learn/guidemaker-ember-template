@@ -1,5 +1,5 @@
 /* eslint-disable ember/no-classic-components, ember/no-computed-properties-in-native-classes, ember/require-tagless-components */
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { and } from '@ember/object/computed';
 import { getOwner } from '@ember/application';
 import Component from '@ember/component';

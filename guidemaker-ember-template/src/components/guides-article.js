@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
 // TODO remove this and use appEmberSatisfies() from @embroider/macros when it's done
 import config from 'ember-get-config';

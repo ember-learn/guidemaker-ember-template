@@ -43,8 +43,8 @@ importers:
         specifier: '*'
         version: 2.0.0
       ember-collapsible-panel:
-        specifier: ^7.0.0
-        version: 7.0.0(@babel/core@7.28.4)
+        specifier: ^7.0.1
+        version: 7.0.1(@babel/core@7.28.4)
       ember-concurrency:
         specifier: ^5.3.0
         version: 5.3.0(@babel/core@7.28.4)
@@ -67,8 +67,8 @@ importers:
         specifier: ^1.0.4
         version: 1.2.1(@babel/core@7.28.4)(showdown@2.1.0)
       ember-styleguide:
-        specifier: github:NullVoxPopuli-ai-agent/ember-styleguide#94eb2c7558347956a575cec72f34dbbabbdcca6b
-        version: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/94eb2c7558347956a575cec72f34dbbabbdcca6b(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0))
+        specifier: github:NullVoxPopuli-ai-agent/ember-styleguide#62e57f01ea9fc27a75f72cc362d4379c9135f932
+        version: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0))
       ember-tether:
         specifier: ^3.1.0
         version: 3.1.0(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.101.3))(webpack@5.101.3)
@@ -3962,8 +3962,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  ember-collapsible-panel@7.0.0:
-    resolution: {integrity: sha512-OsCY0mZ8Za9JzX356mCbeXxgKR4oa3to7lk0LELuhpKhzADfuLE34+02ZgMuUt1cc10sAVdb8I3EQRg3s7U/nw==}
+  ember-collapsible-panel@7.0.1:
+    resolution: {integrity: sha512-aiMrWfvW29lL1hBCzuC0lWLzBmNI5WMlSx6/ii0STXrlb+AgU7yhpd9D+ENbR0kONvtn12aqSE3CX35BHKizVQ==}
     peerDependencies:
       liquid-fire: ^0.36.0
     peerDependenciesMeta:
@@ -4133,8 +4133,8 @@ packages:
     resolution: {integrity: sha512-Oa2xR1Xps0Yw/+0XnglBE61+fGCFVucOX4m8FYib2NWAZEw5Vy0JjM6CdFD3quUK51ck/cql1tNk2iuv5vMkGQ==}
     engines: {node: 18.* || >= 20, pnpm: '>= 10.*'}
 
-  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/94eb2c7558347956a575cec72f34dbbabbdcca6b:
-    resolution: {tarball: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/94eb2c7558347956a575cec72f34dbbabbdcca6b}
+  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932:
+    resolution: {tarball: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932}
     version: 11.5.0
     engines: {node: '>= 24'}
 
@@ -13892,7 +13892,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-collapsible-panel@7.0.0(@babel/core@7.28.4):
+  ember-collapsible-panel@7.0.1(@babel/core@7.28.4):
     dependencies:
       '@embroider/addon-shim': 1.11.0
       decorator-transforms: 2.4.0(@babel/core@7.28.4)
@@ -14284,7 +14284,7 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
 
-  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/94eb2c7558347956a575cec72f34dbbabbdcca6b(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0)):
+  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0)):
     dependencies:
       '@ember/test-waiters': 4.1.2
       '@embroider/addon-shim': 1.11.0

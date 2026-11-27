@@ -38,7 +38,7 @@
     "algoliasearch": "^4.22.1",
     "decorator-transforms": "^2.4.0",
     "ember-basic-dropdown": "^9.1.0",
-    "ember-collapsible-panel": "^7.0.0",
+    "ember-collapsible-panel": "^7.0.1",
     "ember-concurrency": "^5.3.0",
     "ember-get-config": "^2.1.1",
     "ember-href-to": "^5.0.1",
@@ -46,7 +46,7 @@
     "ember-power-select": "^9.0.6",
     "ember-route-template": "^1.0.3",
     "ember-showdown-shiki": "^1.0.4",
-    "ember-styleguide": "github:NullVoxPopuli-ai-agent/ember-styleguide#94eb2c7558347956a575cec72f34dbbabbdcca6b",
+    "ember-styleguide": "github:NullVoxPopuli-ai-agent/ember-styleguide#62e57f01ea9fc27a75f72cc362d4379c9135f932",
     "ember-tether": "^3.1.0",
     "ember-truth-helpers": "^5.0.0",
     "sanitize-html": "^2.12.1"

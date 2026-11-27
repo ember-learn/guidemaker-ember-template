@@ -8,6 +8,7 @@ import EsProgressBar from 'ember-styleguide/components/es-progress-bar';
 import SearchInput from '../components/search-input';
 import InfoBanner from '../components/info-banner';
 
+import 'ember-styleguide/styles.css';
 import '../styles/addon.css';
 import '../styles/agola-search.css';
 import '../styles/on-this-page.css';

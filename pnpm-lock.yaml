@@ -39,9 +39,6 @@ importers:
       ember-basic-dropdown:
         specifier: ^9.1.0
         version: 9.1.0(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(@embroider/macros@1.21.4(@babel/core@7.28.4))(@glimmer/component@2.0.0)
-      ember-cli-head:
-        specifier: '*'
-        version: 2.0.0
       ember-collapsible-panel:
         specifier: ^7.0.1
         version: 7.0.1(@babel/core@7.28.4)

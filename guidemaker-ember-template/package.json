@@ -75,7 +75,6 @@
     "rollup-plugin-copy": "^3.5.0"
   },
   "peerDependencies": {
-    "ember-cli-head": "*",
     "guidemaker": "^4.0.6",
     "showdown": "^2.0.0"
   },
@@ -93,6 +92,7 @@
       "./components/chapter-links.js": "./dist/_app_/components/chapter-links.js",
       "./components/dropdown-header.js": "./dist/_app_/components/dropdown-header.js",
       "./components/guides-article.js": "./dist/_app_/components/guides-article.js",
+      "./components/head-layout.js": "./dist/_app_/components/head-layout.js",
       "./components/info-banner.js": "./dist/_app_/components/info-banner.js",
       "./components/on-this-page.js": "./dist/_app_/components/on-this-page.js",
       "./components/search-input.js": "./dist/_app_/components/search-input.js",

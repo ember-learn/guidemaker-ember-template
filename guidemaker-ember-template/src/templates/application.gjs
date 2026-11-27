@@ -1,6 +1,6 @@
 import RouteTemplate from 'ember-route-template';
 
-import HeadLayout from 'ember-cli-head/components/head-layout';
+import HeadLayout from '../components/head-layout.gjs';
 import EsFooter from 'ember-styleguide/components/es-footer';
 import EsHeader from 'ember-styleguide/components/es-header';
 import EsProgressBar from 'ember-styleguide/components/es-progress-bar';

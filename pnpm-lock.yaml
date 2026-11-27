@@ -67,8 +67,8 @@ importers:
         specifier: ^1.0.4
         version: 1.2.1(@babel/core@7.28.4)(showdown@2.1.0)
       ember-styleguide:
-        specifier: github:NullVoxPopuli-ai-agent/ember-styleguide#62e57f01ea9fc27a75f72cc362d4379c9135f932
-        version: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0))
+        specifier: github:NullVoxPopuli-ai-agent/ember-styleguide#eb7f1b2dca5dca0f9351fae29243c52d7857c490
+        version: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/eb7f1b2dca5dca0f9351fae29243c52d7857c490(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0))
       ember-tether:
         specifier: ^3.1.0
         version: 3.1.0(ember-source@5.7.0(@babel/core@7.28.4)(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.101.3))(webpack@5.101.3)
@@ -4133,8 +4133,8 @@ packages:
     resolution: {integrity: sha512-Oa2xR1Xps0Yw/+0XnglBE61+fGCFVucOX4m8FYib2NWAZEw5Vy0JjM6CdFD3quUK51ck/cql1tNk2iuv5vMkGQ==}
     engines: {node: 18.* || >= 20, pnpm: '>= 10.*'}
 
-  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932:
-    resolution: {tarball: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932}
+  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/eb7f1b2dca5dca0f9351fae29243c52d7857c490:
+    resolution: {tarball: https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/eb7f1b2dca5dca0f9351fae29243c52d7857c490}
     version: 11.5.0
     engines: {node: '>= 24'}
 
@@ -14284,7 +14284,7 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
 
-  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/62e57f01ea9fc27a75f72cc362d4379c9135f932(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0)):
+  ember-styleguide@https://codeload.github.com/NullVoxPopuli-ai-agent/ember-styleguide/tar.gz/eb7f1b2dca5dca0f9351fae29243c52d7857c490(@babel/core@7.28.4)(@ember/test-helpers@5.8.0(@babel/core@7.28.4))(ember-resources@7.1.0(@glimmer/component@2.0.0)):
     dependencies:
       '@ember/test-waiters': 4.1.2
       '@embroider/addon-shim': 1.11.0

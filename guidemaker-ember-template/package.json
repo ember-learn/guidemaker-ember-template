@@ -46,7 +46,7 @@
     "ember-power-select": "^9.0.6",
     "ember-route-template": "^1.0.3",
     "ember-showdown-shiki": "^1.0.4",
-    "ember-styleguide": "github:NullVoxPopuli-ai-agent/ember-styleguide#62e57f01ea9fc27a75f72cc362d4379c9135f932",
+    "ember-styleguide": "github:NullVoxPopuli-ai-agent/ember-styleguide#eb7f1b2dca5dca0f9351fae29243c52d7857c490",
     "ember-tether": "^3.1.0",
     "ember-truth-helpers": "^5.0.0",
     "sanitize-html": "^2.12.1"
